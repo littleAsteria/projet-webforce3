@@ -1,1 +1,21 @@
 {% extends "layout.html.twig" %}
+
+{% block title "Connexion" %}
+    
+{% block content%}
+<form>
+  <div class="form-group" id="form_connexion">
+    <label for="pseudo">Pseudo</label>
+    <input type="text" class="form-control" id="pseudo" name="pseudo" placeholder="Votre pseudo">
+  </div>
+    
+  <div class="form-group">
+    <label for="mdp">Mot de passe</label>
+    <input type="password" class="form-control" id="mdp" name ="mdp" placeholder="Votre mot de passe">
+  </div>
+ 
+  <button type="submit" class="btn btn-default">Se connecter</button>
+</form>
+
+
+
