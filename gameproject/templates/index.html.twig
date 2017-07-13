@@ -1,8 +1,19 @@
 {% extends "layout.html.twig" %}
 
 {% block content %}
-    <h1>Our Game</h1>
-    <button class="btn btn-default">Jouer</button>
-    <button class="btn btn-default">Règles du jeu</button>
-    <button class="btn btn-default">Scores</button>
+    <div class="container">
+        <div class="row">
+            <h1 class="col-md-6 col-md-offset-4">Our Game</h1>
+
+        </div>
+        <div class="row">
+            <button class="btn btn-primary col-md-2 col-md-offset-4 margin-top-10">Jouer</button>
+        </div>
+        <div class="row">
+            <button class="btn btn-primary col-md-2 col-md-offset-4 margin-top-10">Règles du jeu</button>
+        </div>
+        <div class="row">
+            <button class="btn btn-primary col-md-2 col-md-offset-4 margin-top-10">Scores</button>
+        </div>
+    </div>
 {% endblock %}
