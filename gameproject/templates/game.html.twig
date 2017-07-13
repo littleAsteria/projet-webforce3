@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <title>{% block title '' %} - Our game</title>
+        {% block stylesheets %}
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link href="{{ asset('assets/css/main.css') }}" rel="stylesheet" type="text/css" />
+        {% endblock %}
+
+    </head>
+    <body>
+        <nav class="navbar navbar-default">
+            <div class="container">
+                <a class="navbar-brand" href="{{ path('homepage') }}">Accueil</a>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="row">
+                <button id="joker1" class="btn btn-primary col-md-2 col-md-offset-2 margin-top-10">Joker 1</button>
+                <button id="joker2" class="btn btn-primary col-md-2 col-md-offset-4 margin-top-10">Joker 2</button>
+            </div>
+            
+            <div class="row">
+                <p id="questionNumber" class="col-md-12 col-md-offset-5 margin-top-10">Question n°</p>
+                <p id="questionText" class="col-md-12 col-md-offset-5">Texte de la question</p>
+            </div>
+            
+            <div class="row">
+                <button id="reponseA" class="btn btn-primary col-md-2 col-md-offset-2 margin-top-10">Réponse A</button>
+                <button id="reponseB" class="btn btn-primary col-md-2 col-md-offset-4 margin-top-10">Réponse B</button>
+            </div>
+            
+            <div class="row">
+                <button id="reponseC" class="btn btn-primary col-md-2 col-md-offset-2 margin-top-10">Réponse C</button>
+                <button id="reponseD" class="btn btn-primary col-md-2 col-md-offset-4 margin-top-10">Réponse D</button>
+            </div>
+            
+            <div class="row">
+                <button id="valider" class="btn btn-primary col-md-2 col-md-offset-5 margin-top-10">Valider</button>
+            </div>
+        </div>
+        {% block javascript %}
+       {#récupérerer les liens sur bootstrap#}
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        {% endblock %}
+    </body>
+</html>
+
