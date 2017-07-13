@@ -8,21 +8,40 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 //Request::setTrustedProxies(array('127.0.0.1'));
 
+
+
+
 $app->get('/', function () use ($app) {
     return $app['twig']->render('index.html.twig', array());
 })
 ->bind('homepage')
 ;
 
+
+//Partie Front:
+//Utilisateur :
+
+//Inscription:
+$app
+    ->match('/inscription', 'membre.controller:registerAction')
+    ->bind('inscription')
+;
+
+//Connexion
+
+
+//Vue game
 $app
         ->get('/game', 'game.controller:getToGame')
         ->bind('game')
 ;
 
+//Vue des règles
 $app
         ->get('/regles', 'game.controller:getToRegles')
         ->bind('regles')
 ;
+
 
 $app->error(function (\Exception $e, Request $request, $code) use ($app) {
     if ($app['debug']) {
