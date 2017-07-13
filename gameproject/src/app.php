@@ -1,11 +1,14 @@
 <?php
 
+use Controller\MembreController;
+use Repository\MembreRepository;
 use Silex\Application;
 use Silex\Provider\AssetServiceProvider;
-use Silex\Provider\TwigServiceProvider;
-use Silex\Provider\ServiceControllerServiceProvider;
-use Silex\Provider\HttpFragmentServiceProvider;
 use Silex\Provider\DoctrineServiceProvider;
+use Silex\Provider\HttpFragmentServiceProvider;
+use Silex\Provider\ServiceControllerServiceProvider;
+use Silex\Provider\SessionServiceProvider;
+use Silex\Provider\TwigServiceProvider;
 
 $app = new Application();
 $app->register(new ServiceControllerServiceProvider());
@@ -33,5 +36,20 @@ $app->register( //nom de méthode propre à silex
 );
 
 $app->register(new SessionServiceProvider());
+//CONTROLLERS:
+//Déclaration en service du contrôleur Membre: 
+$app['membre.controller'] = function() use ($app){ 
+    
+    return new MembreController($app);
+};
+
+//REPOSITORY:
+//Déclaration en service du repository Membre:
+$app['membre.repository'] = function() use ($app){
+    
+    return new MembreRepository($app['db']);
+};
+
+
 
 return $app;
