@@ -5,6 +5,6 @@
 namespace Controller;
 
 
-class ControllerQuestionAjax {
+class ControllerQuestionAjax extends ControllerAbstract{
    
 }

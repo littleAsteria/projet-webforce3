@@ -17,6 +17,7 @@ $app->get('/', function () use ($app) {
 ->bind('homepage')
 ;
 
+
 //Partie Front:
 //Utilisateur :
 
@@ -28,6 +29,18 @@ $app
 
 //Connexion
 
+
+//Vue game
+$app
+        ->get('/game', 'game.controller:getToGame')
+        ->bind('game')
+;
+
+//Vue des règles
+$app
+        ->get('/regles', 'game.controller:getToRegles')
+        ->bind('regles')
+;
 
 
 $app->error(function (\Exception $e, Request $request, $code) use ($app) {

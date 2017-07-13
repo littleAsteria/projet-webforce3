@@ -63,12 +63,13 @@ class ControllerAbstract {
      * @param type $message
      * @param type $type
      */
-    
+
     public function addFlashMessage($message, $type = 'success'){
         
         $this->session->getFlashBag()->add($type, $message);
         
     }
+
    
     
     

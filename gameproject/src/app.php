@@ -1,7 +1,10 @@
 <?php
 
+
 use Controller\MembreController;
 use Repository\MembreRepository;
+
+use Controller\GameController;
 use Silex\Application;
 use Silex\Provider\AssetServiceProvider;
 use Silex\Provider\DoctrineServiceProvider;
@@ -36,11 +39,17 @@ $app->register( //nom de méthode propre à silex
 );
 
 $app->register(new SessionServiceProvider());
+
 //CONTROLLERS:
 //Déclaration en service du contrôleur Membre: 
 $app['membre.controller'] = function() use ($app){ 
     
     return new MembreController($app);
+};
+
+//Déclaration en service du contrôleur Game: 
+$app['game.controller'] = function () use ($app){
+    return new GameController($app);
 };
 
 //REPOSITORY:
@@ -49,6 +58,11 @@ $app['membre.repository'] = function() use ($app){
     
     return new MembreRepository($app['db']);
 };
+
+
+
+
+
 
 
 
