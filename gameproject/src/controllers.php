@@ -14,6 +14,16 @@ $app->get('/', function () use ($app) {
 ->bind('homepage')
 ;
 
+$app
+        ->get('/game', 'game.controller:getToGame')
+        ->bind('game')
+;
+
+$app
+        ->get('/regles', 'game.controller:getToRegles')
+        ->bind('regles')
+;
+
 $app->error(function (\Exception $e, Request $request, $code) use ($app) {
     if ($app['debug']) {
         return;
