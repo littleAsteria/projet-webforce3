@@ -32,4 +32,6 @@ $app->register( //nom de méthode propre à silex
         ]
 );
 
+$app->register(new SessionServiceProvider());
+
 return $app;
