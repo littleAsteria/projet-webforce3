@@ -42,6 +42,12 @@ $app
         ->bind('regles')
 ;
 
+//Vue du formulaire de soumission des questions
+$app
+        ->match('/soumission', 'question.controller:submitAction')
+        ->bind('soumission')
+;
+
 
 $app->error(function (\Exception $e, Request $request, $code) use ($app) {
     if ($app['debug']) {
