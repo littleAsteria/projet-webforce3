@@ -44,11 +44,19 @@ class MembreController extends ControllerAbstract{
             }elseif($_POST['mdp'] != $_POST['mdp_confirm']){
                     
                     $errors['mdp_confirm'] = "Mot de passe non confirmé";
-                }
+            }
                
                 
             if(empty($errors)){
+                 //encodage du password
+                $membre->setMdp($this->app['membre.manager']->encodePassword($_POST['mdp']));
+                //créer le compte 
+                $this->app['membre.repository']->save($membre);
                 
+                //connexion direct 
+                $this->app['membre.manager']->login($membre);
+                
+                return $this->redirectRoute('homepage');
             }
             
             else {
@@ -62,6 +70,42 @@ class MembreController extends ControllerAbstract{
         }
         
         return $this->render('membre/inscription.html.twig');
+        
+    }
+    
+    
+    public function loginAction(){
+        $pseudo = '';
+        
+        if(!empty($_POST)){
+            $pseudo = $_POST['pseudo'];
+            
+            
+            $membre = $this->app['membre.repository']->findByPseudo($pseudo);
+            
+            if(!is_null($membre)){
+                
+                
+                print_r($_POST['mdp']);
+                
+                echo $membre->getMdp();
+                if($this->app['membre.manager']->verifyPassword($_POST['mdp'], $membre->getMdp())){
+                    
+                    $this->app['membre.manager']->login($membre);
+                    //On enregistre en session
+                    
+                    return $this->redirectRoute('homepage');
+                    
+                }
+                
+                else {
+                    //print_r($membre);
+                }
+                
+            }
+        }
+        
+        return $this->render('membre/connexion.html.twig');
         
     }
   
