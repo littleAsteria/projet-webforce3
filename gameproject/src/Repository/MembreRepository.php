@@ -13,7 +13,7 @@ class MembreRepository extends RepositoryAbstract{
     }
     
     
-     public function findByPseudo($pseudo){
+    public function findByPseudo($pseudo){
         
         $dbMembre = $this->db->fetchAssoc(
             'SELECT * FROM membre WHERE pseudo = :pseudo',
@@ -27,7 +27,7 @@ class MembreRepository extends RepositoryAbstract{
         return null;
     }
     
-     public function buildFromArray(array $dbMembre){
+    public function buildFromArray(array $dbMembre){
         
         $membre = new Membre();
         
