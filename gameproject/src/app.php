@@ -1,7 +1,10 @@
 <?php
+
 use Service\MembreManager;
+
 use Controller\GameController;
 use Controller\MembreController;
+use Controller\QuestionController;
 use Repository\MembreRepository;
 use Silex\Application;
 use Silex\Provider\AssetServiceProvider;
@@ -53,6 +56,11 @@ $app['membre.controller'] = function() use ($app){
 //Déclaration en service du contrôleur Game: 
 $app['game.controller'] = function () use ($app){
     return new GameController($app);
+};
+
+//Déclaration en service du contrôleur Question:
+$app['question.controller'] = function () use ($app){
+  return new QuestionController($app);  
 };
 
 //REPOSITORY:
