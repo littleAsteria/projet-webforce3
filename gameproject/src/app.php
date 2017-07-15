@@ -1,5 +1,7 @@
 <?php
 
+use Service\MembreManager;
+
 use Controller\GameController;
 use Controller\MembreController;
 use Controller\QuestionController;
@@ -38,6 +40,11 @@ $app->register( //nom de méthode propre à silex
 );
 
 $app->register(new SessionServiceProvider());
+
+$app['membre.manager'] = function() use ($app){
+    return new MembreManager($app['session']);
+    
+};
 
 //CONTROLLERS:
 //Déclaration en service du contrôleur Membre: 

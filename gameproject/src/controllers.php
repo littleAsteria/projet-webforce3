@@ -19,6 +19,7 @@ $app->get('/', function () use ($app) {
 
 
 //Partie Front:
+
 //Utilisateur :
 
 //Inscription:
@@ -28,7 +29,10 @@ $app
 ;
 
 //Connexion
-
+$app
+    ->match('/connexion', 'membre.controller:loginAction')
+    ->bind('connexion')
+;
 
 //Vue game
 $app
