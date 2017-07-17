@@ -46,8 +46,26 @@ class QuestionRepository extends RepositoryAbstract{
         $this->persist($data);
     }
     
+
     public function findAll(){
+  
+    }
         
+
+    public function getQuestionsByDifficulty($difficulty){
+        $query = 'SELECT * FROM question WHERE niveau = '.$difficulty;
+        
+        $dbQuestions = $this->db->fetchAll($query);
+        $questions = [];
+        
+        foreach ($dbQuestions as $dbquestion){
+            $question = $this->buildFromArray($dbquestion);
+            
+            $questions[] = $question;
+        }
+        
+        return $questions;
+
     }
     
 }
