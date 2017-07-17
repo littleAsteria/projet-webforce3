@@ -23,6 +23,9 @@ USE game;
 
 -- --------------------------------------------------------
 
+CREATE DATABASE IF NOT EXISTS game;
+USE game;
+
 --
 -- Structure de la table `membre`
 --

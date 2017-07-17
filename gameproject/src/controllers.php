@@ -20,6 +20,12 @@ $app->get('/', function () use ($app) {
 
 //Partie Front:
 
+$app
+    ->get('/randomQuestion', 'question.ajax.controller:getRandomQuestion')
+//    ->assert('difficulty','\d+')
+    ->bind('randomQuestion')
+;
+
 //Utilisateur :
 
 //Inscription:
