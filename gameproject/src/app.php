@@ -1,11 +1,11 @@
 <?php
 
-use Service\MembreManager;
-
 use Controller\GameController;
 use Controller\MembreController;
 use Controller\QuestionController;
 use Repository\MembreRepository;
+use Repository\QuestionRepository;
+use Service\MembreManager;
 use Silex\Application;
 use Silex\Provider\AssetServiceProvider;
 use Silex\Provider\DoctrineServiceProvider;
@@ -71,6 +71,11 @@ $app['question.controller'] = function () use ($app){
 $app['membre.repository'] = function() use ($app){
     
     return new MembreRepository($app['db']);
+};
+
+
+$app['question.repository'] = function() use ($app){
+  return new QuestionRepository($app['db']);  
 };
 
 
