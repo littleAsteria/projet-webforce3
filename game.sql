@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Mer 12 Juillet 2017 à 14:20
+-- Généré le :  Lun 17 Juillet 2017 à 09:56
 -- Version du serveur :  10.1.13-MariaDB
 -- Version de PHP :  5.6.23
 
@@ -19,19 +19,17 @@ SET time_zone = "+00:00";
 --
 -- Base de données :  `game`
 --
-CREATE DATABASE IF NOT EXISTS game;
-
-USE game;
 
 -- --------------------------------------------------------
 
 --
 -- Structure de la table `membre`
+--
 
 CREATE TABLE `membre` (
   `id_membre` int(11) NOT NULL,
   `pseudo` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
-  `mdp` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `mdp` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `score` int(15) NOT NULL DEFAULT '0',
   `statut_membre` enum('0','1') COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -78,7 +76,7 @@ ALTER TABLE `question`
 -- AUTO_INCREMENT pour la table `membre`
 --
 ALTER TABLE `membre`
-  MODIFY `id_membre` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_membre` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT pour la table `question`
 --

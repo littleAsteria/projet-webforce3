@@ -17,7 +17,7 @@ class MembreRepository extends RepositoryAbstract{
         
         $data = [
             'pseudo' => $membre->getPseudo(),
-            'mdp' => $membre->getMdp(),
+            'mdp' => $membre->getMdp()
             
         ];
         

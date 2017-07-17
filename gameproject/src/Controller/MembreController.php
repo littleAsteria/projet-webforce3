@@ -86,7 +86,7 @@ class MembreController extends ControllerAbstract{
             if(!is_null($membre)){
                 
                 
-                print_r($_POST['mdp']);
+                //print_r($_POST['mdp']);
                 
                 echo $membre->getMdp();
                 if($this->app['membre.manager']->verifyPassword($_POST['mdp'], $membre->getMdp())){
@@ -100,6 +100,7 @@ class MembreController extends ControllerAbstract{
                 
                 else {
                     //print_r($membre);
+                    echo 'mauvais mot de passe';
                 }
                 
             }
@@ -108,5 +109,13 @@ class MembreController extends ControllerAbstract{
         return $this->render('membre/connexion.html.twig');
         
     }
+    
+    public function logoutAction(){
+       
+        $this->app['membre.manager']->logout();
+        
+        return $this->redirectRoute('homepage');
+        
+   }
   
 }

@@ -28,10 +28,16 @@ $app
     ->bind('inscription')
 ;
 
-//Connexion
+//Connexion:
 $app
     ->match('/connexion', 'membre.controller:loginAction')
     ->bind('connexion')
+;
+
+//Déconnexion:
+$app
+    ->match('/deconnexion', 'membre.controller:logoutAction')
+    ->bind('deconnexion')
 ;
 
 //Vue game
