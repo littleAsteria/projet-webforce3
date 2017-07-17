@@ -30,5 +30,16 @@ class QuestionController extends ControllerAbstract {
         return $this->redirectRoute('admin_validation');
     }
     
-    
+    public function acceptAction($id){
+        
+        $question = $this->app['question.repository']->find($id);
+        
+        $this->app['question.repository']->accept($question->getId_question());
+        
+        $this->addFlashMessage('La question a été validée');
+        
+        return $this->redirectRoute('admin_validation');
+        
+        
+    }
 }
