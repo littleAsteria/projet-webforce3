@@ -71,6 +71,7 @@ $app
 ;
 
 //Partie Admin:
+//créer protection de l'espace admin:
 
 $admin = $app['controllers_factory'];
 
@@ -79,12 +80,24 @@ $app->mount('/admin', $admin);
 //route de la vue validationQuestion
 $admin
      ->get('/validation','admin.question.controller:listAction')
-        //rendu de la vue
      ->bind('admin_validation')
 ;
-//route modification
 
-//route suppression:
+//route question accepté
+$admin
+     ->get('/validation/accord/{id}','admin.question.controller:acceptAction')
+     ->bind('admin_validation_accord')
+;
+//route modificationQuestion:
+
+
+
+//route suppressionQuestion:
+$admin        
+     ->get('validation/suppression/{id}','admin.question.controller:deleteAction') 
+     ->bind('admin_validation_suppression')
+;
+
 
 
 $app->error(function (\Exception $e, Request $request, $code) use ($app) {

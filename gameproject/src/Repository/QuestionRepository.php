@@ -24,7 +24,7 @@ class QuestionRepository extends RepositoryAbstract{
                 ->setReponse_c($dbQuestion['reponse_c'])
                 ->setReponse_d($dbQuestion['reponse_d'])
                 ->setBonne_reponse($dbQuestion['bonne_reponse'])
-                ->setNiveau($dbQuestion['bonne_reponse'])
+                ->setNiveau($dbQuestion['niveau'])
                 ->setStatut_question($dbQuestion['statut_question'])
         ;
         
@@ -46,9 +46,49 @@ class QuestionRepository extends RepositoryAbstract{
         $this->persist($data);
     }
     
-
+    
     public function findAll(){
-  
+        
+        $query = "SELECT * FROM question WHERE statut_question = :statut_question";
+        
+        $dbQuestions = $this->db->fetchAll(
+                
+            $query,
+            //selectionner les questions de la table question lorsque celle-ci on un statut 0   
+            [':statut_question' => '0']
+                
+            );    
+        
+            foreach ($dbQuestions as $dbQuestion){
+                $question = $this->buildFromArray($dbQuestion);
+            
+            
+                $questions[] = $question;
+            }
+            
+        return $questions;
+     
+         
+    }
+    
+    public function find($id){
+        
+        $dbQuestion = $this->db->fetchAssoc(
+            'SELECT * FROM question WHERE id_question =:id',
+            [':id' => $id]
+        );
+        
+        if(!empty($dbQuestion)){
+            return $this->buildFromArray($dbQuestion);
+        }
+        return null;
+        
+    }
+    
+     public function delete($question){
+        
+        $this->db->delete('question', ['id_question' => $question->getId_question()]);
+    
     }
         
 
