@@ -3,6 +3,7 @@
 use Controller\GameController;
 use Controller\MembreController;
 use Controller\QuestionController;
+use Controller\ControllerQuestionAjax;
 use Repository\MembreRepository;
 use Repository\QuestionRepository;
 use Service\MembreManager;
@@ -64,6 +65,10 @@ $app['game.controller'] = function () use ($app){
 //Déclaration en service du contrôleur Question:
 $app['question.controller'] = function () use ($app){
   return new QuestionController($app);  
+};
+
+$app['question.ajax.controller'] = function () use ($app){
+    return new ControllerQuestionAjax($app);
 };
 
 //REPOSITORY:
