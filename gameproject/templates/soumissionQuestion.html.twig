@@ -2,7 +2,7 @@
 
 {% block title "Soumission" %}
     
-{% block content%}
+{% block content %}
 
 <form method="post">
     
@@ -33,7 +33,7 @@
     
     <div class="form-group">
         <label for="reponse">Quelle est la bonne réponse ?</label>
-        <select id="reponse">
+        <select id="reponse" name="reponse">
             <option value="a" selected>Réponse A</option>
             <option value="b">Réponse B</option>
             <option value="c">Réponse C</option>
@@ -43,7 +43,7 @@
     
     <div class="form-group">
         <label for="difficulte">Quel est le niveau de difficulté de votre question ?</label>
-        <select>
+        <select id="difficulte" name="difficulte">
             <option value="1" selected>1</option>
             <option value="2">2</option>
             <option value="3">3</option>
