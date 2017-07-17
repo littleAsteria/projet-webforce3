@@ -1,0 +1,25 @@
+{% extends "layout.html.twig" %}
+
+{% block title "Inscription" %}
+    
+{% block content %}
+<div class="container">
+    <h1>Meilleurs scores</h1>
+    
+    
+    <table class="table">
+        <tr>
+            <th>Pseudo</th>
+            <th>Score</th>
+        </tr>
+        
+        {% for membre in membres %}
+        <tr>
+            <td>{{ membre.pseudo }}</td>
+            <td>{{ membre.score }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+    
+{% endblock %}

@@ -58,6 +58,12 @@ $app
         ->bind('regles')
 ;
 
+//Vue des scores
+$app
+        ->get('/scores', 'game.controller:getToScores')
+        ->bind('scores')
+;
+
 //Vue du formulaire de soumission des questions
 $app
         ->match('/soumission', 'question.controller:submitAction')
