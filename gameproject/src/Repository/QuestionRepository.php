@@ -90,6 +90,22 @@ class QuestionRepository extends RepositoryAbstract{
         $this->db->delete('question', ['id_question' => $question->getId_question()]);
     
     }
+    
+ 
+    /**
+     * 
+     * @param type $id
+     */
+    public function accept($id){
+        
+        
+        $data=['statut_question' => '1'];
+        
+        $where = ['id_question' => $id];
+        
+        $this->persist($data,$where);
+                
+    }
         
 
     public function getQuestionsByDifficulty($difficulty){
