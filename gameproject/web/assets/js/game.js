@@ -1,16 +1,16 @@
 $(function(){
-   console.log('hi');
+    
+    var currentQuestion;
    
     $.ajax({
         method : 'get',
         url : path,
         data : {difficulty : 1},
-        //dataType : 'json'
-       
     })
    
     .done(function(data){
         console.log(data);
+        currentQuestion = data;
 
     })
     

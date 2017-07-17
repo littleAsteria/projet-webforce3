@@ -22,6 +22,9 @@ SET time_zone = "+00:00";
 
 -- --------------------------------------------------------
 
+CREATE DATABASE IF NOT EXISTS game;
+USE game;
+
 --
 -- Structure de la table `membre`
 --
