@@ -3,26 +3,26 @@
 {% block title "Inscription" %}
     
 {% block content %}
+<div class="container">
+    <form method="post">
+      <div class="form-group" id="form_inscription">
+        <label for="pseudo">Entrer un pseudo : </label>
+        <input type="text" class="form-control" id="pseudo" name="pseudo" placeholder="Votre pseudo">
+      </div>
 
-<form method="post">
-  <div class="form-group" id="form_inscription">
-    <label for="pseudo">Entrer un pseudo : </label>
-    <input type="text" class="form-control" id="pseudo" name="pseudo" placeholder="Votre pseudo">
-  </div>
-    
-  <div class="form-group">
-    <label for="mdp">Entrer un mot de passe : </label>
-    <input type="password" class="form-control" id="mdp" name ="mdp" placeholder="Votre mot de passe">
-  </div>
-    
-    <div class="form-group">
-        <label for="mdp_confirm">Veuillez confirmer votre mot de passe</label>
-        <input type="password" class="form-control" id="mdp_confirm" name="mdp_confirm" placeholder="Votre mot de passe">
-    </div>
- 
-  <button type="submit" class="btn btn-default">S'inscrire</button>
-</form>
-    
+      <div class="form-group">
+        <label for="mdp">Entrer un mot de passe : </label>
+        <input type="password" class="form-control" id="mdp" name ="mdp" placeholder="Votre mot de passe">
+      </div>
+
+        <div class="form-group">
+            <label for="mdp_confirm">Veuillez confirmer votre mot de passe</label>
+            <input type="password" class="form-control" id="mdp_confirm" name="mdp_confirm" placeholder="Votre mot de passe">
+        </div>
+
+      <button type="submit" class="btn btn-default">S'inscrire</button>
+    </form>
+</div>
 {% endblock %}
     
 

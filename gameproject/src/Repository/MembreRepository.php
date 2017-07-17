@@ -13,6 +13,22 @@ class MembreRepository extends RepositoryAbstract{
         return 'membre';
     }
     
+    public function findAllBestScores($limit){
+        $query = "SELECT * FROM membre ORDER BY score DESC LIMIT 0, $limit";
+        
+        $dbMembres = $this->db->fetchAll($query);
+        
+        $membres = [];
+        
+        foreach($dbMembres as $dbMembre){
+            $membre = $this->buildFromArray($dbMembre);
+            
+            $membres[] = $membre;
+        }
+        
+        return $membres;
+    }
+    
     public function save(Membre $membre){
         
         $data = [
@@ -55,6 +71,7 @@ class MembreRepository extends RepositoryAbstract{
            ->setId_membre($dbMembre['id_membre'])
            ->setPseudo($dbMembre['pseudo'])
            ->setMdp($dbMembre['mdp'])
+           ->setScore($dbMembre['score'])
         ;
         
         return $membre;
