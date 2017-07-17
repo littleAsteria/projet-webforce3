@@ -46,4 +46,8 @@ class QuestionRepository extends RepositoryAbstract{
         $this->persist($data);
     }
     
+    public function findAll(){
+        
+    }
+    
 }

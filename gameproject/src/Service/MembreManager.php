@@ -64,6 +64,9 @@ class MembreManager {
         $this->session->remove('membre');
    }
    
+   //Vérifie si la session membre existe (si il y a un membre de connecté)
+   //Si oui retourne le pseudo de l'utilisateur
+   
    /**
     * 
     * @return string
@@ -77,6 +80,11 @@ class MembreManager {
        return '';
    }
    
+   //Méthode permettant de vérifier si l'utilisateur est connecté 
+   /**
+    * 
+    * @return string
+    */
    public function getMembre(){
        
        if($this->session->has('membre')){
@@ -86,6 +94,17 @@ class MembreManager {
        return '';
    }
    
+   //methode pour vérifier si un on est bien connecté (entant que membre puis entant qu'admin:
+   
+    public function isAdmin(){
+       
+       return $this->session->has('membre') && $this->session->get('membre')->isAdmin();
+       //il y a t-il un utilisateur si oui 
+       //vrai si on une clef user 
+       //la 2éme condition doit aussi etre vrai 
+       //condition qui renvoit un booléen
+       
+   }
     
   
 }

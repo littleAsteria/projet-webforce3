@@ -13,6 +13,19 @@
 
     </head>
     <body>
+        {#{% if membre_manager.admin %}#}
+            <nav class="navbar navbar-inverse">
+                <div class="container">
+                    <a class="navbar-brand">Menu admin</a>
+                        <ul class="nav navbar-nav">
+                            
+                            <li>
+                                <a href='{{ path('admin_validation')}}'>Gestion des questions</a>
+                            </li>
+                        </ul>
+                </div>
+            </nav>
+        {#{% endif %}#}                 
         <nav class="navbar navbar-default">
                 <div class="container">
                     <a class="navbar-brand" href="{{ path('homepage') }}">Accueil</a>

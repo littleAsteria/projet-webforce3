@@ -58,6 +58,22 @@ $app
         ->bind('soumission')
 ;
 
+//Partie Admin:
+
+$admin = $app['controllers_factory'];
+
+$app->mount('/admin', $admin);
+
+//route de la vue validationQuestion
+$admin
+     ->get('/validation','admin.question.controller:listAction')
+        //rendu de la vue
+     ->bind('admin_validation')
+;
+//route modification
+
+//route suppression:
+
 
 $app->error(function (\Exception $e, Request $request, $code) use ($app) {
     if ($app['debug']) {
