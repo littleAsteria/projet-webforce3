@@ -2,6 +2,7 @@
 
 {% block title "Questions joueurs" %}
 {% block content %}
+<div class="container">
     <table class="table">
          <tr>
             <th>Id_question</th>
@@ -28,14 +29,14 @@
                 <td>{{ question.niveau}}</td>
                 {# cherche la methode categoryName#}
                 <td>
-                    <a href="" class="btn btn-primary">
+                    <a href="" class="btn btn-success">
                         Accepter
                     </a>
                     <a href="" class="btn btn-primary">
                         Modifier
                     </a>
                        
-                    <a href="" class="btn btn-danger">
+                    <a href="{{ path('admin_validation_suppression' , {id: question.id_question}) }}" class="btn btn-danger">
                         Supprimer
                     </a>  
                 </td>
@@ -43,6 +44,7 @@
         {% endfor %}
                
     </table>
+</div> 
 {% endblock %}
 
     
