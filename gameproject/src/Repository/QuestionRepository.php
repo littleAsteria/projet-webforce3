@@ -46,6 +46,12 @@ class QuestionRepository extends RepositoryAbstract{
         $this->persist($data);
     }
     
+
+    public function findAll(){
+  
+    }
+        
+
     public function getQuestionsByDifficulty($difficulty){
         $query = 'SELECT * FROM question WHERE niveau = '.$difficulty;
         
@@ -59,6 +65,7 @@ class QuestionRepository extends RepositoryAbstract{
         }
         
         return $questions;
+
     }
     
 }

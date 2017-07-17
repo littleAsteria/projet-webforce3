@@ -1,5 +1,5 @@
 <?php
-
+use Controller\Admin\QuestionController as AdminQuestionController;
 use Controller\GameController;
 use Controller\MembreController;
 use Controller\QuestionController;
@@ -50,6 +50,15 @@ $app['membre.manager'] = function() use ($app){
     
 };
 
+//ADMIN:
+//déclaration en service du contrôleur Admin Question 
+$app['admin.question.controller'] = function() use ($app) {
+    
+    return new AdminQuestionController($app);
+};
+
+
+//FRONT:
 //CONTROLLERS:
 //Déclaration en service du contrôleur Membre: 
 $app['membre.controller'] = function() use ($app){ 
@@ -78,14 +87,10 @@ $app['membre.repository'] = function() use ($app){
     return new MembreRepository($app['db']);
 };
 
-
+//Déclaration en service du repository Question
 $app['question.repository'] = function() use ($app){
   return new QuestionRepository($app['db']);  
 };
-
-
-
-
 
 
 

@@ -1,0 +1,48 @@
+{% extends "layout.html.twig" %}
+
+{% block title "Questions joueurs" %}
+{% block content %}
+    <table class="table">
+         <tr>
+            <th>Id_question</th>
+            <th>Question</th>
+            <th>Réponse A</th>
+            <th>Réponse B</th>
+            <th>Réponse C</th>
+            <th>Réponse D</th>
+            <th>Bonne réponse</th>
+            <th>niveau</th>
+            <th width="200px"></th>
+        </tr>
+        
+        {% for question in questions %}
+            <tr>
+                
+                <td>{{ question.id_question }}</td>
+                <td>{{ question.question }}</td>
+                <td>{{ question.reponse_a}}</td>
+                <td>{{ question.reponse_b}}</td>
+                <td>{{ question.reponse_c}}</td>
+                <td>{{ question.reponse_d}}</td>
+                <td>{{ question.bonne_reponse}}</td>
+                <td>{{ question.niveau}}</td>
+                {# cherche la methode categoryName#}
+                <td>
+                    <a href="" class="btn btn-primary">
+                        Accepter
+                    </a>
+                    <a href="" class="btn btn-primary">
+                        Modifier
+                    </a>
+                       
+                    <a href="" class="btn btn-danger">
+                        Supprimer
+                    </a>  
+                </td>
+            </tr>
+        {% endfor %}
+               
+    </table>
+{% endblock %}
+
+    
