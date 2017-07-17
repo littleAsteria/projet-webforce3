@@ -20,8 +20,11 @@ $app->register(new AssetServiceProvider());
 $app->register(new TwigServiceProvider());
 $app->register(new HttpFragmentServiceProvider());
 $app['twig'] = $app->extend('twig', function ($twig, $app) {
-    // add custom globals, filters, tags, ...
-
+// add custom globals, filters, tags, ...
+    
+    
+//nouvelle globale membre_manager utilisable avec twig 
+ $twig->addGlobal('membre_manager',$app['membre.manager']);
     return $twig;
 });
 

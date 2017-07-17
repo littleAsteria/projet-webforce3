@@ -18,9 +18,13 @@
             <a class="btn btn-primary col-md-2 col-md-offset-4 margin-top-10">Scores</a>
         </div>
         
+       
+        {% if membre_manager.membre %}    
         <div class="row">
             <a href="{{ path('soumission') }}" class="btn btn-primary col-md-2 col-md-offset-4 margin-top-10">Soumettre une question</a>
         </div>
+        {% endif %}
+        
         
     </div>
 {% endblock %}

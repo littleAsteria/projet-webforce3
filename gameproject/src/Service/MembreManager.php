@@ -30,8 +30,8 @@ class MembreManager {
    */
    public function encodePassword($plainPassword){
        //hash le mot de passe
-       //return password_hash($plainPassword, PASSWORD_BCRYPT);
-       return $plainPassword;
+       return password_hash($plainPassword, PASSWORD_BCRYPT);
+       //return $plainPassword;
        
    }
    
@@ -44,8 +44,8 @@ class MembreManager {
    public function verifyPassword($plainPassword, $encodedPassword){
        //verifie la concordance entre mdp haché et mdp en clair
        
-       //return password_verify($plainPassword, $encodedPassword);
-       return ($plainPassword == $encodedPassword);
+       return password_verify($plainPassword, $encodedPassword);
+       //return ($plainPassword == $encodedPassword);
        
    }
    
@@ -56,6 +56,34 @@ class MembreManager {
    public function login(Membre $membre){
        
        $this->session->set('membre',$membre);
+   }
+   
+ 
+   public function logout(){
+       
+        $this->session->remove('membre');
+   }
+   
+   /**
+    * 
+    * @return string
+    */
+    public function getMembrePseudo(){
+       
+       if($this->session->has('membre')){
+           return $this->session->get('membre')->getPseudo();  
+       }
+       
+       return '';
+   }
+   
+   public function getMembre(){
+       
+       if($this->session->has('membre')){
+           return $this->session->get('membre');  
+       }
+       
+       return '';
    }
    
     
