@@ -33,6 +33,7 @@ class QuestionRepository extends RepositoryAbstract{
     
     public function save (Question $question) {
         $data = [
+            
             'question' => $question->getQuestion(),
             'reponse_a' => $question->getReponse_a(),
             'reponse_b' => $question->getReponse_b(),
@@ -43,7 +44,12 @@ class QuestionRepository extends RepositoryAbstract{
             'statut_question' => $question->getStatut_question()
         ];
         
-        $this->persist($data);
+        $where = !empty($question->getId_question())
+                 ?['id_question' => $question->getId_question()]
+                 : null
+        ;
+        
+        $this->persist($data, $where);
     }
     
     
@@ -113,7 +119,7 @@ class QuestionRepository extends RepositoryAbstract{
         
 
     public function getQuestionsByDifficulty($difficulty){
-        $query = 'SELECT * FROM question WHERE niveau = '.$difficulty;
+        $query = 'SELECT * FROM question WHERE niveau = '.$difficulty.' AND statut_question = "1"';
         
         $dbQuestions = $this->db->fetchAll($query);
         $questions = [];
