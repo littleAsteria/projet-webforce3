@@ -42,4 +42,11 @@ class QuestionController extends ControllerAbstract {
         
         
     }
+    
+    public function editAction($id){
+        //instance de l'entité question
+        $question = $this->app['question.repository']->find($id);
+        
+        return $this->render('soumissionQuestion.html.twig', ['question' => $question]);
+    }
 }

@@ -88,8 +88,13 @@ $admin
      ->get('/validation/accord/{id}','admin.question.controller:acceptAction')
      ->bind('admin_validation_accord')
 ;
-//route modificationQuestion:
 
+//route modificationQuestion:
+$admin
+     ->match('/validation/modification/{id}','admin.question.controller:editAction')
+     
+     ->bind('admin_validation_modification')
+;
 
 
 //route suppressionQuestion:
