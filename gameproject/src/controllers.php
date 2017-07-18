@@ -28,19 +28,19 @@ $app
 
 //Utilisateur :
 
-//Inscription:
+//Inscription
 $app
     ->match('/inscription', 'membre.controller:registerAction')
     ->bind('inscription')
 ;
 
-//Connexion:
+//Connexion
 $app
     ->match('/connexion', 'membre.controller:loginAction')
     ->bind('connexion')
 ;
 
-//Déconnexion:
+//Déconnexion
 $app
     ->match('/deconnexion', 'membre.controller:logoutAction')
     ->bind('deconnexion')
@@ -97,7 +97,7 @@ $admin
      ->bind('admin_validation_accord')
 ;
 
-//route modificationQuestion:
+//route modificationQuestion
 $admin
      ->match('/validation/modification/{id}','admin.question.controller:editAction')
      
@@ -105,7 +105,7 @@ $admin
 ;
 
 
-//route suppressionQuestion:
+//route suppressionQuestion
 $admin        
      ->get('validation/suppression/{id}','admin.question.controller:deleteAction') 
      ->bind('admin_validation_suppression')

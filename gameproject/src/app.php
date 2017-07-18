@@ -1,4 +1,5 @@
 <?php
+
 use Controller\Admin\QuestionController as AdminQuestionController;
 use Controller\Admin\MembreController as AdminMembreController;
 use Controller\GameController;
@@ -43,7 +44,7 @@ $app->register( //nom de méthode propre à silex
           ]
         ]
 );
-
+//Pour la session membre
 $app->register(new SessionServiceProvider());
 
 //Déclaration en servcie du MembreManager:

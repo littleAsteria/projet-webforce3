@@ -101,13 +101,13 @@ class QuestionRepository extends RepositoryAbstract{
     
     }
     
- 
+    //Méthode pour valider la question du joueur et la rendre utilisable dans le jeu 
+    //en passant le statut de la question de 0 à 1 
     /**
      * 
-     * @param type $id
+     * @param $id
      */
     public function accept($id){
-        
         
         $data=['statut_question' => '1'];
         
@@ -117,11 +117,13 @@ class QuestionRepository extends RepositoryAbstract{
                 
     }
         
+
     /**
      * 
      * @param int $difficulty
      * @return array
      */
+
     public function getQuestionsByDifficulty($difficulty){
         $query = 'SELECT * FROM question WHERE niveau = '.$difficulty.' AND statut_question = "1"';
         
