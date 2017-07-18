@@ -11,14 +11,18 @@
         <tr>
             <th>Pseudo</th>
             <th>Score</th>
+            {% if membre_manager.admin %}
             <th>Action</th>
+            {% endif %}
         </tr>
         
         {% for membre in membres %}
         <tr>
             <td>{{ membre.pseudo }}</td>
             <td>{{ membre.score }}</td>
+            {% if membre_manager.admin %}
             <td><a href="{{ path('admin_reset_score',{id:membre.id_membre}) }}">Supprimer</a></td>
+            {% endif %}
         </tr>
         {% endfor %}
     </table>
