@@ -1,22 +1,14 @@
 $(function(){
     
     var currentQuestion;
-   
-    $.ajax({
-        method : 'get',
-        url : path,
-        data : {difficulty : 1},
-    })
-   
-    .done(function(data){
-        console.log(data);
-        currentQuestion = data;
-
-    })
+    var startingDifficulty = 1;
+    var currentDifficulty = startingDifficulty;
     
-    .fail(function(jqXHR, textStatus){
-        console.log(jqXHR);
+    getRandomQuestion(currentDifficulty, function(data){
+        currentQuestion = data;
+        console.log(currentQuestion);
     });
-   
+
+    
 });
 
