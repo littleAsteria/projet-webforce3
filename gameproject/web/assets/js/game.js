@@ -4,12 +4,17 @@ $(function(){
     var startingDifficulty = 1;
     var currentDifficulty = startingDifficulty;
     
-    var chosenAnswer;
+
+    var startingQuestionNumber = 1;
+    var currentQuestionNumber = startingQuestionNumber;
     
     getRandomQuestion(currentDifficulty, function(data){
         currentQuestion = data;
-        
-    });
+        //console.log(currentQuestion);
+        affichageDonnees(currentQuestion, currentQuestionNumber);
+
+    var chosenAnswer;
+    
     
     $('.reponseButton').on('click', function(e){
         chosenAnswer = $(this).attr('id').substr(-1).toLowerCase();
@@ -29,6 +34,7 @@ $(function(){
         else {
             console.log('aucune réponse donnée');
         }
+
     });
     
     
