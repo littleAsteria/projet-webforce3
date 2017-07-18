@@ -9,22 +9,33 @@ $(function(){
     
     var chosenAnswer;
     
-    getRandomQuestion(currentDifficulty, function(data){
-        currentQuestion = data;
-        //console.log(currentQuestion);
-        affichageDonnees(currentQuestion, currentQuestionNumber);
-
-    });
     
+    getQuestion();
     
     $('.reponseButton').on('click', function(e){
         chosenAnswer = $(this).attr('id').substr(-1).toLowerCase();
+        $('.reponseButton').removeClass('btn-success');
+        $('.reponseButton').addClass('btn-primary');
+        
+        $(this).removeClass('btn-primary');
+        $(this).addClass('btn-success');
     });
     
     $('#valider').on('click', function(e){
         if(chosenAnswer != undefined){
+            
+            $('.reponseButton').removeClass('btn-success');
+            $('.reponseButton').addClass('btn-primary');
+            
             if(verificationReponse(chosenAnswer, currentQuestion)){
-                console.log('bonne réponse !')
+                
+                console.log('bonne réponse !');
+                
+                if(currentQuestionNumber < 10) {
+                    currentDifficulty++;
+                    currentQuestionNumber++;
+                    getQuestion();
+                }
             }
                 
             else {
@@ -38,7 +49,12 @@ $(function(){
 
     });
     
-    
+    function getQuestion(){
+        getRandomQuestion(currentDifficulty, function(data){
+            currentQuestion = data;
+            affichageDonnees(currentQuestion, currentQuestionNumber);
+        });
+    }
 
     
 });
