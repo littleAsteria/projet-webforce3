@@ -13,8 +13,8 @@ $(function(){
         currentQuestion = data;
         //console.log(currentQuestion);
         affichageDonnees(currentQuestion, currentQuestionNumber);
+
     });
-    
     
     
     $('.reponseButton').on('click', function(e){
