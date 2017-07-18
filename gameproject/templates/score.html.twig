@@ -11,12 +11,14 @@
         <tr>
             <th>Pseudo</th>
             <th>Score</th>
+            <th>Action</th>
         </tr>
         
         {% for membre in membres %}
         <tr>
             <td>{{ membre.pseudo }}</td>
             <td>{{ membre.score }}</td>
+            <td><a href="{{ path('admin_reset_score',{id:membre.id_membre}) }}">Supprimer</a></td>
         </tr>
         {% endfor %}
     </table>
