@@ -103,6 +103,11 @@ $admin
      ->bind('admin_validation_suppression')
 ;
 
+//route remise d'un score à 0
+$admin
+        ->get('/score/reset/{id}', 'admin.membre.controller:setScoreToZero')
+        ->bind('admin_reset_score')
+;
 
 
 $app->error(function (\Exception $e, Request $request, $code) use ($app) {

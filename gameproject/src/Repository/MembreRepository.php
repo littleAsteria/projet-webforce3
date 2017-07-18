@@ -38,7 +38,7 @@ class MembreRepository extends RepositoryAbstract{
         ];
         
         $where = !empty($membre->getId_membre())
-                 ?['id' => $membre->getId_membre()]
+                 ?['id_membre' => $membre->getId_membre()]
                  : null
         ;
         
@@ -75,5 +75,17 @@ class MembreRepository extends RepositoryAbstract{
         ;
         
         return $membre;
+    }
+    
+    public function setScore($id, $score){
+        $data = [
+            'score' => $score
+        ];
+        
+        $where = [
+            'id_membre' => $id
+        ];
+        
+        $this->persist($data, $where);
     }
 }
