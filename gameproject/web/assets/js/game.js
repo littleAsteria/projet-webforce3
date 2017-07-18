@@ -12,7 +12,7 @@ $(function(){
         currentQuestion = data;
         //console.log(currentQuestion);
         affichageDonnees(currentQuestion, currentQuestionNumber);
-
+    
     var chosenAnswer;
     
     
