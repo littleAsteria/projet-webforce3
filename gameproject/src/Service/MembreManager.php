@@ -74,7 +74,7 @@ class MembreManager {
     public function getMembrePseudo(){
        
        if($this->session->has('membre')){
-           return $this->session->get('membre')->getPseudo();  
+           return $this->session->get('membre')->getPseudo(); 
        }
        
        return '';
