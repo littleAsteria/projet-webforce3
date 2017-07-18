@@ -72,6 +72,7 @@ class MembreRepository extends RepositoryAbstract{
            ->setPseudo($dbMembre['pseudo'])
            ->setMdp($dbMembre['mdp'])
            ->setScore($dbMembre['score'])
+           ->setStatut_membre($dbMembre['statut_membre'])
         ;
         
         return $membre;

@@ -86,9 +86,7 @@ class MembreController extends ControllerAbstract{
             if(!is_null($membre)){
                 
                 
-                //print_r($_POST['mdp']);
-                
-                echo $membre->getMdp();
+
                 if($this->app['membre.manager']->verifyPassword($_POST['mdp'], $membre->getMdp())){
                     
                     $this->app['membre.manager']->login($membre);
@@ -99,7 +97,6 @@ class MembreController extends ControllerAbstract{
                 }
                 
                 else {
-                    //print_r($membre);
                     echo 'mauvais mot de passe';
                 }
                 
