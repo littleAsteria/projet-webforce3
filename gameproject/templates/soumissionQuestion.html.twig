@@ -10,52 +10,71 @@
 
         <div class="form-group">
             <label for="question">Entrer un texte de question : </label>
-            <textarea class="form-control" id="question" name="question" placeholder="Votre question"></textarea>
+            <textarea class="form-control" id="question" name="question" placeholder="Votre question">{{ question.question }}</textarea>
         </div>
 
         <div class="form-group">
             <label for="reponseA">Entrer votre réponse A : </label>
-            <input type="text" class="form-control" id="reponseA" name ="reponseA" placeholder="Votre réponse A">
+            <input type="text" class="form-control" id="reponseA" name ="reponseA" value="{{ question.reponse_a }}" placeholder="Votre réponse A">
         </div>
 
         <div class="form-group">
             <label for="reponseB">Entrer votre réponse B : </label>
-            <input type="text" class="form-control" id="reponseB" name ="reponseB" placeholder="Votre réponse B">
+            <input type="text" class="form-control" id="reponseB" name ="reponseB" value="{{ question.reponse_b }}" placeholder="Votre réponse B">
         </div>
 
         <div class="form-group">
             <label for="reponseC">Entrer votre réponse C : </label>
-            <input type="text" class="form-control" id="reponseC" name ="reponseC" placeholder="Votre réponse C">
+            <input type="text" class="form-control" id="reponseC" name ="reponseC" value="{{ question.reponse_c }}" placeholder="Votre réponse C">
         </div>
 
         <div class="form-group">
             <label for="reponseD">Entrer votre réponse D : </label>
-            <input type="text" class="form-control" id="reponseD" name ="reponseD" placeholder="Votre réponse D">
+            <input type="text" class="form-control" id="reponseD" name ="reponseD" value="{{ question.reponse_d }}" placeholder="Votre réponse D">
         </div>
 
         <div class="form-group">
             <label for="reponse">Quelle est la bonne réponse ?</label>
             <select id="reponse" name="reponse">
-                <option value="a" selected>Réponse A</option>
-                <option value="b">Réponse B</option>
-                <option value="c">Réponse C</option>
-                <option value="d">Réponse D</option>
+                <option value="a"
+                    {% if question.bonne_reponse == "a" %}selected{% endif %}>
+                    Réponse A
+                </option>
+                
+                <option value="b"
+                    {% if question.bonne_reponse == "b" %}selected{% endif %}>
+                    Réponse B
+                </option>
+                
+                <option value="c"
+                    {% if question.bonne_reponse == "c" %}selected{% endif %}>
+                    Réponse C
+                </option>
+                
+                <option value="d"
+                    {% if question.bonne_reponse == "d" %}selected{% endif %}>
+                    Réponse D
+                </option>
             </select>
         </div>
 
         <div class="form-group">
             <label for="difficulte">Quel est le niveau de difficulté de votre question ?</label>
             <select id="difficulte" name="difficulte">
-                <option value="1" selected>1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
+                {#{% for question in questions|slice(0, 9) %}
+                <option value=''>{{ question.niveau }}</option>
+                {% endfor %}#}
+                
+                <option value="1" {% if question.niveau == "1" %}selected{% endif %}>1</option>
+                <option value="2" {% if question.niveau == "2" %}selected{% endif %}>2</option>
+                <option value="3" {% if question.niveau == "3" %}selected{% endif %}>3</option>
+                <option value="4" {% if question.niveau == "4" %}selected{% endif %}>4</option>
+                <option value="5" {% if question.niveau == "5" %}selected{% endif %}>5</option>
+                <option value="6" {% if question.niveau == "6" %}selected{% endif %}>6</option>
+                <option value="7" {% if question.niveau == "7" %}selected{% endif %}>7</option>
+                <option value="8" {% if question.niveau == "8" %}selected{% endif %}>8</option>
+                <option value="9" {% if question.niveau == "9" %}selected{% endif %}>9</option>
+                <option value="10" {% if question.niveau == "10" %}selected{% endif %}>10</option>
             </select>
         </div>
 
