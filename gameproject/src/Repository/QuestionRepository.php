@@ -117,7 +117,13 @@ class QuestionRepository extends RepositoryAbstract{
                 
     }
         
-    
+
+    /**
+     * 
+     * @param int $difficulty
+     * @return array
+     */
+
     public function getQuestionsByDifficulty($difficulty){
         $query = 'SELECT * FROM question WHERE niveau = '.$difficulty.' AND statut_question = "1"';
         

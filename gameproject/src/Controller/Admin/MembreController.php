@@ -8,6 +8,7 @@ use Controller\ControllerAbstract;
 
 class MembreController extends ControllerAbstract{
     
+    
     public function setScoreToZero($id){
         
         $this->app['membre.repository']->setScore($id, 0);
