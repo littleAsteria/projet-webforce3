@@ -129,6 +129,11 @@ class Membre {
         $this->statut_membre = $statut_membre;
         return $this;
     }
+    
+    public function isAdmin(){
+        if($this->statut_membre == 1) return true;
+        else return false;
+    }
 
 
            

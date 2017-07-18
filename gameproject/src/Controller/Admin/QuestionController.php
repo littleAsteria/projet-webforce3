@@ -48,5 +48,8 @@ class QuestionController extends ControllerAbstract {
         $question = $this->app['question.repository']->find($id);
         
         return $this->render('soumissionQuestion.html.twig', ['question' => $question]);
+        
+        
+        
     }
 }
