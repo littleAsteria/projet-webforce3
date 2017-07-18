@@ -1,5 +1,6 @@
 <?php
 use Controller\Admin\QuestionController as AdminQuestionController;
+use Controller\Admin\MembreController as AdminMembreController;
 use Controller\GameController;
 use Controller\MembreController;
 use Controller\QuestionController;
@@ -55,6 +56,12 @@ $app['membre.manager'] = function() use ($app){
 $app['admin.question.controller'] = function() use ($app) {
     
     return new AdminQuestionController($app);
+};
+
+//déclaration en service du contrôleur Admin Membre 
+$app['admin.membre.controller'] = function() use ($app) {
+    
+    return new AdminMembreController($app);
 };
 
 

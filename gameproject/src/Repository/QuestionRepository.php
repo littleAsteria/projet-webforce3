@@ -51,6 +51,8 @@ class QuestionRepository extends RepositoryAbstract{
         
         $query = "SELECT * FROM question WHERE statut_question = :statut_question";
         
+        $questions = [];
+        
         $dbQuestions = $this->db->fetchAll(
                 
             $query,
