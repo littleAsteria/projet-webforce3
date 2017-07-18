@@ -30,6 +30,7 @@ class QuestionController extends ControllerAbstract {
         return $this->redirectRoute('admin_validation');
     }
     
+    //Action pour valider la question posté par le joueur 
     public function acceptAction($id){
         
         $question = $this->app['question.repository']->find($id);

@@ -1,7 +1,16 @@
 {% extends "layout.html.twig" %}
 
 {% block content %}
+    
     <div class="container">
+        
+        <div class="row">
+            {# On affiche un message si un joueur n'est pas connecté#}
+            {% if not membre_manager.membre %}
+                <p class='alert alert-danger col-md-2 col-md-offset-4'>Attention, si vous n'êtes pas connecté votre score ne sera pas sauvegardé!</p>
+            {% endif %}
+        </div>
+        
         <div class="row">
             <h1 class="col-md-6 col-md-offset-4">Our Game</h1>
         </div>
