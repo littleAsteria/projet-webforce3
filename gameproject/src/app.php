@@ -46,19 +46,20 @@ $app->register( //nom de méthode propre à silex
 
 $app->register(new SessionServiceProvider());
 
+//Déclaration en servcie du MembreManager:
 $app['membre.manager'] = function() use ($app){
     return new MembreManager($app['session']);
     
 };
 
 //ADMIN:
-//déclaration en service du contrôleur Admin Question 
+//Déclaration en service du contrôleur Admin Question 
 $app['admin.question.controller'] = function() use ($app) {
     
     return new AdminQuestionController($app);
 };
 
-//déclaration en service du contrôleur Admin Membre 
+//Déclaration en service du contrôleur Admin Membre 
 $app['admin.membre.controller'] = function() use ($app) {
     
     return new AdminMembreController($app);
@@ -83,6 +84,7 @@ $app['question.controller'] = function () use ($app){
   return new QuestionController($app);  
 };
 
+//Déclaration en service du controller QuestionAjax:
 $app['question.ajax.controller'] = function () use ($app){
     return new ControllerQuestionAjax($app);
 };
@@ -94,12 +96,10 @@ $app['membre.repository'] = function() use ($app){
     return new MembreRepository($app['db']);
 };
 
-//Déclaration en service du repository Question
+//Déclaration en service du repository Question:
 $app['question.repository'] = function() use ($app){
   return new QuestionRepository($app['db']);  
 };
-
-
 
 
 return $app;

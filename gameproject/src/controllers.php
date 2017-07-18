@@ -71,9 +71,17 @@ $app
 ;
 
 //Partie Admin:
-//créer protection de l'espace admin:
+
 
 $admin = $app['controllers_factory'];
+
+//sécurisation des routes admin:
+$admin->before(function () use ($app){
+    if(!$app['membre.manager']->isAdmin()){
+        $app->abort(403,'Accès refusé');
+    //renvoie un message d'erreur si la personne n'est pas connecté entant qu'admin
+    }
+});
 
 $app->mount('/admin', $admin);
 
