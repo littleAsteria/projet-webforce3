@@ -15,7 +15,7 @@ $(function(){
     })
     
     .fail(function(jqXHR, textStatus){
-        console.log(textStatus);
+        console.log(jqXHR);
     });
    
 });
