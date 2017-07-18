@@ -47,6 +47,7 @@ class QuestionController extends ControllerAbstract {
         //instance de l'entité question
         $question = $this->app['question.repository']->find($id);
         
+        //Vérification des champs
         if(!empty($_POST)){
             
             if(empty($_POST['question'])){
@@ -69,6 +70,7 @@ class QuestionController extends ControllerAbstract {
                 $errors['reponseD'] = 'Veuillez renseigner votre réponse D';
             }
             
+            //S'il n'y a pas d'erreurs, on change les champs de $question
             if(empty($errors)){
             
                 $question
@@ -83,7 +85,7 @@ class QuestionController extends ControllerAbstract {
                 
                 $this->app['question.repository']->save($question);
                 
-                $msg = '<strong>Merci d\'avoir soumi votre question !</strong>';
+                $msg = '<strong>Votre modification a bien été prise en compte !</strong>';
                 $this->addFlashMessage($msg);
                 
                 return $this->redirectRoute('admin_validation');

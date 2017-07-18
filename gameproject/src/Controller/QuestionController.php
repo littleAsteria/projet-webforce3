@@ -7,6 +7,7 @@ use Entity\Question;
 
 class QuestionController extends ControllerAbstract{
     
+    
     public function submitAction(){
         
         $question = new Question();
@@ -14,6 +15,7 @@ class QuestionController extends ControllerAbstract{
         //On créé une 2éme instance de question qui restera vide et sera passé en paramétre de la méthode render
         $errors = [];
         
+        //Vérification des champs
         if(!empty($_POST)){
             
             if(empty($_POST['question'])){
