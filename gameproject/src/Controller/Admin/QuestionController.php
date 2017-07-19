@@ -30,7 +30,7 @@ class QuestionController extends ControllerAbstract {
         return $this->redirectRoute('admin_validation');
     }
     
-    //Action pour valider la question posté par le joueur 
+    //Action pour valider la question postée par le joueur 
     public function acceptAction($id){
         
         $question = $this->app['question.repository']->find($id);
@@ -48,7 +48,7 @@ class QuestionController extends ControllerAbstract {
         //instance de l'entité question
         $question = $this->app['question.repository']->find($id);
         
-        //Vérification des champs
+        //VÃ©rification des champs
         if(!empty($_POST)){
             
             if(empty($_POST['question'])){

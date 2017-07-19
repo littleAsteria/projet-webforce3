@@ -9,11 +9,16 @@ $(function(){
     
     var chosenAnswer;
     
+    var score = 0;
+     
     getRandomQuestion(currentDifficulty, function(data){
         currentQuestion = data;
         //console.log(currentQuestion);
         affichageDonnees(currentQuestion, currentQuestionNumber);
-
+        
+    //en début de partie, le score commence à 0    
+   
+    
     });
     
     
@@ -23,16 +28,22 @@ $(function(){
     
     $('#valider').on('click', function(e){
         if(chosenAnswer != undefined){
+            
             if(verificationReponse(chosenAnswer, currentQuestion)){
-                console.log('bonne réponse !')
+                
+                
+                score = scoreRequest(score, currentDifficulty);
+                console.log(score);
             }
                 
             else {
-                console.log('mauvaise réponse !')
+                
+                console.log('mauvaise réponse !');
             }
         }
 
         else {
+            
             console.log('aucune réponse donnée');
         }
 
