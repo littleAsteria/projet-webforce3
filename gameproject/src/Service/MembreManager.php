@@ -99,14 +99,14 @@ class MembreManager {
     * 
     * @return string
     */
-   public function getMembre(){
+    public function getMembre(){
        
        if($this->session->has('membre')){
            return $this->session->get('membre');  
        }
        
        return '';
-   }
+    }
    
    //methode pour vérifier si un on est bien connecté (entant que membre puis entant qu'admin:
    
