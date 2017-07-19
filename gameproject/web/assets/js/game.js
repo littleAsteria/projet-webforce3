@@ -8,8 +8,11 @@ $(function(){
     var currentQuestionNumber = startingQuestionNumber;
     
     var chosenAnswer;
-    
     var usedQuestions = [];
+  
+    //en début de partie, le score commence à 0
+    var score = 0;
+
     
     getQuestion();
     
@@ -29,6 +32,7 @@ $(function(){
     $('#valider').on('click', function(e){
         if(chosenAnswer != undefined){
             
+
             $('.reponseButton').removeClass('btn-success');
             $('.reponseButton').addClass('btn-primary');
             
@@ -40,6 +44,7 @@ $(function(){
                     currentQuestionNumber++;
                     usedQuestions = [];
                     getQuestion();
+                    score = scoreRequest(score, currentDifficulty);
 
                 }
 
@@ -49,10 +54,12 @@ $(function(){
                     getQuestion();
                 }
             
+
             }
         }
 
         else {
+            
             console.log('aucune réponse donnée');
         }
 
