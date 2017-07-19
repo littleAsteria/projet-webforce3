@@ -9,7 +9,8 @@ function postScore(score){
                
     })
     .done(function(data){
-        console.log('done');
+        //console.log('done');
+        window.location = path3;
         
     })
     

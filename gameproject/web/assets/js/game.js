@@ -26,6 +26,7 @@ $(function(){
         
         $(this).removeClass('btn-primary');
         $(this).addClass('btn-success');
+        
     });
     
     $('#valider').on('click', function(e){
@@ -49,14 +50,18 @@ $(function(){
 
                 else {
 
+                    currentDifficulty++;
                     currentQuestionNumber++;
                     getQuestion();
                 }
             }
             
             else if(currentQuestionNumber == 10) {
-                console.log('dernière réponse');
-                score = scoreRequest(score, currentDifficulty);
+                
+                if(verificationReponse(chosenAnswer, currentQuestion)){
+                    score = scoreRequest(score, currentDifficulty);
+                }
+                
                 postScore(score);
             }
         }
