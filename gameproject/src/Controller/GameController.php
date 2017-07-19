@@ -23,7 +23,6 @@ class GameController extends ControllerAbstract{
     public function getToEndGame(){
         
         return $this->render('finDePartie.html.twig');
-        
     }
     //action: 
     /*
@@ -33,17 +32,26 @@ class GameController extends ControllerAbstract{
      */
     public function postBestScore(){
         
-        //enregistrement du score dans la session
-        $this->app['membre.manager']->saveScore($_POST['scoreEnvoye']);
+        if($this->app['session']->has('membre')){
+            
         
-        //on récupére le score du membre connecté et on le compare au score envoyé par l'ajax
-        if($this->app['membre.manager']->getMembre()->getScore() < $_POST['scoreEnvoye']){
         
-            //On enregistre le score en BDD
-            $this->app['membre.repository']->setScore($this->app['membre.manager']->getMembre()->getId_membre(), $_POST['scoreEnvoye']);
+            //enregistrement du score dans la session
+            $this->app['membre.manager']->saveScore($_POST['scoreEnvoye']);
+
+            //on récupére le score du membre connecté et on le compare au score envoyé par l'ajax
+            if($this->app['membre.manager']->getMembre()->getScore() < $_POST['scoreEnvoye']){
+
+                //On enregistre le score en BDD
+                $this->app['membre.repository']->setScore($this->app['membre.manager']->getMembre()->getId_membre(), $_POST['scoreEnvoye']);
+            }
+
+            $this->app['membre.manager']->getMembre()->setScore($_POST['scoreEnvoye']);
+
+       
         }
         
-       return $this->redirectRoute('scores');
+        return $this->redirectRoute('scores');
  
         
     }

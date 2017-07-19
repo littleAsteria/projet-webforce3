@@ -57,6 +57,7 @@ class MembreRepository extends RepositoryAbstract{
         );
         
         if(!empty($dbMembre)){
+            
             return $this->buildFromArray($dbMembre);
         }
         

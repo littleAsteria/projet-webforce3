@@ -32,18 +32,15 @@
                 <p class="col-md-12 col-md-offset-3" id="paragraphe">
                     
                 {% if membre_manager.score < 600 %}
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                Suspendisse ac augue quam. 
+                    moins de  600
                 {% endif%}
                 
                 {% if membre_manager.score >= 600 and membre_manager.score < 1200 %}
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                Suspendisse ac augue quam. 
+                    entre 600 et 1200
                 {% endif%}
                 
-                {% if membre_manager.score >=1200 %}
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                Suspendisse ac augue quam. 
+                {% if membre_manager.score >= 1200 and membre_manager.score < 2000 %}
+                    entre 1200 et 2000
                 {% endif%}
                 
                 </p>
