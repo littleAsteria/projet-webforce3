@@ -9,8 +9,13 @@ $(function(){
     
     var chosenAnswer;
     
+    var usedQuestions = [];
     
     getQuestion();
+    
+    $('#joker1').on('click', function(e){
+        getQuestion();
+    });
     
     $('.reponseButton').on('click', function(e){
         chosenAnswer = $(this).attr('id').substr(-1).toLowerCase();
@@ -27,19 +32,23 @@ $(function(){
             $('.reponseButton').removeClass('btn-success');
             $('.reponseButton').addClass('btn-primary');
             
-            if(verificationReponse(chosenAnswer, currentQuestion)){
-                
-                console.log('bonne réponse !');
-                
-                if(currentQuestionNumber < 10) {
+            if(currentQuestionNumber < 10){
+            
+                if(verificationReponse(chosenAnswer, currentQuestion)){
+
                     currentDifficulty++;
+                    currentQuestionNumber++;
+                    usedQuestions = [];
+                    getQuestion();
+
+                }
+
+                else {
+
                     currentQuestionNumber++;
                     getQuestion();
                 }
-            }
-                
-            else {
-                console.log('mauvaise réponse !')
+            
             }
         }
 
@@ -50,8 +59,9 @@ $(function(){
     });
     
     function getQuestion(){
-        getRandomQuestion(currentDifficulty, function(data){
+        getRandomQuestion(currentDifficulty, usedQuestions, function(data){
             currentQuestion = data;
+            usedQuestions.push(currentQuestion.id_question);
             affichageDonnees(currentQuestion, currentQuestionNumber);
         });
     }
