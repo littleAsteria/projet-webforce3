@@ -64,6 +64,20 @@ class MembreManager {
         $this->session->remove('membre');
    }
    
+   //on enregistre le score en session
+    public function saveScore($scoreSession){
+        $this->session->set('score', $scoreSession);
+    }
+    
+    //on récupére le score pour l'afficher sur la vue
+    public function getScore() {
+        if($this->session->has('score')){
+            return $this->session->get('score');
+        }
+        
+        return "";
+    }
+   
    //Vérifie si la session membre existe (si il y a un membre de connecté)
    //Si oui retourne le pseudo de l'utilisateur
    

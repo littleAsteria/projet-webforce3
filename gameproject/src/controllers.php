@@ -67,6 +67,12 @@ $app
         ->bind('regles')
 ;
 
+//Vue de fin de partie
+$app
+       ->get('/endGame','game.controller:getToEndGame')
+       ->bind('fin_de_partie')
+;
+
 //Vue des scores
 $app
         ->get('/scores', 'game.controller:getToScores')
