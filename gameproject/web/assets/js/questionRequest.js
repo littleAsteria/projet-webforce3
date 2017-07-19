@@ -10,7 +10,6 @@ function getRandomQuestion(difficulty, excluded, callback){
     
     .done(function(data){
         if(callback != undefined) callback(data);
-        console.log(excluded);
         
     })
     

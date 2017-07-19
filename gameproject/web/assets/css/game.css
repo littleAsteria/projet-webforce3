@@ -8,3 +8,13 @@ h1,h2,h3,p {
     color:#fff;
 }
 
+.disabled {
+    background-color: #757575;
+    color: #fff;
+    cursor : not-allowed;
+}
+
+.barre {
+    text-decoration: line-through;
+}
+
