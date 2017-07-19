@@ -16,9 +16,8 @@ $(function(){
     
     getQuestion();
     
-    $('#joker1').on('click', function(e){
-        getQuestion();
-    });
+    $('#joker1').on('click', clickJokerQuestion);
+    $('#joker2').on('click', clickJokerMoitie);
     
     $('.reponseButton').on('click', function(e){
         chosenAnswer = $(this).attr('id').substr(-1).toLowerCase();
@@ -36,16 +35,16 @@ $(function(){
             $('.reponseButton').removeClass('btn-success');
             $('.reponseButton').addClass('btn-primary');
             
+            
             if(currentQuestionNumber < 10){
             
                 if(verificationReponse(chosenAnswer, currentQuestion)){
 
+                    score = scoreRequest(score, currentDifficulty);
                     currentDifficulty++;
                     currentQuestionNumber++;
                     usedQuestions = [];
                     getQuestion();
-                    score = scoreRequest(score, currentDifficulty);
-
                 }
 
                 else {
@@ -53,8 +52,6 @@ $(function(){
                     currentQuestionNumber++;
                     getQuestion();
                 }
-            
-
             }
         }
 
@@ -70,7 +67,26 @@ $(function(){
             currentQuestion = data;
             usedQuestions.push(currentQuestion.id_question);
             affichageDonnees(currentQuestion, currentQuestionNumber);
+            $('.reponseButton').removeClass('barre');
         });
+    }
+    
+    function clickJokerQuestion(){
+    
+        getQuestion();
+        $(this).removeClass('btn-primary');
+        $(this).addClass('disabled');
+        $(this).off('click', clickJokerQuestion);
+    
+    }
+    
+    function clickJokerMoitie(){
+    
+        $(this).removeClass('btn-primary');
+        $(this).addClass('disabled');
+        $(this).off('click', clickJokerMoitie);
+        removeTwoAnswers(currentQuestion)
+    
     }
 
     
