@@ -19,5 +19,7 @@ function getRandomQuestion(difficulty, excluded, callback){
         console.log(excluded);
         return null;
     });
+    
+   
 }
 

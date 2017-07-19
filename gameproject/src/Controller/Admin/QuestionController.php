@@ -48,7 +48,7 @@ class QuestionController extends ControllerAbstract {
         //instance de l'entité question
         $question = $this->app['question.repository']->find($id);
         
-        //VÃ©rification des champs
+        //Vérification des champs
         if(!empty($_POST)){
             
             if(empty($_POST['question'])){

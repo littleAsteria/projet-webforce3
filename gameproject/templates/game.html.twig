@@ -61,15 +61,14 @@
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
             <script>
                 var path = '{{ path('randomQuestion') }}';
+                var path2 = '{{ path("best-score") }}';
             </script>
             <script src="../assets/js/questionRequest.js"></script>
             <script src="../assets/js/game.js"></script>
-
             <script src="../assets/js/affichage-donnees.js"></script>
-            
             <script src="../assets/js/score.js"></script>
-
             <script src="../assets/js/verificationReponses.js"></script>
+            <script src="../assets/js/PostBestScore.js"></script>
 
         {% endblock %}
     </body>

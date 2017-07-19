@@ -40,11 +40,12 @@ $(function(){
             
                 if(verificationReponse(chosenAnswer, currentQuestion)){
 
+                    score = scoreRequest(score, currentDifficulty);
                     currentDifficulty++;
                     currentQuestionNumber++;
                     usedQuestions = [];
                     getQuestion();
-                    score = scoreRequest(score, currentDifficulty);
+                    
 
                 }
 
@@ -55,6 +56,12 @@ $(function(){
                 }
             
 
+            }
+            
+            else if(currentQuestionNumber == 10) {
+                console.log('dernière réponse');
+                score = scoreRequest(score, currentDifficulty);
+                postScore(score);
             }
         }
 
