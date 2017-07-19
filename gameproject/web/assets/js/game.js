@@ -8,37 +8,53 @@ $(function(){
     var currentQuestionNumber = startingQuestionNumber;
     
     var chosenAnswer;
-    
+    var usedQuestions = [];
+  
+    //en début de partie, le score commence à 0
     var score = 0;
-     
-    getRandomQuestion(currentDifficulty, function(data){
-        currentQuestion = data;
-        //console.log(currentQuestion);
-        affichageDonnees(currentQuestion, currentQuestionNumber);
-        
-    //en début de partie, le score commence à 0    
-   
+
     
+    getQuestion();
+    
+    $('#joker1').on('click', function(e){
+        getQuestion();
     });
-    
     
     $('.reponseButton').on('click', function(e){
         chosenAnswer = $(this).attr('id').substr(-1).toLowerCase();
+        $('.reponseButton').removeClass('btn-success');
+        $('.reponseButton').addClass('btn-primary');
+        
+        $(this).removeClass('btn-primary');
+        $(this).addClass('btn-success');
     });
     
     $('#valider').on('click', function(e){
         if(chosenAnswer != undefined){
             
-            if(verificationReponse(chosenAnswer, currentQuestion)){
-                
-                
-                score = scoreRequest(score, currentDifficulty);
-                console.log(score);
-            }
-                
-            else {
-                
-                console.log('mauvaise réponse !');
+
+            $('.reponseButton').removeClass('btn-success');
+            $('.reponseButton').addClass('btn-primary');
+            
+            if(currentQuestionNumber < 10){
+            
+                if(verificationReponse(chosenAnswer, currentQuestion)){
+
+                    currentDifficulty++;
+                    currentQuestionNumber++;
+                    usedQuestions = [];
+                    getQuestion();
+                    score = scoreRequest(score, currentDifficulty);
+
+                }
+
+                else {
+
+                    currentQuestionNumber++;
+                    getQuestion();
+                }
+            
+
             }
         }
 
@@ -49,7 +65,13 @@ $(function(){
 
     });
     
-    
+    function getQuestion(){
+        getRandomQuestion(currentDifficulty, usedQuestions, function(data){
+            currentQuestion = data;
+            usedQuestions.push(currentQuestion.id_question);
+            affichageDonnees(currentQuestion, currentQuestionNumber);
+        });
+    }
 
     
 });
