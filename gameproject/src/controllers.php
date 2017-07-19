@@ -18,7 +18,11 @@ $app->get('/', function () use ($app) {
 ;
 
 
+
 //Partie Front:
+
+//jeu:
+
 
 $app
     ->get('/randomQuestion', 'question.ajax.controller:getRandomQuestion')
@@ -26,8 +30,13 @@ $app
     ->bind('randomQuestion')
 ;
 
-//Utilisateur :
 
+$app ->post('/bestScore','game.controller:postBestScore')
+     ->bind('best-score')
+;
+
+
+//Utilisateur :
 //Inscription
 $app
     ->match('/inscription', 'membre.controller:registerAction')
@@ -52,7 +61,7 @@ $app
         ->bind('game')
 ;
 
-//Vue des règles
+//Vue des régles
 $app
         ->get('/regles', 'game.controller:getToRegles')
         ->bind('regles')
@@ -64,6 +73,8 @@ $app
         ->bind('scores')
 ;
 
+
+
 //Vue du formulaire de soumission des questions
 $app
         ->match('/soumission', 'question.controller:submitAction')
@@ -71,15 +82,13 @@ $app
 ;
 
 //Partie Admin:
-
-
 $admin = $app['controllers_factory'];
 
 //sécurisation des routes admin:
 $admin->before(function () use ($app){
     if(!$app['membre.manager']->isAdmin()){
-        $app->abort(403,'Accès refusé');
-    //renvoie un message d'erreur si la personne n'est pas connecté entant qu'admin
+        $app->abort(403,'AccÃ¨s refusÃ©');
+    //renvoie un message d'erreur si la personne n'est pas connectÃ© entant qu'admin
     }
 });
 
@@ -91,7 +100,7 @@ $admin
      ->bind('admin_validation')
 ;
 
-//route question accepté
+//route question acceptée
 $admin
      ->get('/validation/accord/{id}','admin.question.controller:acceptAction')
      ->bind('admin_validation_accord')
@@ -111,7 +120,7 @@ $admin
      ->bind('admin_validation_suppression')
 ;
 
-//route remise d'un score à 0
+//route remise d'un score à  0
 $admin
         ->get('/score/reset/{id}', 'admin.membre.controller:setScoreToZero')
         ->bind('admin_reset_score')

@@ -53,6 +53,12 @@ $(function(){
                     getQuestion();
                 }
             }
+            
+            else if(currentQuestionNumber == 10) {
+                console.log('dernière réponse');
+                score = scoreRequest(score, currentDifficulty);
+                postScore(score);
+            }
         }
 
         else {
