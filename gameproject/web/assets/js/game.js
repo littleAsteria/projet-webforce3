@@ -12,6 +12,8 @@ $(function(){
   
     //en début de partie, le score commence à 0
     var score = 0;
+    
+    var wrongAnswers = 0;
 
     
     getQuestion();
@@ -50,9 +52,11 @@ $(function(){
 
                 else {
 
-                    currentDifficulty++;
                     currentQuestionNumber++;
+                    wrongAnswers++;
                     getQuestion();
+                    
+                    if(wrongAnswers == 3) postScore(score);
                 }
             }
             
