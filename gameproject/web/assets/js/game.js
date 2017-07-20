@@ -29,12 +29,17 @@ $(function(){
     $('#joker1').on('click', clickJokerQuestion);
     $('#joker2').on('click', clickJokerMoitie);
     
-    //
+    //Au moment du clic sur un des boutons de réponse
     $('.reponseButton').on('click', function(e){
+        
+        //On récupère la lettre du bouton qui a été cliqué (la dernière lettre de son id qu'on passe en minuscule)
         chosenAnswer = $(this).attr('id').substr(-1).toLowerCase();
+        
+        //Enlève la classe success à tous les boutons et leur ajoute la classe primary
         $('.reponseButton').removeClass('btn-success');
         $('.reponseButton').addClass('btn-primary');
         
+        //Enlève la classe primary au bouton cliqué et lui ajoute la classe success
         $(this).removeClass('btn-primary');
         $(this).addClass('btn-success');
         
@@ -118,6 +123,7 @@ $(function(){
     function getQuestion(){
         getRandomQuestion(currentDifficulty, usedQuestions, function(data){
             currentQuestion = data;
+            console.log(data);
             usedQuestions.push(currentQuestion.id_question);
             affichageDonnees(currentQuestion, currentQuestionNumber);
             $('.reponseButton').removeClass('barre');
