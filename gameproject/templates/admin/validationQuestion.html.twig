@@ -13,7 +13,7 @@
             <th>Réponse D</th>
             <th>Bonne réponse</th>
             <th>niveau</th>
-            <th width="200px"></th>
+            <th width="200px">Options</th>
         </tr>
         
         {% for question in questions %}
@@ -29,15 +29,15 @@
                 <td>{{ question.niveau}}</td>
                 {# cherche la methode categoryName#}
                 <td>
-                    <a href="{{ path('admin_validation_accord' , {id: question.id_question}) }}" class="btn btn-success">
-                        Accepter
+                    <a href="{{ path('admin_validation_accord' , {id: question.id_question}) }}">
+                        <img id="option1" src="{{ asset('assets/images/validation.png') }}">
                     </a>
-                    <a href="{{ path('admin_validation_modification',{id:question.id_question}) }}" class="btn btn-primary">
-                        Modifier
+                    <a href="{{ path('admin_validation_modification',{id:question.id_question}) }}">
+                        <img id="option2" src="{{ asset('assets/images/edit.png') }}">
                     </a>
                        
-                    <a href="{{ path('admin_validation_suppression' , {id: question.id_question}) }}" class="btn btn-danger">
-                        Supprimer
+                    <a href="{{ path('admin_validation_suppression' , {id: question.id_question}) }}">
+                        <img id="option3" src="{{ asset('assets/images/remove.png') }}">
                     </a>  
                 </td>
             </tr>
