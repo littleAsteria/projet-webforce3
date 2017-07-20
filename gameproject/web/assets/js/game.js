@@ -22,24 +22,19 @@ $(function(){
     //nombre de bonnes réponses à la suite requises pour faire un combo
     var comboRequirement = 3;
     
-    console.log('réponses requises pour un combo : ' + comboRequirement);
+    //console.log('réponses requises pour un combo : ' + comboRequirement);
     
     getQuestion();
     
     $('#joker1').on('click', clickJokerQuestion);
     $('#joker2').on('click', clickJokerMoitie);
     
-    //Au moment du clic sur un des boutons de réponse
+    //
     $('.reponseButton').on('click', function(e){
-        
-        //On récupère la lettre du bouton qui a été cliqué (la dernière lettre de son id qu'on passe en minuscule)
         chosenAnswer = $(this).attr('id').substr(-1).toLowerCase();
-        
-        //Enlève la classe success à tous les boutons et leur ajoute la classe primary
         $('.reponseButton').removeClass('btn-success');
         $('.reponseButton').addClass('btn-primary');
         
-        //Enlève la classe primary au bouton cliqué et lui ajoute la classe success
         $(this).removeClass('btn-primary');
         $(this).addClass('btn-success');
         
@@ -48,12 +43,17 @@ $(function(){
     //quand on valide la reponse à la question:
 
     $('#valider').on('click', function(e){
+        
+        
+        
         if(chosenAnswer != undefined){
             
             //évite que la couleur de la reponse validée reste verte
             // en passant à la question suivante
-            $('.reponseButton').removeClass('btn-success');
-            $('.reponseButton').addClass('btn-primary');
+            
+            //setTimeout(function(){ }, 6000);
+            showAnswers(currentQuestion, chosenAnswer);
+           
             
             //Si le numéro de la question actuelle est inférieur à 10
             if(currentQuestionNumber < 10){
@@ -109,11 +109,14 @@ $(function(){
                 //Fin de la partie
                 postScore(score);
             }
+            
+            $('.reponseButton').removeClass('btn-success');
+            $('.reponseButton').addClass('btn-primary');
         }
         //si le joueur valide sans chosir de réponse:
         else {
             
-            console.log('aucune réponse donnée');
+            //console.log('aucune réponse donnée');
         }
 
     });
@@ -123,7 +126,6 @@ $(function(){
     function getQuestion(){
         getRandomQuestion(currentDifficulty, usedQuestions, function(data){
             currentQuestion = data;
-            console.log(data);
             usedQuestions.push(currentQuestion.id_question);
             affichageDonnees(currentQuestion, currentQuestionNumber);
             $('.reponseButton').removeClass('barre');
