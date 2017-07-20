@@ -39,7 +39,9 @@ $(function(){
         $(this).addClass('btn-success');
         
     });
+
     //quand on valide la reponse à la question:
+
     $('#valider').on('click', function(e){
         if(chosenAnswer != undefined){
             
