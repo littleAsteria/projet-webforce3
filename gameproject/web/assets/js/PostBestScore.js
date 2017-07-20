@@ -5,7 +5,7 @@ function postScore(score){
            
         method : 'post',
         url: path2,//action de la route best-score 
-        
+        data: {scoreEnvoye:score}
                
     })
     .done(function(data){
@@ -16,6 +16,7 @@ function postScore(score){
     
     .fail(function(jqXHR, textStatus){
         console.log(jqXHR);
+        console.log('problème envoi du score');
         return null;
     });
         

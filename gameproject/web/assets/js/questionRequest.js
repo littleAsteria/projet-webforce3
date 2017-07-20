@@ -18,6 +18,7 @@ function getRandomQuestion(difficulty, excluded, callback){
     
     .fail(function(jqXHR, textStatus){
         console.log(jqXHR);
+        console.log('problème récupération de la question');
         return null;
     });
     

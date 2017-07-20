@@ -180,6 +180,8 @@ $(function(){
                             wrongAnswers++;
                             goodAnswersInARow = 0;
                             getQuestion();
+                            
+                            //console.log(score);
                             //Si le joueur répond à 3 mauvaises réponses alors la partie s'arrête
                             if(wrongAnswers == 3) postScore(score);
                         }
