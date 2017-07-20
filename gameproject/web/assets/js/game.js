@@ -21,6 +21,7 @@ $(function(){
     $('#joker1').on('click', clickJokerQuestion);
     $('#joker2').on('click', clickJokerMoitie);
     
+    //
     $('.reponseButton').on('click', function(e){
         chosenAnswer = $(this).attr('id').substr(-1).toLowerCase();
         $('.reponseButton').removeClass('btn-success');
@@ -30,17 +31,18 @@ $(function(){
         $(this).addClass('btn-success');
         
     });
-    
+    //qaund on valide la reponse à la question:
     $('#valider').on('click', function(e){
         if(chosenAnswer != undefined){
             
-
+            //évite que la couleur de la reponse validée reste verte
+            // en passant à la question suivante
             $('.reponseButton').removeClass('btn-success');
             $('.reponseButton').addClass('btn-primary');
             
-            
+            //Si le numéro de la question actuelle est inférieur à 10
             if(currentQuestionNumber < 10){
-            
+                
                 if(verificationReponse(chosenAnswer, currentQuestion)){
 
                     score = scoreRequest(score, currentDifficulty);
@@ -49,13 +51,14 @@ $(function(){
                     usedQuestions = [];
                     getQuestion();
                 }
-
+                
+                //Si le joueur donne une mauvaise réponse à la question alors
                 else {
 
                     currentQuestionNumber++;
                     wrongAnswers++;
                     getQuestion();
-                    
+                    //Si le joueur répond à 3 mauvaises réponses alors la partie s'arrête
                     if(wrongAnswers == 3) postScore(score);
                 }
             }
@@ -69,7 +72,7 @@ $(function(){
                 postScore(score);
             }
         }
-
+        //si le joueur valide sans chosir de réponse:
         else {
             
             console.log('aucune réponse donnée');
