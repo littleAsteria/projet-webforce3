@@ -1,5 +1,7 @@
 $(function(){
-    
+    //pour afficher les infos-bulles des jokers
+    $('[data-toggle="tooltip"]').tooltip()
+
     var currentQuestion;
     var startingDifficulty = 1;
     var currentDifficulty = startingDifficulty;
