@@ -16,6 +16,8 @@ function removeTwoAnswers(question) {
     //En se servant de l'id, on leur ajoute la classe 'barre', qui barre le texte
     $('#'+getKeyByValue(question, falseAnswers[0])).addClass('barre');
     $('#'+getKeyByValue(question, falseAnswers[1])).addClass('barre');
+    
+    return [getKeyByValue(question, falseAnswers[0]), getKeyByValue(question, falseAnswers[1])];
 }
 
 function getKeyByValue(object, value) {
