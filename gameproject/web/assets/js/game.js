@@ -14,7 +14,11 @@ $(function(){
     var score = 0;
     
     var wrongAnswers = 0;
-
+    var goodAnswersInARow = 0;
+    
+    var comboRequirement = 3;
+    
+    console.log('réponses requises pour un combo : ' + comboRequirement);
     
     getQuestion();
     
@@ -43,7 +47,18 @@ $(function(){
             
                 if(verificationReponse(chosenAnswer, currentQuestion)){
 
-                    score = scoreRequest(score, currentDifficulty);
+                    goodAnswersInARow++;
+                    
+                    console.log(goodAnswersInARow);
+                    
+                    if(goodAnswersInARow == comboRequirement){
+                        score = scoreRequest(score, currentDifficulty, true);
+                        goodAnswersInARow = 0;
+                        console.log('combo');
+                    }
+                    
+                    else score = scoreRequest(score, currentDifficulty, false);
+                    
                     currentDifficulty++;
                     currentQuestionNumber++;
                     usedQuestions = [];
@@ -54,6 +69,7 @@ $(function(){
 
                     currentQuestionNumber++;
                     wrongAnswers++;
+                    goodAnswersInARow = 0;
                     getQuestion();
                     
                     if(wrongAnswers == 3) postScore(score);
@@ -63,7 +79,16 @@ $(function(){
             else if(currentQuestionNumber == 10) {
                 
                 if(verificationReponse(chosenAnswer, currentQuestion)){
-                    score = scoreRequest(score, currentDifficulty);
+                    
+                    goodAnswersInARow++;
+                    
+                    if(goodAnswersInARow == comboRequirement){
+                        score = scoreRequest(score, currentDifficulty, true);
+                        goodAnswersInARow = 0;
+                        console.log('combo');
+                    }
+                    
+                    else score = scoreRequest(score, currentDifficulty, false);
                 }
                 
                 postScore(score);
