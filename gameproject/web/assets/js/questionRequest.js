@@ -1,3 +1,6 @@
+//Prend en paramètre une difficulté, un tableau d'id et une fonction callback
+//Le PHP renverra une question aléatoire de la difficulté spécifiée, en excluant toutes les questions dont l'id est dans le tableau passé en deuxième paramètre
+//La fonction callback passée en troisième paramètre sera appelée lorsque la requête aura réussi
 function getRandomQuestion(difficulty, excluded, callback){
     $.ajax({
         method : 'get',
@@ -15,7 +18,6 @@ function getRandomQuestion(difficulty, excluded, callback){
     
     .fail(function(jqXHR, textStatus){
         console.log(jqXHR);
-        console.log(excluded);
         return null;
     });
     
