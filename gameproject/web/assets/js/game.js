@@ -22,6 +22,8 @@ $(function(){
     //nombre de bonnes réponses à la suite requises pour faire un combo
     var comboRequirement = 3;
     
+    var nextQuestionTimer = 3000;
+    
     //console.log('réponses requises pour un combo : ' + comboRequirement);
     
     getQuestion();
@@ -41,85 +43,7 @@ $(function(){
     });
 
     //quand on valide la reponse à la question:
-
-    $('#valider').on('click', function(e){
-        
-        
-        
-        if(chosenAnswer != undefined){
-            
-            //évite que la couleur de la reponse validée reste verte
-            // en passant à la question suivante
-            
-            //setTimeout(function(){ }, 6000);
-            showAnswers(currentQuestion, chosenAnswer);
-           
-            
-            //Si le numéro de la question actuelle est inférieur à 10
-            if(currentQuestionNumber < 10){
-                
-                //Si le joueur a donné la bonne réponse
-                if(verificationReponse(chosenAnswer, currentQuestion)){
-
-                    goodAnswersInARow++;
-                    
-                    //Si le joueur a réussi à faire un combo
-                    if(goodAnswersInARow == comboRequirement){
-                        score = scoreRequest(score, currentDifficulty, true);
-                        goodAnswersInARow = 0;
-                    }
-                    
-                    else score = scoreRequest(score, currentDifficulty, false);
-                    
-                    //On augmente la difficulté, le numéro de la question actuelle,
-                    //on reset le tableau d'id déjà passées et on va chercher une nouvelle question
-                    currentDifficulty++;
-                    currentQuestionNumber++;
-                    usedQuestions = [];
-                    getQuestion();
-                }
-                
-                //Si le joueur donne une mauvaise réponse à la question alors
-                else {
-
-                    currentQuestionNumber++;
-                    wrongAnswers++;
-                    goodAnswersInARow = 0;
-                    getQuestion();
-                    //Si le joueur répond à 3 mauvaises réponses alors la partie s'arrête
-                    if(wrongAnswers == 3) postScore(score);
-                }
-            }
-            
-            //Si le joueur en est à la dernière question
-            else if(currentQuestionNumber == 10) {
-                
-                if(verificationReponse(chosenAnswer, currentQuestion)){
-                    
-                    goodAnswersInARow++;
-                    
-                    if(goodAnswersInARow == comboRequirement){
-                        score = scoreRequest(score, currentDifficulty, true);
-                        goodAnswersInARow = 0;
-                    }
-                    
-                    else score = scoreRequest(score, currentDifficulty, false);
-                }
-                
-                //Fin de la partie
-                postScore(score);
-            }
-            
-            $('.reponseButton').removeClass('btn-success');
-            $('.reponseButton').addClass('btn-primary');
-        }
-        //si le joueur valide sans chosir de réponse:
-        else {
-            
-            //console.log('aucune réponse donnée');
-        }
-
-    });
+    $('#valider').on('click', onValidateClick);
     
     //fonction qui va chercher une nouvelle question via l'ajax, récupère son id,
     //et affiche la question à l'écran
@@ -152,6 +76,98 @@ $(function(){
     
     }
 
+    function onValidateClick(){
+        
+        if(chosenAnswer != undefined){
+            
+            //évite que la couleur de la reponse validée reste verte
+            // en passant à la question suivante
+            
+            $(this).removeClass('btn-primary');
+            $(this).addClass('disabled');
+            $(this).off('click', onValidateClick);
+            
+            showAnswers(currentQuestion, chosenAnswer);
+           
+            setTimeout(function(){ 
+            
+                //Si le numéro de la question actuelle est inférieur à 10
+                if(currentQuestionNumber < 10){
+
+                    //Si le joueur a donné la bonne réponse
+                    if(verificationReponse(chosenAnswer, currentQuestion)){
+
+                        goodAnswersInARow++;
+
+                        //Si le joueur a réussi à faire un combo
+                        if(goodAnswersInARow == comboRequirement){
+                            score = scoreRequest(score, currentDifficulty, true);
+                            goodAnswersInARow = 0;
+                        }
+
+                        else score = scoreRequest(score, currentDifficulty, false);
+
+                        //On augmente la difficulté, le numéro de la question actuelle,
+                        //on reset le tableau d'id déjà passées et on va chercher une nouvelle question
+                        currentDifficulty++;
+                        currentQuestionNumber++;
+                        usedQuestions = [];
+                        getQuestion();
+                    }
+
+                    //Si le joueur donne une mauvaise réponse à la question alors
+                    else {
+
+                        currentQuestionNumber++;
+                        wrongAnswers++;
+                        goodAnswersInARow = 0;
+                        getQuestion();
+                        //Si le joueur répond à 3 mauvaises réponses alors la partie s'arrête
+                        if(wrongAnswers == 3) postScore(score);
+                    }
+                }
+
+                //Si le joueur en est à la dernière question
+                else if(currentQuestionNumber == 10) {
+
+                    if(verificationReponse(chosenAnswer, currentQuestion)){
+
+                        goodAnswersInARow++;
+
+                        if(goodAnswersInARow == comboRequirement){
+                            score = scoreRequest(score, currentDifficulty, true);
+                            goodAnswersInARow = 0;
+                        }
+
+                        else score = scoreRequest(score, currentDifficulty, false);
+                    }
+
+                    //Fin de la partie
+                    postScore(score);
+                }
+
+                $('.reponseButton').removeClass('btn-success');
+                $('.reponseButton').removeClass('btn-danger');
+                $('.reponseButton').addClass('btn-primary');
+                
+                chosenAnswer = undefined;
+                
+                $('#valider').removeClass('disabled');
+                $('#valider').addClass('btn-primary');
+                $('#valider').on('click', onValidateClick);
+            
+            }, nextQuestionTimer);
+            
+        }
+        //si le joueur valide sans chosir de réponse:
+        else {
+            
+            console.log('aucune réponse donnée');
+        }
+        
+        
+
+    }
     
 });
 
