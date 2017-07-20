@@ -13,9 +13,13 @@ $(function(){
     //en début de partie, le score commence à 0
     var score = 0;
     
+    //compteur de mauvaises réponses
     var wrongAnswers = 0;
+    
+    //compteur de bonnes réponses à la suite
     var goodAnswersInARow = 0;
     
+    //nombre de bonnes réponses à la suite requises pour faire un combo
     var comboRequirement = 3;
     
     console.log('réponses requises pour un combo : ' + comboRequirement);
@@ -35,7 +39,9 @@ $(function(){
         $(this).addClass('btn-success');
         
     });
-    //quand on valide la réponse à la question:
+
+    //quand on valide la reponse à la question:
+
     $('#valider').on('click', function(e){
         if(chosenAnswer != undefined){
             
@@ -47,20 +53,21 @@ $(function(){
             //Si le numéro de la question actuelle est inférieur à 10
             if(currentQuestionNumber < 10){
                 
+                //Si le joueur a donné la bonne réponse
                 if(verificationReponse(chosenAnswer, currentQuestion)){
 
                     goodAnswersInARow++;
                     
-                    console.log(goodAnswersInARow);
-                    
+                    //Si le joueur a réussi à faire un combo
                     if(goodAnswersInARow == comboRequirement){
                         score = scoreRequest(score, currentDifficulty, true);
                         goodAnswersInARow = 0;
-                        console.log('combo');
                     }
                     
                     else score = scoreRequest(score, currentDifficulty, false);
                     
+                    //On augmente la difficulté, le numéro de la question actuelle,
+                    //on reset le tableau d'id déjà passées et on va chercher une nouvelle question
                     currentDifficulty++;
                     currentQuestionNumber++;
                     usedQuestions = [];
@@ -79,6 +86,7 @@ $(function(){
                 }
             }
             
+            //Si le joueur en est à la dernière question
             else if(currentQuestionNumber == 10) {
                 
                 if(verificationReponse(chosenAnswer, currentQuestion)){
@@ -88,12 +96,12 @@ $(function(){
                     if(goodAnswersInARow == comboRequirement){
                         score = scoreRequest(score, currentDifficulty, true);
                         goodAnswersInARow = 0;
-                        console.log('combo');
                     }
                     
                     else score = scoreRequest(score, currentDifficulty, false);
                 }
                 
+                //Fin de la partie
                 postScore(score);
             }
         }
@@ -105,6 +113,8 @@ $(function(){
 
     });
     
+    //fonction qui va chercher une nouvelle question via l'ajax, récupère son id,
+    //et affiche la question à l'écran
     function getQuestion(){
         getRandomQuestion(currentDifficulty, usedQuestions, function(data){
             currentQuestion = data;
@@ -114,6 +124,7 @@ $(function(){
         });
     }
     
+    //Va chercher une nouvelle question et désactive le joker
     function clickJokerQuestion(){
     
         getQuestion();
@@ -123,6 +134,7 @@ $(function(){
     
     }
     
+    //Barre deux mauvaises réponses et désactive le joker
     function clickJokerMoitie(){
     
         $(this).removeClass('btn-primary');
