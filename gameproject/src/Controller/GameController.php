@@ -32,12 +32,11 @@ class GameController extends ControllerAbstract{
      */
     public function postBestScore(){
         
+        //enregistrement du score dans la session
+        $this->app['membre.manager']->saveScore($_POST['scoreEnvoye']);
+        
         if($this->app['session']->has('membre')){
             
-        
-        
-            //enregistrement du score dans la session
-            $this->app['membre.manager']->saveScore($_POST['scoreEnvoye']);
 
             //on récupére le score du membre connecté et on le compare au score envoyé par l'ajax
             if($this->app['membre.manager']->getMembre()->getScore() < $_POST['scoreEnvoye']){

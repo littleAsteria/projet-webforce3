@@ -1,6 +1,8 @@
-function scoreRequest(score, difficulty){
+function scoreRequest(score, difficulty, combo){
     
-    score += 100 * difficulty;
+    if(combo) score += (100 * difficulty) * 2;
+    
+    else score += 100 * difficulty;
     
     $('#score').html('Score : ' + score);
     
