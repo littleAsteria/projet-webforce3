@@ -32,9 +32,14 @@ $(function(){
     var isFiftyUsed = false;
     var isSwapUsed = false;
     
+    var comboUpTime = 1000;
+    var comboFadeOutTime = 2000;
+    
     //console.log('réponses requises pour un combo : ' + comboRequirement);
     
     getQuestion();
+    
+    $('#combo').hide();
     
     $('#joker1').on('click', clickJokerQuestion);
     $('#joker2').on('click', clickJokerMoitie);
@@ -158,11 +163,21 @@ $(function(){
                     height: 'toggle'
                 });
                 
+                //Timer de fin d'animation précédente
                 setTimeout(function(){
                     showAnswers(currentQuestion, chosenAnswer);
                     $('.reponseButton').animate({
                         height: 'toggle'
                     });
+                    
+                    //Vérification du combo uniquement pour l'affichage
+                    if(verificationReponse(chosenAnswer, currentQuestion)) {
+                        goodAnswersInARow++;
+                        if(goodAnswersInARow == comboRequirement){
+                            displayCombo();
+                        }
+                    }
+                    
                 }, 800);
 
                 //Timer avant d'afficher la prochaine question
@@ -174,8 +189,7 @@ $(function(){
                         //Si le joueur a donné la bonne réponse
                         if(verificationReponse(chosenAnswer, currentQuestion)){
 
-                            goodAnswersInARow++;
-
+                            
                             //Si le joueur a réussi à faire un combo
                             if(goodAnswersInARow == comboRequirement){
                                 score = scoreRequest(score, currentDifficulty, true);
@@ -250,9 +264,15 @@ $(function(){
             
             console.log('aucune réponse donnée');
         }
-        
-        
 
+    }
+    
+    //Permet d'afficher le mot 'combo' et de le faire disparaitre plus tard
+    function displayCombo(){
+        $('#combo').show();
+        setTimeout(function(){
+            $('#combo').fadeOut(comboFadeOutTime);
+        }, comboUpTime);
     }
     
 });
