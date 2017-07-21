@@ -26,7 +26,7 @@ $(function(){
     //nombre de bonnes réponses à la suite requises pour faire un combo
     var comboRequirement = 3;
     
-    var nextQuestionTimer = 10000;
+    var nextQuestionTimer = 1000;
     var suspensTimer = 1000;
     
     var isFiftyUsed = false;
@@ -51,10 +51,16 @@ $(function(){
         //Récupère la lettre du bouton sur lequel on a cliqué et la stocke dans une variable
         chosenAnswer = $(this).attr('id').substr(-1).toLowerCase();
         
-        //Repasse tous les boutons en bleu
-        $('.reponseButton').removeClass('reponseButton-selected');
-        $('.reponseButton').addClass('reponseButton-primary');
+        for (var i = 0; i < $('.reponseButton').length; i++) {
+            
+            if(!$('.reponseButton').eq(i).hasClass('disabled')){
+                
+                $('.reponseButton').eq(i).removeClass('reponseButton-selected');
+                $('.reponseButton').eq(i).addClass('reponseButton-primary');
+            }
+        }
         
+
         //Passe le bouton cliqué en vert
         $(this).removeClass('reponseButton-primary');
         $(this).addClass('reponseButton-selected');
@@ -120,8 +126,12 @@ $(function(){
     
     function reactivateButton(){
         
+        $('.reponseButton').removeClass('reponseButton-selected');
+        $('.reponseButton').addClass('reponseButton-primary');
+        
         //Résactive tous les boutons stockés dans le tableau
         for (i = 0; i < deactivatedButtons.length; i++){
+            
             $('#'+ deactivatedButtons[i]).removeClass('disabled');
             $('#'+ deactivatedButtons[i]).addClass('reponseButton-primary');
             $('#'+ deactivatedButtons[i]).on('click', onClickReponse);
@@ -224,9 +234,9 @@ $(function(){
                     $('#valider').on('click', onValidateClick);
                    
 
-                }, nextQuestionTimer * (currentDifficulty/2));
+                }, nextQuestionTimer);
             
-            }, suspensTimer);
+            }, suspensTimer * (currentDifficulty / 2));
             
         }
         //si le joueur valide sans chosir de réponse:
