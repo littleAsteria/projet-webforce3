@@ -14,8 +14,6 @@ function removeTwoAnswers(question) {
     
     //On récupère la clé dans l'objet question des deux mauvaises réponses du tableau pour récupérer l'id des boutons correspondants
     //En se servant de l'id, on leur ajoute la classe 'barre', qui barre le texte
-    $('#'+getKeyByValue(question, falseAnswers[0])).addClass('barre');
-    $('#'+getKeyByValue(question, falseAnswers[1])).addClass('barre');
     
     return [getKeyByValue(question, falseAnswers[0]), getKeyByValue(question, falseAnswers[1])];
 }
