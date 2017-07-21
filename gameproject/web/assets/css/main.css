@@ -9,6 +9,11 @@
 /*Tableau de validation des questions*/
 #option1,#option2,#option3{
   width: 30px;
-  heigth:30px;
+  heigth: 30px;
   display: inline-block;
+}
+
+/*Régles du jeu*/
+li{
+   list-style-type: none; 
 }
