@@ -85,8 +85,6 @@ class MembreController extends ControllerAbstract{
             
             if(!is_null($membre)){
                 
-                
-
                 if($this->app['membre.manager']->verifyPassword($_POST['mdp'], $membre->getMdp())){
                     
                     $this->app['membre.manager']->login($membre);
@@ -97,10 +95,17 @@ class MembreController extends ControllerAbstract{
                 }
                 
                 else {
-                    echo 'mauvais mot de passe';
+                    
+                    $this->addFlashMessage('Mauvais mot de passe','error');
                 }
                 
             }
+            else{
+                
+                $this->addFlashMessage("Pseudo incorrect","error");
+                
+            }
+            
         }
         
         return $this->render('membre/connexion.html.twig');
