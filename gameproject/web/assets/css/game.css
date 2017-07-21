@@ -28,15 +28,11 @@ h1, h2, h3, p {
     margin-top: 5%;
 }
 
-#reponseA {
+#reponseA, #reponseC {
     margin-right: 44%;
     margin-left: 6%;
 }
 
-#reponseC {
-    margin-right: 44%;
-    margin-left: 6%;
-}
 
 #joker2 {
     float:right;
@@ -163,6 +159,46 @@ h1, h2, h3, p {
 
 .yellow {
     color: #ffff00;
+}
+
+@media screen and (max-width:770px){
+    
+    body {
+        background-size: 100% 100%;
+    }
+    
+    h1 {
+        margin-top: 8rem;
+    }
+    
+    .jokerRow {
+        margin: 0;
+        padding: 0;
+    }
+    
+    .jokerButton {
+        border-radius: 0;
+        margin: 0;
+        padding: 0;
+        line-height: 5rem;
+    }
+    
+    #reponseA, #reponseC {
+        margin: 0;
+    }
+    
+    .buttonRow{
+        padding: 0 15%;
+        margin-top: 5%;
+    }
+    
+    #reponseD {
+        margin-bottom: 50%;
+    }
+    
+    .validateButton {
+        top: 135%;
+    }
 }
 
 
