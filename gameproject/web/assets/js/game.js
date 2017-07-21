@@ -26,7 +26,7 @@ $(function(){
     //nombre de bonnes réponses à la suite requises pour faire un combo
     var comboRequirement = 3;
     
-    var nextQuestionTimer = 2000;
+    var nextQuestionTimer = 10000;
     var suspensTimer = 1000;
     
     var isFiftyUsed = false;
@@ -52,12 +52,12 @@ $(function(){
         chosenAnswer = $(this).attr('id').substr(-1).toLowerCase();
         
         //Repasse tous les boutons en bleu
-        $('.reponseButton').removeClass('btn-success');
-        $('.reponseButton').addClass('btn-primary');
+        $('.reponseButton').removeClass('reponseButton-selected');
+        $('.reponseButton').addClass('reponseButton-primary');
         
         //Passe le bouton cliqué en vert
-        $(this).removeClass('btn-primary');
-        $(this).addClass('btn-success');
+        $(this).removeClass('reponseButton-primary');
+        $(this).addClass('reponseButton-selected');
     }
     
     //fonction qui va chercher une nouvelle question via l'ajax, récupère son id,
@@ -69,7 +69,6 @@ $(function(){
             currentQuestion = data;
             usedQuestions.push(currentQuestion.id_question);
             affichageDonnees(currentQuestion, currentQuestionNumber);
-            $('.reponseButton').removeClass('barre');
             
             //Si les deux jokers ont été utilisés pour cette question
             if(isFiftyUsed && isSwapUsed){
@@ -87,7 +86,7 @@ $(function(){
     function clickJokerQuestion(){
     
         getQuestion();
-        $(this).removeClass('btn-primary');
+        $(this).removeClass('jokerButton-primary');
         $(this).addClass('disabled');
         $(this).off('click', clickJokerQuestion);
         isSwapUsed = true;
@@ -97,7 +96,7 @@ $(function(){
     //Barre deux mauvaises réponses et désactive le joker
     function clickJokerMoitie(){
     
-        $(this).removeClass('btn-primary');
+        $(this).removeClass('jokerButton-primary');
         $(this).addClass('disabled');
         $(this).off('click', clickJokerMoitie);
         
@@ -113,7 +112,7 @@ $(function(){
         //Désactive tous les boutons stockés dans le tableau
         for (i = 0; i < deactivatedButtons.length; i++){
             
-            $('#'+ deactivatedButtons[i]).removeClass('btn-primary');
+            $('#'+ deactivatedButtons[i]).removeClass('reponseButton-primary');
             $('#'+ deactivatedButtons[i]).addClass('disabled');
             $('#'+ deactivatedButtons[i]).off('click', onClickReponse);
         }
@@ -124,7 +123,7 @@ $(function(){
         //Résactive tous les boutons stockés dans le tableau
         for (i = 0; i < deactivatedButtons.length; i++){
             $('#'+ deactivatedButtons[i]).removeClass('disabled');
-            $('#'+ deactivatedButtons[i]).addClass('btn-primary');
+            $('#'+ deactivatedButtons[i]).addClass('reponseButton-primary');
             $('#'+ deactivatedButtons[i]).on('click', onClickReponse);
         }
         
@@ -137,13 +136,17 @@ $(function(){
         if(chosenAnswer != undefined){
             
             //Désactive le bouton validation
-            $(this).removeClass('btn-primary');
+            $(this).removeClass('validateButton-primary');
             $(this).addClass('disabled');
             $(this).off('click', onValidateClick);
             
             //Timer de suspens
             setTimeout(function(){
             
+                /*$('.reponseButton').animate({
+                    height: 'toggle'
+                });*/
+                
                 showAnswers(currentQuestion, chosenAnswer);
 
                 //Timer avant d'afficher la prochaine question
@@ -208,15 +211,16 @@ $(function(){
 
                     //évite que la couleur de la reponse validée reste verte
                     // en passant à la question suivante
-                    $('.reponseButton').removeClass('btn-success');
-                    $('.reponseButton').removeClass('btn-danger');
-                    $('.reponseButton').addClass('btn-primary');
+                    $('.reponseButton').removeClass('reponseButton-selected');
+                    $('.reponseButton').removeClass('reponseButton-right');
+                    $('.reponseButton').removeClass('reponseButton-wrong');
+                    $('.reponseButton').addClass('reponseButton-primary');
 
                     chosenAnswer = undefined;
 
                     //Réactive le bouton de validation
                     $('#valider').removeClass('disabled');
-                    $('#valider').addClass('btn-primary');
+                    $('#valider').addClass('validateButton-primary');
                     $('#valider').on('click', onValidateClick);
                    
 
