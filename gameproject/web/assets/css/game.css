@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Anton');
-html{
-    
-}
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+
 /*JEU*/
 body {
     margin: 0;
@@ -11,12 +10,42 @@ body {
     font-family: 'Anton';
 }
 
-h1,h2,h3,p {
+h1 {
+    margin-top: 5rem;
+}
+
+h1, h2, h3, p {
+    text-align: center;
     color:#fff;
-    
+}
+
+.jokerRow {
+    margin: 0 300px;
+}
+
+.buttonRow{
+    padding: 0 12%;
+    margin-top: 5%;
+}
+
+#reponseA {
+    margin-right: 44%;
+    margin-left: 6%;
+}
+
+#reponseC {
+    margin-right: 44%;
+    margin-left: 6%;
+}
+
+#joker2 {
+    float:right;
+    clear:both;
 }
 
 .jokerButton {
+    display: inline-block;
+    margin: 0 20px;
     padding: 15px;
     border-radius: 100%;
     color: #fff;
@@ -58,6 +87,7 @@ h1,h2,h3,p {
     text-shadow: -1px 1px #004d40;
     border: none;
     height: 45px;
+    width: 200px;
 }
 
 
@@ -67,10 +97,6 @@ h1,h2,h3,p {
     background-image: -moz-linear-gradient(center bottom, #424242, #e0e0e0, rgba(0,0,0,0.4));
     background-image: -webkit-linear-gradient(center bottom, #424242, #e0e0e0, rgba(0,0,0,0.4));
     cursor : not-allowed;
-}
-
-.barre {
-    text-decoration: line-through;
 }
 
 .reponseButton-selected {
@@ -120,13 +146,23 @@ h1,h2,h3,p {
     
 }
 
-
 #questionNumber,#questionText{
     /*border: 1px solid #ccc;*/
     font-size:large;
-    text-align: left;
     
 }
 
+#combo {
+    position: absolute;
+    font-family: 'Pacifico';
+    font-size:6rem;
+    transform: rotate(-45deg);
+    top : 55%;
+    left: 45%;
+}
+
+.yellow {
+    color: #ffff00;
+}
 
 
