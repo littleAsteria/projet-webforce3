@@ -15,49 +15,40 @@
     </head>
     <body>
                      
-            <div class="container">
-                <a class="navbar-brand" href="{{ path('homepage') }}"><img id="home" src="{{ asset('assets/images/home.png') }}"></a>
-            </div>
-            
-      
         <div class="container">
-            <div class="row">
-                <h1 class="col-md-12 col-md-offset-5">Nom du jeu</h1>
-            </div>
-            <div class="row">
+            <a class="navbar-brand" href="{{ path('homepage') }}"><img id="home" src="{{ asset('assets/images/home.png') }}"></a>
+        
+            
+            <h1>Nom du jeu</h1>
 
-                <h2 id="score" class="col-md-12 col-md-offset-5">Score :  0</h2>
+            <h2 id="score">Score :  0</h2>
 
-            </div>
-            <div class="row">
+            <div class="jokerRow">
                 
-                <button id="joker1" type="button" class="jokerButton jokerButton-primary col-md-2 col-md-offset-2 margin-top-5" data-toggle="tooltip" data-placement="top" title="Changer de question">Switch</button>
+                <button id="joker1" type="button" class="jokerButton jokerButton-primary margin-top-5" data-toggle="tooltip" data-placement="top" title="Changer de question">Switch</button>
                 
-                <button id="joker2" type="button" class="jokerButton jokerButton-primary col-md-2 col-md-offset-4 margin-top-5" data-toggle="tooltip" data-placement="top" title="enlever deux mauvaises réponses">50/50</button>
+                <button id="joker2" type="button" class="jokerButton jokerButton-primary margin-top-5" data-toggle="tooltip" data-placement="top" title="Enlever deux mauvaises réponses">50/50</button>
 
             </div>
             
-            <div class="row">
-                <h3 id="questionNumber" class="col-md-12 col-md-offset-3 margin-top-5">Question n°</h3>
-            </div>
+            <h3 id="questionNumber" class="margin-top-5">Question n°</h3>
             
-            <div class="row">
-             <p id="questionText" class="col-md-12 col-md-offset-3">Texte de la question</p>
-            </div>
+            <p id="questionText">Texte de la question</p>
 
-            <div class="row">
-                <button id="reponseA" class="reponseButton reponseButton-primary col-md-2 col-md-offset-2 margin-top-5">Réponse A</button>
-                <button id="reponseB" class="reponseButton reponseButton-primary col-md-2 col-md-offset-4 margin-top-5">Réponse B</button>
+            <div class="buttonRow">
+                <button id="reponseA" class="reponseButton reponseButton-primary margin-top-5">Réponse A</button>
+                <button id="reponseB" class="reponseButton reponseButton-primary margin-top-5">Réponse B</button>
             </div>
             
-            <div class="row">
-                <button id="reponseC" class="reponseButton reponseButton-primary col-md-2 col-md-offset-2 margin-top-5">Réponse C</button>
-                <button id="reponseD" class="reponseButton reponseButton-primary col-md-2 col-md-offset-4 margin-top-5">Réponse D</button>
+            <div class="buttonRow">
+                <button id="reponseC" class="reponseButton reponseButton-primary margin-top-5">Réponse C</button>
+                <button id="reponseD" class="reponseButton reponseButton-primary margin-top-5">Réponse D</button>
             </div>
             
-            <div class="row">
-                <button id="valider" class="validateButton validateButton-primary margin-top-5 margin-bottom-5">Valider</button>
-            </div>
+            <button id="valider" class="validateButton validateButton-primary margin-top-5 margin-bottom-5">Valider</button>
+            <span id="combo">
+                <strong><p class="yellow">Combo x3</p></strong>
+            </span>
         </div>
         {% block javascript %}
        {#récupérerer les liens sur bootstrap#}
