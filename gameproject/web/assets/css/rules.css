@@ -1,27 +1,37 @@
 /*Régles du jeu*/
 body{
     margin: 0;
+    
 }
 #cadre{
     border: solid 1px #ccc;
+    /*background: url(../images/papier.jpg) center center repeat;
+    background-size:cover;*/
+    background-color: #ccc;
 }
+
 li{
    list-style-type: none; 
 }
+
 h1{
     text-align: center;
     font-size: xx-large;
 }
+
+#logo{
+    width: 50px;
+    height: 50px;
+    display: block;
+}
+
 .margin-top-10 {
     margin-top: 10%;
     text-align: center;
     margin-bottom: 15px;
 }
+
 .story{
     margin: 10px;
      
 }
-.rule{
-    
-}
-
