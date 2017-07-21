@@ -2,11 +2,10 @@
 
 {% block content %}
     <div class="container">
-        <div class="row">
-                <ul class="list-group list-group-flush" id='cadre'>
-                    <li class="margin-top-10">
-                        Logo type compagnie spatiale 
-                    </li>
+        <div class="row" >
+            
+                <ul class="list-group list-group-flush" id='cadre'
+                  
                     <li class="story">
                         Félicitations habitant(e) de "nom de planète".
                     </li>
@@ -30,36 +29,48 @@
     <div class="container">
         <div class="row">
             
-            <h1 class="col-md-6 col-md-offset-4">Règles du jeu</h1>
 
-            <ul class="list-group list-group-flush">
+            {# <h1 class="col-md-6 col-md-offset-4"></h1> #}
+            <div class="card">
+                <div class="card-block">
+                    <h4 class="card-title text-center">Règles du jeu</h4>
+  
+
+                    <ul class="list-group list-group-flush">
+
+            
                 
-                    <li class="list-group-item">
-                        Sélectionner une réponse par question puis 
-                        valider votre réponse à l'aide du bouton valider
-                    </li>
-                    <li class="list-group-item">
-                        Vous avez le droit à trois mauvaises réponses par partie.
-                        Sinon vous aurez échoué au test.
-                    </li>
-                    <li class="list-group-item">
-                        Pour vous aidez, vous avez à votre disposition deux jokers:
-                            Le joker Switch permet de changer de question au cours de la partie
+                        <li class="list-group-item">
+                            Sélectionner une réponse par question puis valider votre réponse à l'aide du bouton valider
+                        </li>
+                    
+                        <li class="list-group-item">
+                            Vous avez le droit à trois mauvaises réponses par partie.
+                            Sinon vous aurez échoué au test.
+                        </li>
+                    
+                        <li class="list-group-item">
+                            Pour vous aidez, vous avez à votre disposition deux jokers:
+                                Le joker Switch permet de changer de question au cours de la partie
                             
-                            Le joker 50/50 permet de retirer deux mauvaises réponses à la question 
-                            et vous laisse donc un choix à deux réponses
+                                Le joker 50/50 permet de retirer deux mauvaises réponses à la question 
+                                et vous laisse donc un choix à deux réponses
                             
-                        Attention chaque joker ne peut etre utiliser qu'une seule fois au cours de la partie.
-                        Ils peuvent etre utiliser     
-                    </li>
-                    <li class="list-group-item">
+                            Attention chaque joker ne peut etre utiliser qu'une seule fois au cours de la partie.
+                            Ils peuvent etre utiliser     
+                        </li>
+                    
+                        <li class="list-group-item">
                         Si vous donnez trois bonnes réponses à la suite, votre score sera zugmenté.
                         En fonction de votre score, vos chances de réussite sont multipliés.
-                    </li>
-                </ul>
+                        </li>
+                    
+                    </ul>
+                </div>
+            </div>
 
         </div>
-    </div>
+  </div>
 {% endblock %}
 
    
