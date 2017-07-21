@@ -26,7 +26,7 @@ $(function(){
     //nombre de bonnes réponses à la suite requises pour faire un combo
     var comboRequirement = 3;
     
-    var nextQuestionTimer = 1000;
+    var nextQuestionTimer = 2800;
     var suspensTimer = 1000;
     
     var isFiftyUsed = false;
@@ -153,11 +153,17 @@ $(function(){
             //Timer de suspens
             setTimeout(function(){
             
-                /*$('.reponseButton').animate({
+                $('.reponseButton').css('padding','0');
+                $('.reponseButton').animate({
                     height: 'toggle'
-                });*/
+                });
                 
-                showAnswers(currentQuestion, chosenAnswer);
+                setTimeout(function(){
+                    showAnswers(currentQuestion, chosenAnswer);
+                    $('.reponseButton').animate({
+                        height: 'toggle'
+                    });
+                }, 800);
 
                 //Timer avant d'afficher la prochaine question
                 setTimeout(function(){ 
