@@ -2,66 +2,76 @@
 
 {% block content %}
     <div class="container">
+        <div class="row">
+             <h1 class='col-md-2 col-md-offset-4' id="welcome"> Welcome to "nom du jeu"</h1>
+        </div>
+        
         <div class="row" >
             <img id ="logo" src="{{ asset('assets/images/earth.png') }}">
+            
             <ul class="list-group list-group-flush" id='cadre'>
                   
                 <li class="story">
                     Félicitations habitant(e) de "nom de planète".
                 </li>
+                
                 <li class="story">
-                    Vous avez été sélectionné pour participer au voyage intersidéral , qui vous permettra de passer un an sur la planète Terre. 
-                    Mais avant cela une dernière étape il vous faudra passer..
-                    Nous recherchons en effet des candidats motivés et ayant un minimum de connaissances sur les humains. 
+                    Vous avez été sélectionné(e) pour participer au voyage intersidéral, qui vous permettra de passer un an sur la planète Terre. 
+                    Mais avant cela, une dernière étape il vous faudra passer..
+                    Nous recherchons, en effet, des candidat(e)s motivé(e)s et ayant un minimum de connaissances sur les humains. 
                 </li>
+                
                 <li class="story">
                     Ils sont très sensibles à ce qu'ils nomment communément la culture G. 
                     Nous allons donc vous faire passer un test à ce sujet.  
-                    Mais ne vous inquiétez pas nous sommes convaincu que vous y arriverez. 
+                    Mais ne vous inquiétez pas nous sommes convaincu que vous y arriverez. Surtout pensez à bien lire les régles.
                 </li>
+                
                 <li class="story">
                     "Nom de la compagnie spatiale".
                 </li>
+                
             </ul>
 
         </div>
     </div>
     <div class="container">
         <div class="row">
-            
-
-            {# <h1 class="col-md-6 col-md-offset-4"></h1> #}
             <div class="card">
                 <div class="card-block">
-                    <h4 class="card-title text-center">Règles du jeu</h4>
-  
-                    
-                    <ul id="rule" class="list-group list-group-flush">
+                    <h2 class="card-title text-center" id="gameRules">Règles du jeu</h2>
+
+                    <ul id="rules" class="list-group list-group-flush">
                         
                 
-                        <li>
-                            Sélectionner une réponse par question puis valider votre réponse à l'aide du bouton valider
+                        <li class="rule">
+                            Sélectionner une seule réponse par question posée et valider là ensuite à l'aide du bouton valider.
                         </li>
                     
-                        <li>
-                            Vous avez le droit à trois mauvaises réponses par partie.
-                            Sinon vous aurez échoué au test.
+                        <li class="rule">
+                            Si vous donnez plus de trois mauvaises réponses, durant la partie, vous aurez échoué au test.
                         </li>
                     
-                        <li>
-                            Pour vous aidez, vous avez à votre disposition deux jokers:
-                                Le joker Switch permet de changer de question au cours de la partie
-                            
-                                Le joker 50/50 permet de retirer deux mauvaises réponses à la question 
-                                et vous laisse donc un choix à deux réponses
-                            
-                            Attention chaque joker ne peut etre utiliser qu'une seule fois au cours de la partie.
-                            Ils peuvent etre utiliser     
+                        <li class="rule">
+                            Pour vous aidez, vous avez à votre disposition deux jokers: le Switch et le cinquante-cinquante.
                         </li>
-                    
-                        <li>
-                        Si vous donnez trois bonnes réponses à la suite, votre score sera zugmenté.
-                        En fonction de votre score, vos chances de réussite sont multipliés.
+                        
+                        <li class="rule">
+                            Le joker Switch permet de changer de question au cours de la partie.
+                        </li> 
+                        
+                        <li class="rule">
+                            Le joker 50/50 permet de retirer deux mauvaises réponses à la question et vous laisse donc un choix à deux réponses au lieu de quatre.
+                        </li>  
+                        
+                        <li class="rule">
+                            Attention chaque joker ne peut être utiliser qu'une seule fois au cours de la partie.
+                            Ils peuvent cependant être utiliser conjointement durant la même manche.  
+                        </li>
+                        
+                        <li class="rule">
+                            Si vous réalisez un combo de trois bonnes réponses à la suite, votre score sera augmenté.
+                            En fonction de votre score, vos chances de réussite au test sont multipliées.
                         </li>
                     
                     </ul>

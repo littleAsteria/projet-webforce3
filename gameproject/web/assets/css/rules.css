@@ -1,50 +1,75 @@
 @import url('https://fonts.googleapis.com/css?family=Dhurjati|Raleway');
-
-/*Régles du jeu*/
+@import url('https://fonts.googleapis.com/css?family=Gruppo');
 body{
     
     margin: 0;
     font-family:'Raleway';
 }
-#cadre{
-    border: solid 1px #ccc;
-    background: url(../images/blue3.jpg) center center repeat;
-    background-size:cover;
-    color: #fff;
-    /*background:#ccc -moz-linear-gradient(center bottom , #1565c0, #64b5f6, rgba(0, 0, 0, 0.4)) repeat scroll 0 0;*/ 
-    font-family:'Dhurjati';
-    font-size:large;
-    
-}
-.story{
-    margin: 10px;
-    color: #fff;
-     
-}
+/*Introduction de l'histoire du jeu*/ 
 
-#rule{
-    background: url(../images/blue3.jpg) center center repeat;
-    background-size:cover;
-    color: #fff;
-    font-family:'Dhurjati';
-     font-size:large;
+/*titre h1*/
+#welcome{
+   font-size: xx-large;
+   /*text-align: center;*/
+   font-family:'Gruppo';
+   font-weight: bold;
 }
-
-li{
-   list-style-type: none; 
-}
-
-h1{
-    text-align: center;
-    font-size: xx-large;
-}
-
+/*image*/
 #logo{
     width: 100px;
     height: 100px;
     display: block;
     margin :10px auto;
 }
+
+/*ul*/
+#cadre{
+    border: solid 1px #ccc;
+    background: url(../images/blue3.jpg) center center repeat;
+    background-size:cover;
+    color: #fff;
+    /*background:#ccc -moz-linear-gradient(center bottom , #1565c0, #64b5f6, rgba(0, 0, 0, 0.4)) repeat scroll 0 0;*/ 
+    font-family:'Gruppo';
+    font-weight: bold;
+    font-size:large;
+}
+
+/*li*/
+.story{
+    margin: 10px;
+    color: #fff;    
+}
+
+.story:first-child{
+    text-align: center;
+    list-style-type: none;
+}
+
+/*Régles du jeu*/
+#gameRules{
+    text-align: center;
+    font-size: xx-large;
+    font-family:'Gruppo';
+    font-weight: bold;
+}
+
+/*ul*/
+#rules{
+    background: url(../images/blue3.jpg) center center repeat;
+    background-size: cover;
+    color: #fff;
+    font-family:'Gruppo';
+    font-weight: bold;
+    font-size: large;
+}
+
+/*li*/
+.rule{
+   list-style-type: none; 
+   margin-left: 10px;
+   margin-rigth: 10px;
+}
+
 
 .margin-top-10 {
     margin-top: 10%;
