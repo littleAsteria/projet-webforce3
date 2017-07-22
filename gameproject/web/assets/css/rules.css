@@ -26,7 +26,7 @@ body{
 /*ul*/
 #cadre{
     border: solid 1px #ccc;
-    background: url(../images/blue3.jpg) center center repeat;
+    background: url('../images/blue3.jpg') center center repeat;
     background-size:cover;
     color: #fff;
     /*background:#ccc -moz-linear-gradient(center bottom , #1565c0, #64b5f6, rgba(0, 0, 0, 0.4)) repeat scroll 0 0;*/ 
@@ -44,8 +44,8 @@ body{
 .story:first-child{
     text-align: center;
     list-style-type: none;
-
 }
+
 /*Régles du jeu*/
 #gameRules{
     text-align: center;
@@ -56,7 +56,7 @@ body{
 
 /*ul*/
 #rules{
-    background: url(../images/blue3.jpg) center center repeat;
+    background: url('../images/blue3.jpg') center center repeat;
     background-size: cover;
     color: #fff;
     font-family:'Gruppo';
@@ -68,7 +68,7 @@ body{
 .rule{
    list-style-type: none; 
    margin-left: 10px;
-   margin-rigth: 10px;
+   margin-right: 10px;
 }
 
 .margin-top-10 {
