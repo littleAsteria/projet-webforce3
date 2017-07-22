@@ -15,50 +15,49 @@
     </head>
     <body>
                      
-        <div class="container">
-            <a class="navbar-brand" href="{{ path('homepage') }}"><img id="home" src="{{ asset('assets/images/home.png') }}"></a>
+        <a class="homeButton" href="{{ path('homepage') }}"><img id="home" src="{{ asset('assets/images/home.png') }}"></a>
         
-            
+        <div class="titleContainer">
             <h1>Nom du jeu</h1>
-
             <h2 id="score">Score :  0</h2>
-
-            <div class="jokerRow">
-                
-                <button id="joker1" type="button" class="jokerButton jokerButton-primary margin-top-5" data-toggle="tooltip" data-placement="top" title="Changer de question">Switch</button>
-                
-                <button id="joker2" type="button" class="jokerButton jokerButton-primary margin-top-5" data-toggle="tooltip" data-placement="top" title="Enlever deux mauvaises réponses">50/50</button>
-
-            </div>
-            
-            <h3 id="questionNumber" class="margin-top-5">Question n°</h3>
-            
-            <p id="questionText">Texte de la question</p>
-
-            <div class="buttonRow">
-                <button id="reponseA" class="reponseButton reponseButton-primary margin-top-5">Réponse A</button>
-                <button id="reponseB" class="reponseButton reponseButton-primary margin-top-5">Réponse B</button>
-            </div>
-            
-            <div class="buttonRow">
-                <button id="reponseC" class="reponseButton reponseButton-primary margin-top-5">Réponse C</button>
-                <button id="reponseD" class="reponseButton reponseButton-primary margin-top-5">Réponse D</button>
-            </div>
-            
-            <button id="valider" class="validateButton validateButton-primary margin-top-5 margin-bottom-5">Valider</button>
-            <span id="combo">
-                <strong><p class="yellow">Combo x3</p></strong>
-            </span>
         </div>
+        <div class="jokerRow">
+                
+            <button id="joker1" type="button" class="jokerButton jokerButton-primary margin-top-5" data-toggle="tooltip" data-placement="top" title="Changer de question">Switch</button>
+                
+            <button id="joker2" type="button" class="jokerButton jokerButton-primary margin-top-5" data-toggle="tooltip" data-placement="top" title="Enlever deux mauvaises réponses">50/50</button>
+
+        </div>
+            
+        <h3 id="questionNumber" class="margin-top-5">Question n°</h3>
+            
+        <p id="questionText">Texte de la question</p>
+
+        <div class="buttonRow">
+            <button id="reponseA" class="reponseButton reponseButton-primary margin-top-5">Réponse A</button>
+            <button id="reponseB" class="reponseButton reponseButton-primary margin-top-5">Réponse B</button>
+        </div>
+            
+        <div class="buttonRow">
+            <button id="reponseC" class="reponseButton reponseButton-primary margin-top-5">Réponse C</button>
+            <button id="reponseD" class="reponseButton reponseButton-primary margin-top-5">Réponse D</button>
+        </div>
+            
+        <button id="valider" class="validateButton validateButton-primary margin-top-5 margin-bottom-5">Valider</button>
+        <span id="combo">
+            <strong><p class="yellow">Combo x3</p></strong>
+        </span>
         {% block javascript %}
        {#récupérerer les liens sur bootstrap#}
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.4/howler.core.min.js"></script>
             <script>
                 var path = '{{ path('randomQuestion') }}';
                 var path2 = '{{ path("best-score") }}';
                 var path3 = '{{ path('fin_de_partie') }}';
             </script>
+            <script src="../assets/js/sound.js"></script>
             <script src="../assets/js/questionRequest.js"></script>
             <script src="../assets/js/game.js"></script>
             <script src="../assets/js/affichage-donnees.js"></script>
