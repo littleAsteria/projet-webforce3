@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Dhurjati|Raleway');
 @import url('https://fonts.googleapis.com/css?family=Gruppo');
+
 body{
-    
     margin: 0;
     font-family:'Raleway';
 }
+
 /*Introduction de l'histoire du jeu*/ 
 
 /*titre h1*/
@@ -43,7 +44,7 @@ body{
 .story:first-child{
     text-align: center;
     list-style-type: none;
-}
+
 
 /*Régles du jeu*/
 #gameRules{
