@@ -10,6 +10,12 @@ body {
     font-family: 'Anton';
 }
 
+.homeButton {
+    display: block;
+    margin-top: 1%;
+    margin-left: 10%;
+}
+
 h1 {
     margin-top: 5rem;
 }
@@ -20,21 +26,17 @@ h1, h2, h3, p {
 }
 
 .jokerRow {
-    margin: 0 300px;
+    width: 30%;
+    margin: 0 auto;
 }
 
 .buttonRow{
-    padding: 0 12%;
-    margin-top: 5%;
-}
-
-#reponseA, #reponseC {
-    margin-right: 44%;
-    margin-left: 6%;
+    width: 30%;
+    margin: 2% auto;
 }
 
 
-#joker2 {
+#joker2, #reponseB, #reponseD {
     float:right;
     clear:both;
 }
@@ -161,44 +163,91 @@ h1, h2, h3, p {
     color: #ffff00;
 }
 
+/* Gestion de la hauteur de l'écran (pour le top en absolute) */
+
+@media screen and (max-height:540px) {
+    body {
+      height: 650px;  
+    }
+    
+    .validateButton {
+        top: 110%;
+        margin: 0;
+    }
+}
+
+@media screen and (min-height:541px) and (max-height:600px) {
+    body {
+      height: 650px;  
+    }
+    
+    .validateButton {
+        top: 103%;
+        margin: 0;
+    }
+}
+
+@media screen and (min-height:601px) and (max-height:640px) {
+    body {
+      height: 650px;  
+    }
+    
+    .validateButton {
+        top: 92%;
+        margin: 0;
+    }
+}
+
+@media screen and (min-height:641px) and (max-height:700px) {
+    body {
+      height: 700px; 
+    }
+    
+    .validateButton {
+        top: 90%;
+        margin: 0;
+    }
+}
+
+@media screen and (min-height:701px) and (max-height:740px) {
+    body {
+      height: 700px; 
+    }
+    
+    .validateButton {
+        top: 85%;
+        margin: 0;
+    }
+}
+
+/* Gestion de la largeur de l'écran */
+
 @media screen and (max-width:770px){
     
     body {
         background-size: 100% 100%;
-    }
-    
-    h1 {
-        margin-top: 8rem;
+        
     }
     
     .jokerRow {
-        margin: 0;
-        padding: 0;
+        width: auto;
     }
     
-    .jokerButton {
-        border-radius: 0;
-        margin: 0;
-        padding: 0;
-        line-height: 5rem;
+    .buttonRow {
+        width: 90%;
+        margin: 0 auto;
     }
     
-    #reponseA, #reponseC {
-        margin: 0;
+    .reponseButton {
+        width: 100%;
+        margin: 1% auto 0;
     }
     
-    .buttonRow{
-        padding: 0 15%;
-        margin-top: 5%;
+    #reponseB, #reponseD {
+        float:none;
     }
     
-    #reponseD {
-        margin-bottom: 50%;
-    }
     
-    .validateButton {
-        top: 135%;
-    }
 }
 
 

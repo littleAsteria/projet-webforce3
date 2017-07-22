@@ -50,6 +50,11 @@ $(function(){
     //quand on valide la reponse à la question:
     $('#valider').on('click', onValidateClick);
     
+    $('button').on('click', function(){
+        gameButtonClickSound.play();
+    });
+    
+    
     
     function onClickReponse(){
         
@@ -172,10 +177,21 @@ $(function(){
                     
                     //Vérification du combo uniquement pour l'affichage
                     if(verificationReponse(chosenAnswer, currentQuestion)) {
+                        
                         goodAnswersInARow++;
                         if(goodAnswersInARow == comboRequirement){
                             displayCombo();
+                            comboSound.play();
                         }
+                        
+                        else {
+                           correctSound.play(); 
+                        }
+                    }
+                    
+                    //Si la réponse est fausse, lancement du son d'erreur
+                    else {
+                        errorSound.play();
                     }
                     
                 }, 800);

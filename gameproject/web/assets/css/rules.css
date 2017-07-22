@@ -4,6 +4,16 @@
 body{
     
     margin: 0;
+
+    
+}
+#cadre{
+    border: solid 1px #ccc;
+    /*background: url(../images/papier.jpg) center center repeat;
+    background-size:cover;*/
+    background-color: #ccc;
+}
+
     font-family:'Raleway';
 }
 #cadre{
@@ -30,6 +40,7 @@ body{
      font-size:large;
 }
 
+
 li{
    list-style-type: none; 
 }
@@ -40,16 +51,28 @@ h1{
 }
 
 #logo{
+
+    width: 50px;
+    height: 50px;
+    display: block;
+
     width: 100px;
     height: 100px;
     display: block;
     margin :10px auto;
+
 }
 
 .margin-top-10 {
     margin-top: 10%;
     text-align: center;
     margin-bottom: 15px;
+}
+
+
+.story{
+    margin: 10px;
+     
 }
 
 
