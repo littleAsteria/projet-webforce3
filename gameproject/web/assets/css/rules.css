@@ -1,6 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Dhurjati|Raleway');
+
 /*Régles du jeu*/
 body{
+    
     margin: 0;
+
     
 }
 #cadre{
@@ -9,6 +13,33 @@ body{
     background-size:cover;*/
     background-color: #ccc;
 }
+
+    font-family:'Raleway';
+}
+#cadre{
+    border: solid 1px #ccc;
+    background: url(../images/blue3.jpg) center center repeat;
+    background-size:cover;
+    color: #fff;
+    /*background:#ccc -moz-linear-gradient(center bottom , #1565c0, #64b5f6, rgba(0, 0, 0, 0.4)) repeat scroll 0 0;*/ 
+    font-family:'Dhurjati';
+    font-size:large;
+    
+}
+.story{
+    margin: 10px;
+    color: #fff;
+     
+}
+
+#rule{
+    background: url(../images/blue3.jpg) center center repeat;
+    background-size:cover;
+    color: #fff;
+    font-family:'Dhurjati';
+     font-size:large;
+}
+
 
 li{
    list-style-type: none; 
@@ -20,9 +51,16 @@ h1{
 }
 
 #logo{
+
     width: 50px;
     height: 50px;
     display: block;
+
+    width: 100px;
+    height: 100px;
+    display: block;
+    margin :10px auto;
+
 }
 
 .margin-top-10 {
@@ -31,7 +69,10 @@ h1{
     margin-bottom: 15px;
 }
 
+
 .story{
     margin: 10px;
      
 }
+
+
