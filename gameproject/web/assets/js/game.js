@@ -54,6 +54,8 @@ $(function(){
         gameButtonClickSound.play();
     });
     
+    gameMusic.play();
+    
     
     
     function onClickReponse(){
@@ -85,6 +87,7 @@ $(function(){
             currentQuestion = data;
             usedQuestions.push(currentQuestion.id_question);
             affichageDonnees(currentQuestion, currentQuestionNumber);
+            gameMusic.fade(0,0.4,2000);
             
             //Si les deux jokers ont été utilisés pour cette question
             if(isFiftyUsed && isSwapUsed){
@@ -154,6 +157,8 @@ $(function(){
     function onValidateClick(){
         
         if(chosenAnswer != undefined){
+            
+            gameMusic.fade(0.4,0,2000);
             
             //Désactive le bouton validation
             $(this).removeClass('validateButton-primary');

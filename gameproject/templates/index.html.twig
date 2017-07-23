@@ -34,6 +34,10 @@
         </div>
         {% endif %}
         
-        
+        {% block javascript %}
+            {{ parent() }}
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.4/howler.core.min.js"></script>
+            <script src="../assets/js/accueil.js"></script>
+        {% endblock %}
     </div>
 {% endblock %}
