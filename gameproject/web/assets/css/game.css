@@ -67,14 +67,14 @@ h1, h2, h3, p {
     background: #2196f3;
     background-image: linear-gradient(center bottom, #1a237e, #7986cb, rgba(0,0,0,0.4));
     background-image: -moz-linear-gradient(center bottom, #1a237e, #7986cb, rgba(0,0,0,0.4));
-    background-image: -webkit-linear-gradient(center bottom, #1a237e, #7986cb, rgba(0,0,0,0.4));
+    background-image: linear-gradient(to bottom, #1a237e, #7986cb, rgba(0,0,0,0.4));
     cursor: pointer;
 }
 
 .validateButton-primary:hover, .jokerButton-primary:hover {
     background-image: linear-gradient(center bottom, #7986cb, #1a237e, rgba(0,0,0,0.4));
     background-image: -moz-linear-gradient(center bottom, #7986cb, #1a237e, rgba(0,0,0,0.4));
-    background-image: -webkit-linear-gradient(center bottom, #7986cb, #1a237e, rgba(0,0,0,0.4));
+    background-image: linear-gradient(to bottom, #7986cb, #1a237e, rgba(0,0,0,0.4));
     cursor: pointer;
 }
 
@@ -93,7 +93,7 @@ h1, h2, h3, p {
     background-color: #757575;
     background-image: linear-gradient(center bottom, #424242, #e0e0e0, rgba(0,0,0,0.4));
     background-image: -moz-linear-gradient(center bottom, #424242, #e0e0e0, rgba(0,0,0,0.4));
-    background-image: -webkit-linear-gradient(center bottom, #424242, #e0e0e0, rgba(0,0,0,0.4));
+    background-image: linear-gradient(to bottom, #424242, #e0e0e0, rgba(0,0,0,0.4));
     cursor : not-allowed;
 }
 
@@ -101,7 +101,7 @@ h1, h2, h3, p {
     background-color: #ffca28;
     background-image: linear-gradient(center bottom, #ff8f00, #ffe082, rgba(0,0,0,0.4));
     background-image: -moz-linear-gradient(center bottom, #ff8f00, #ffe082, rgba(0,0,0,0.4));
-    background-image: -webkit-linear-gradient(center bottom, #ff8f00, #ffe082, rgba(0,0,0,0.4));
+    background-image: linear-gradient(to bottom, #ff8f00, #ffe082, rgba(0,0,0,0.4));
     cursor: pointer;
 }
 
@@ -109,7 +109,7 @@ h1, h2, h3, p {
     background-color: #f44336;
     background-image: linear-gradient(center bottom, #c62828, #e57373, rgba(0,0,0,0.4));
     background-image: -moz-linear-gradient(center bottom, #c62828, #e57373, rgba(0,0,0,0.4));
-    background-image: -webkit-linear-gradient(center bottom, #c62828, #e57373, rgba(0,0,0,0.4));
+    background-image: linear-gradient(to bottom, #c62828, #e57373, rgba(0,0,0,0.4));
     cursor: pointer;
 }
 
@@ -117,7 +117,7 @@ h1, h2, h3, p {
     background-color: #43a047;
     background-image: linear-gradient(center bottom, #2e7d32, #81c784, rgba(0,0,0,0.4));
     background-image: -moz-linear-gradient(center bottom, #2e7d32, #81c784, rgba(0,0,0,0.4));
-    background-image: -webkit-linear-gradient(center bottom, #2e7d32, #81c784, rgba(0,0,0,0.4));
+    background-image: linear-gradient(to bottom, #2e7d32, #81c784, rgba(0,0,0,0.4));
     cursor: pointer;
 }
 
@@ -125,14 +125,14 @@ h1, h2, h3, p {
     background: #2196f3;
     background-image: linear-gradient(center bottom, #1565c0, #64b5f6, rgba(0,0,0,0.4));
     background-image: -moz-linear-gradient(center bottom, #1565c0, #64b5f6, rgba(0,0,0,0.4));
-    background-image: -webkit-linear-gradient(center bottom, #1565c0, #64b5f6, rgba(0,0,0,0.4));
+    background-image: linear-gradient(to bottom, #1565c0, #64b5f6, rgba(0,0,0,0.4));
     cursor: pointer;
 }
 
 .reponseButton-primary:hover{
     background-image: linear-gradient(center bottom, #64b5f6, #1565c0, rgba(0,0,0,0.4));
     background-image: -moz-linear-gradient(center bottom, #64b5f6, #1565c0, rgba(0,0,0,0.4));
-    background-image: -webkit-linear-gradient(center bottom, #64b5f6, #1565c0, rgba(0,0,0,0.4));
+    background-image: linear-gradient(to bottom, #64b5f6, #1565c0, rgba(0,0,0,0.4));
     cursor: pointer;
 }
 
