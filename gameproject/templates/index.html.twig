@@ -2,8 +2,11 @@
 
 {% block content %}
     
+    
+     
+    
+    
     <div class="container">
-        
         <div class="row">
             {# On affiche un message si un joueur n'est pas connecté#}
             {% if not membre_manager.membre %}
@@ -12,25 +15,29 @@
         </div>
         
         <div class="row">
-            <h1 class="col-md-2 col-md-offset-4">Our Game</h1>
+            <h1 class="col-md-2 col-md-offset-4 col-xs-6 col-xs-offset-3" id="mainTitle">Politismos Quiz</h1>
+        </div>
+        {# essais #}
+       
+        {# fin de l'essai #}
+    
+        <div class="row">
+            <a href="{{ path('game') }}" class="btn btn-primary col-md-2 col-md-offset-4 margin-top-5 col-xs-6 col-xs-offset-3" role="button">
+                <i class="fa fa-space-shuttle" aria-hidden="true"></i>Jouer</a>
         </div>
         
         <div class="row">
-            <a href="{{ path('game') }}" class="btn btn-primary col-md-2 col-md-offset-4 margin-top-5">Jouer</a>
+            <a href="{{ path('regles') }}" class="btn btn-primary col-md-2 col-md-offset-4 margin-top-5 col-xs-6 col-xs-offset-3" role="button"> <i class="fa fa-space-shuttle" aria-hidden="true"></i>Règles du jeu</a>
         </div>
         
         <div class="row">
-            <a href="{{ path('regles') }}" class="btn btn-primary col-md-2 col-md-offset-4 margin-top-5">Règles du jeu</a>
-        </div>
-        
-        <div class="row">
-            <a href="{{ path('scores') }}" class="btn btn-primary col-md-2 col-md-offset-4 margin-top-5">Scores</a>
+            <a href="{{ path('scores') }}" class="btn btn-primary col-md-2 col-md-offset-4 margin-top-5 col-xs-6 col-xs-offset-3" role="button"> <i class="fa fa-space-shuttle" aria-hidden="true"></i>Scores</a>
         </div>
         
        
         {% if membre_manager.membre %}    
         <div class="row">
-            <a href="{{ path('soumission') }}" class="btn btn-primary col-md-2 col-md-offset-4 margin-top-5">Proposer une question</a>
+            <a href="{{ path('soumission') }}" class="btn btn-primary col-md-2 col-md-offset-4 margin-top-5 col-xs-6 col-xs-offset-3"> <i class="fa fa-space-shuttle" aria-hidden="true"></i>Proposer une question</a>
         </div>
         {% endif %}
         
@@ -40,4 +47,5 @@
             <script src="../assets/js/accueil.js"></script>
         {% endblock %}
     </div>
+        
 {% endblock %}
