@@ -38,7 +38,8 @@ body{
 /*li*/
 .story{
     margin: 10px;
-    color: #fff;    
+    color: #fff;   
+     list-style-type: none;
 }
 
 .story:first-child{
