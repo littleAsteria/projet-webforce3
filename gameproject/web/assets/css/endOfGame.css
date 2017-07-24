@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css?family=Anton');
+
+/*Titre du jeu*/
+#rappelTitre{
+   font-family:'Anton';
+   margin-bottom: 30px;
+}
+
+/*affichage du score*/
+#score{
+     font-family:'Anton';
+     margin-top:30px;
+}
+
+/*texte de fin de partie*/
+#paragraph{
+    color: #fff;
+    font-family:'Anton';
+    font-weight: 100;
+    font-size:large;
+    margin-top: 50px;
+}
