@@ -39,6 +39,10 @@ $(function(){
     
     getQuestion();
     
+    $('button').on('click', function(){
+        if(!$(this).hasClass('disabled')) gameButtonClickSound.play();
+    });
+    
     $('#combo').hide();
     
     $('#joker1').on('click', clickJokerQuestion);
@@ -50,9 +54,6 @@ $(function(){
     //quand on valide la reponse à la question:
     $('#valider').on('click', onValidateClick);
     
-    $('button').on('click', function(){
-        gameButtonClickSound.play();
-    });
     
     gameMusic.play();
     
@@ -109,7 +110,8 @@ $(function(){
         $(this).removeClass('jokerButton-primary');
         $(this).addClass('disabled');
         $(this).off('click', clickJokerQuestion);
-        isSwapUsed = true;
+        if(isFiftyUsed) isSwapUsed = true;
+        
         
     }
     
@@ -246,8 +248,6 @@ $(function(){
                     else if(currentQuestionNumber == 10) {
 
                         if(verificationReponse(chosenAnswer, currentQuestion)){
-
-                            goodAnswersInARow++;
 
                             if(goodAnswersInARow == comboRequirement){
                                 score = scoreRequest(score, currentDifficulty, true);
