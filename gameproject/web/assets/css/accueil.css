@@ -1,0 +1,19 @@
+body{ 
+background: url('../images/background_accueil.png') center center repeat;
+background-size:cover 100%;
+}
+
+.btn-primary {
+    background-color: #4dd0e1;
+    border-color: #4dd0e1;
+    color: #fff;
+}
+.btn-primary:hover{
+   background-color: #b2ebf2; 
+}
+
+/*bouton proposer une question*/
+#last-button{
+    font-size: 1.3rem;
+}
+
