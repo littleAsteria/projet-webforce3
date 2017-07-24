@@ -3,47 +3,49 @@
 {% block title "Questions joueurs" %}
 {% block content %}
 <div class="container">
-    <table class="table">
-         <tr>
-            <th>Id_question</th>
-            <th>Question</th>
-            <th>Réponse A</th>
-            <th>Réponse B</th>
-            <th>Réponse C</th>
-            <th>Réponse D</th>
-            <th>Bonne réponse</th>
-            <th>Niveau</th>
-            <th width="200px">Options</th>
-        </tr>
-        
-        {% for question in questions %}
-            <tr>
-                
-                <td>{{ question.id_question }}</td>
-                <td>{{ question.question }}</td>
-                <td>{{ question.reponse_a}}</td>
-                <td>{{ question.reponse_b}}</td>
-                <td>{{ question.reponse_c}}</td>
-                <td>{{ question.reponse_d}}</td>
-                <td>{{ question.bonne_reponse}}</td>
-                <td>{{ question.niveau}}</td>
-                {# cherche la methode categoryName#}
-                <td>
-                    <a href="{{ path('admin_validation_accord' , {id: question.id_question}) }}">
-                        <img alt="" id="option1" src="{{ asset('assets/images/validation.png') }}">
-                    </a>
-                    <a href="{{ path('admin_validation_modification',{id:question.id_question}) }}">
-                        <img alt="" id="option2" src="{{ asset('assets/images/edit.png') }}">
-                    </a>
-                       
-                    <a href="{{ path('admin_validation_suppression' , {id: question.id_question}) }}">
-                        <img alt="" id="option3" src="{{ asset('assets/images/remove.png') }}">
-                    </a>  
-                </td>
+    <div class="table-responsive">
+        <table class="table">
+             <tr>
+                <th>Id_question</th>
+                <th>Question</th>
+                <th>Réponse A</th>
+                <th>Réponse B</th>
+                <th>Réponse C</th>
+                <th>Réponse D</th>
+                <th>Bonne réponse</th>
+                <th>Niveau</th>
+                <th width="200px">Options</th>
             </tr>
-        {% endfor %}
-               
-    </table>
+
+            {% for question in questions %}
+                <tr>
+
+                    <td>{{ question.id_question }}</td>
+                    <td>{{ question.question }}</td>
+                    <td>{{ question.reponse_a}}</td>
+                    <td>{{ question.reponse_b}}</td>
+                    <td>{{ question.reponse_c}}</td>
+                    <td>{{ question.reponse_d}}</td>
+                    <td>{{ question.bonne_reponse}}</td>
+                    <td>{{ question.niveau}}</td>
+                    {# cherche la methode categoryName#}
+                    <td>
+                        <a href="{{ path('admin_validation_accord' , {id: question.id_question}) }}">
+                            <img alt="" id="option1" src="{{ asset('assets/images/validation.png') }}">
+                        </a>
+                        <a href="{{ path('admin_validation_modification',{id:question.id_question}) }}">
+                            <img alt="" id="option2" src="{{ asset('assets/images/edit.png') }}">
+                        </a>
+
+                        <a href="{{ path('admin_validation_suppression' , {id: question.id_question}) }}">
+                            <img alt="" id="option3" src="{{ asset('assets/images/remove.png') }}">
+                        </a>  
+                    </td>
+                </tr>
+            {% endfor %}
+
+        </table>
+    </div>
 </div> 
 {% endblock %}
 

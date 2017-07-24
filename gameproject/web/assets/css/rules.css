@@ -29,7 +29,6 @@ body{
     background: url('../images/blue3.jpg') center center repeat;
     background-size:cover;
     color: #fff;
-    /*background:#ccc -moz-linear-gradient(center bottom , #1565c0, #64b5f6, rgba(0, 0, 0, 0.4)) repeat scroll 0 0;*/ 
     font-family:'Gruppo';
     font-weight: bold;
     font-size:large;
@@ -39,7 +38,7 @@ body{
 .story{
     margin: 10px;
     color: #fff;   
-     list-style-type: none;
+    list-style-type: none;
 }
 
 .story:first-child{
@@ -70,6 +69,7 @@ body{
    list-style-type: none; 
    margin-left: 10px;
    margin-right: 10px;
+   margin-bottom: 10px;
 }
 
 .margin-top-10 {

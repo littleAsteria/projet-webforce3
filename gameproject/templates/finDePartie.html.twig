@@ -25,7 +25,7 @@
         <div class="container">
              
             <div class="row">
-                <h1 class="col-md-12 col-md-offset-0" id="rappelTitre">Nom du jeu</h1>
+                <h1 class="col-md-12 col-md-offset-0" id="rappelTitre">Politismos Quizz</h1>
             </div>
             
              <div class="row" >
@@ -42,41 +42,40 @@
                   {% if membre_manager.score < 600 %}
                     {# moins de 600 points #}
                     Nous pensons que vous n'êtes pas prêt(e) pour le monde des humains.
-                    Entraînez-vous et retenter l'expérience dans quelques années lumiéres!
+                    Entraînez-vous et retenter l'expérience dans quelques années !
                   {% endif%}
                 
                   {% if membre_manager.score >= 600 and membre_manager.score < 1200 %}
                     {# entre 600 et moins de 1200 points #}
-                    Nous apprécions vos efforts mais ce ne sera pas suffisant pour passer innaperçu(e) parmi les humains.
+                    Nous apprécions vos efforts mais ce ne sera pas suffisant pour passer inaperçu(e) parmi les humains.
                   {% endif%}
                 
                   {% if membre_manager.score >= 1200 and membre_manager.score < 2000 %}
                     {# entre 1200 et moins de 2000 points #}
                     Pas mal mais pas suffisant!
-                    Nous vous remercions d'avoir participer.
+                    l'essentiel c'est que vous ayez participé. 
                   {% endif%}
                   
                   {% if membre_manager.score >= 2000 and membre_manager.score < 2800 %}
                     {# entre 2000 et moins de 2800 points #}
-                     Nous croyons en vous!
-                     Pour votre peine, nous vous offrons une visite gratuite de notre station spatiale!
+                     Vous n'irez pas sur Terre pour cette fois mais nous vous offrons une carte de la planéte terre!
                   {% endif%}
                   
                   {% if membre_manager.score >= 2800 and membre_manager.score < 4000%}
                     {# entre 2800 et moins de 4000 points #} 
-                    Vous y étiez presque! 
-                    Nous vous laissons une autre chance au quizz pour rencontrer les Humains!
+                     Nous croyons en vous!
+                     Pour votre peine, nous vous offrons une visite gratuite de notre station spatiale Politismos3!
                   {% endif%}
                   
                   {% if membre_manager.score >= 4000 and membre_manager.score < 6300 %}
                     {# entre 4000 et moins de 6300 points #}
                     Vous y étiez presque! 
-                    Nous vous laissons une autre chance au quizz pour rencontrer les Humains!
+                    Nous vous offrons une seconde chance au quiz pour remporter le voyage et rencontrer les Humains!
                   {% endif%}
                   
                   {% if membre_manager.score >= 6300 and membre_manager.score < 7300 %}
                     {# entre 6300 points et moins de 7300 points #}
-                    Bon travail! Vous vous êtes bien battus! 
+                    Bon travail! Vous avez réussi!
                     Prêt(e) pour l'aventure de votre vie ? 
                   {% endif%}
                   
@@ -84,7 +83,7 @@
                     {#7300 points(score maximum avec combos)#}
                     Waouh! Nous sommes impressionnés! 
                     Vous êtes de loin notre meilleur(e) candidat(e)!
-                    Vous serez sans doute capable de conduire vous même la navette! 
+                    Vous seriez sans doute capable de conduire vous-même la navette! 
                   {% endif%}
                   
                 </p>

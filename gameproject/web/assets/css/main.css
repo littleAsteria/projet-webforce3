@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Gruppo');
+#mainTitle{
+    font-family:'Gruppo';
+    font-weight: 'bold';
+
+}
+
 .margin-top-5 {
     margin-top: 5%;
 }
@@ -6,10 +13,16 @@
     margin-bottom: 5%;
 }
 
-/*Tableau de validation des questions*/
+/*Options pour le Tableau de validation des questions*/
 #option1,#option2,#option3{
   width: 30px;
   heigth: 30px;
   display: inline-block;
 }
-
+/*message à l'utilisateur connecté*/
+#messageUser{
+    margin: 15px;
+}
+i .fa fa-space-shuttle{
+    padding-right: 10px;
+}
