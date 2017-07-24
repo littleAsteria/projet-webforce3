@@ -23,6 +23,7 @@
 #messageUser{
     margin: 15px;
 }
-i .fa fa-space-shuttle{
-    padding-right: 10px;
+
+#last-button{
+    font-size: 1.3rem;
 }

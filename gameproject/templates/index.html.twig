@@ -22,22 +22,21 @@
         {# fin de l'essai #}
     
         <div class="row">
-            <a href="{{ path('game') }}" class="btn btn-primary col-md-2 col-md-offset-4 margin-top-5 col-xs-6 col-xs-offset-3" role="button">
-                <i class="fa fa-space-shuttle" aria-hidden="true"></i>Jouer</a>
+            <a href="{{ path('game') }}" class="btn btn-primary col-md-2 col-md-offset-4 margin-top-5 col-xs-6 col-xs-offset-3" role="button">Jouer</a>
         </div>
         
         <div class="row">
-            <a href="{{ path('regles') }}" class="btn btn-primary col-md-2 col-md-offset-4 margin-top-5 col-xs-6 col-xs-offset-3" role="button"> <i class="fa fa-space-shuttle" aria-hidden="true"></i>Règles du jeu</a>
+            <a href="{{ path('regles') }}" class="btn btn-primary col-md-2 col-md-offset-4 margin-top-5 col-xs-6 col-xs-offset-3" role="button">Règles du jeu</a>
         </div>
         
         <div class="row">
-            <a href="{{ path('scores') }}" class="btn btn-primary col-md-2 col-md-offset-4 margin-top-5 col-xs-6 col-xs-offset-3" role="button"> <i class="fa fa-space-shuttle" aria-hidden="true"></i>Scores</a>
+            <a href="{{ path('scores') }}" class="btn btn-primary col-md-2 col-md-offset-4 margin-top-5 col-xs-6 col-xs-offset-3" role="button">Scores</a>
         </div>
         
        
         {% if membre_manager.membre %}    
-        <div class="row">
-            <a href="{{ path('soumission') }}" class="btn btn-primary col-md-2 col-md-offset-4 margin-top-5 col-xs-6 col-xs-offset-3"> <i class="fa fa-space-shuttle" aria-hidden="true"></i>Proposer une question</a>
+        <div class="row" >
+            <a href="{{ path('soumission') }}" id="last-button" class="btn btn-primary col-md-2 col-md-offset-4 margin-top-5 col-xs-6 col-xs-offset-3" role="button">Proposer une question</a>
         </div>
         {% endif %}
         
