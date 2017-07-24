@@ -31,14 +31,14 @@
                     {# cherche la methode categoryName#}
                     <td>
                         <a href="{{ path('admin_validation_accord' , {id: question.id_question}) }}">
-                            <img alt="" id="option1" src="{{ asset('assets/images/validation.png') }}">
+                            <img alt="accepter la question" id="option1" src="{{ asset('assets/images/validation.png') }}">
                         </a>
                         <a href="{{ path('admin_validation_modification',{id:question.id_question}) }}">
-                            <img alt="" id="option2" src="{{ asset('assets/images/edit.png') }}">
+                            <img alt="modifier la question" id="option2" src="{{ asset('assets/images/edit.png') }}">
                         </a>
 
                         <a href="{{ path('admin_validation_suppression' , {id: question.id_question}) }}">
-                            <img alt="" id="option3" src="{{ asset('assets/images/remove.png') }}">
+                            <img alt="supprimer la question" id="option3" src="{{ asset('assets/images/remove.png') }}">
                         </a>  
                     </td>
                 </tr>
