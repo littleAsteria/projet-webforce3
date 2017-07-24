@@ -21,7 +21,7 @@
             <td>{{ membre.pseudo }}</td>
             <td>{{ membre.score }}</td>
             {% if membre_manager.admin %}
-            <td><a href="{{ path('admin_reset_score',{id:membre.id_membre}) }}"><img id="option3" src="{{ asset('assets/images/remove.png') }}"></a></td>
+            <td><a href="{{ path('admin_reset_score',{id:membre.id_membre}) }}"><img id="option3" src="{{ asset('assets/images/remove.png') }}" alt="remettre à zéro"></a></td>
             {% endif %}
         </tr>
         {% endfor %}
