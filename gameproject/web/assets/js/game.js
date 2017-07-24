@@ -56,7 +56,8 @@ $(function(){
     
     gameMusic.play();
     
-    
+    console.log('width : ' + window.innerWidth);
+    console.log('height : ' + window.innerHeight);
     
     function onClickReponse(){
         
