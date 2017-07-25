@@ -2,15 +2,43 @@
 
 /*navbar utilisateur*/
 .navbar-default {
-    background-color: transparent;
-    border-color: transparent;
+    background-color: #42a5f5;
+    border-color: #0288d1;
 }
+
+li.bottom{
+    border-bottom: solid 1px #0288d1;
+}
+
+li.top{
+    border-top: solid 1px #0288d1;
+}
+
+
+.navbar-default .navbar-nav li a{
+     color: #0288d1;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #fff;
+}
+
+/*Hovers*/
+.navbar-default .navbar-nav > li:hover{
+    background: #90caf9;
+}
+
+.navbar-default .navbar-nav > li > a:hover{
+    color: #0288d1;
+}
+
 
 /*navbar administrateur*/
 .navbar-inverse {
     background-color: #222;
     border-color: transparent;
 }
+
 
 .margin-top-5 {
     margin-top: 5%;
@@ -29,13 +57,30 @@
 /*message à l'utilisateur connecté*/
 #messageUser{
     margin: 15px;
+    color: #fff;
+}
+#messageUser:hover{
+    background: transparent;
 }
 
 /*Titre du jeu*/
 #mainTitle{
-    font-family:'Gruppo';
+    font-family: 'Gruppo';
     font-weight: bold;
     color: #fff;
-    font-size: 4.5rem;
+    font-size: 4rem;
 }
 
+
+
+/*boutons de validation des formulaires*/
+.btn-primary{
+    background-color: #42a5f5;
+    border-color: transparent;
+    color: #fff;
+}
+
+.btn-primary:hover{
+   background-color: #90caf9; 
+    border-color: transparent;
+}
