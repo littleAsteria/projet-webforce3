@@ -18,9 +18,11 @@
         {% if membre_manager.admin %}
             <nav class="navbar navbar-inverse" id="navbar-admin"> 
                 <div class="container">
-                    <a class="navbar-brand">Menu admin</a>
+                    
                         <ul class="nav navbar-nav">
-                            
+                            <li>
+                                <a class="navbar-brand">Menu admin</a>
+                            </li>
                             <li>
                                 <a href='{{ path('admin_validation')}}'>Gestion des questions</a>
                             </li>
