@@ -1,5 +1,22 @@
 @import url('https://fonts.googleapis.com/css?family=Anton');
 
+
+.navbar-default .navbar-brand {
+   color:#fff; 
+   /*margin-right: 10px;
+   float: right;
+   clear:both*/
+}
+
+/*Hovers*/
+.navbar-default .navbar-brand:hover{
+    background: #90caf9;
+}
+
+.navbar-default .navbar-brand:hover{
+    color: #0288d1;
+}
+
 /*Titre du jeu*/
 #rappelTitre{
    font-family:'Anton';
@@ -20,3 +37,28 @@
     font-size:large;
     margin-top: 50px;
 }
+
+/*image*/
+#logo{
+    width: 100px;
+    height: 100px;
+    display: block;
+    margin :10px auto;
+}
+
+#container-bar {
+    padding: 0;
+}
+
+.bottom{
+    border-bottom: solid 1px #0288d1;
+}
+
+/*@media screen and (max-width:400px){
+    .navbar-default .navbar-brand {
+        display:block;
+        padding: 10px;
+        margin: 0;
+        width: 100%;
+    }
+}*/
