@@ -16,12 +16,27 @@
 
     </head>
     <body>
+        
         <nav class="navbar navbar-default">
+            <div class="container" id="navbar-container">
+                    
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="bottom"><a href="{{ path('homepage') }}" class="bold"><strong>Accueil</strong></a></li>
+                    <li><a class="navbar-brand font" href="{{ path('scores') }}">Tableau des scores</a></li>
+                </ul>
+            </div>
+        </nav>
+        
+        {# <nav class="navbar navbar-default">
             <div class="container" id="container-bar">
                 <a class="navbar-brand bottom" href="{{ path('homepage') }}">Accueil</a>
                 <a class="navbar-brand" href="{{ path('scores') }}">Tableau des scores</a>
             </div>
-        </nav>
+        </nav> #}
+            
+            
+            
+            
         <div class="container">
              
             <div class="row">
@@ -47,13 +62,13 @@
                 
                   {% if membre_manager.score >= 600 and membre_manager.score < 1200 %}
                     {# entre 600 et moins de 1200 points #}
-                    Nous apprécions vos efforts mais ce ne sera pas suffisant pour passer inaperçu(e) parmi les humains.
+                    Pas mal mais pas suffisant!
+                    L'essentiel c'est que vous ayez participé. 
                   {% endif%}
                 
                   {% if membre_manager.score >= 1200 and membre_manager.score < 2000 %}
                     {# entre 1200 et moins de 2000 points #}
-                    Pas mal mais pas suffisant!
-                    L'essentiel c'est que vous ayez participé. 
+                   Nous apprécions vos efforts mais ce ne sera pas suffisant pour passer inaperçu(e) parmi les humains.
                   {% endif%}
                   
                   {% if membre_manager.score >= 2000 and membre_manager.score < 2800 %}
