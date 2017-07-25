@@ -35,6 +35,10 @@ li.top{
     color: #0288d1;
 }
 
+.bold{
+    font-weight: bold;
+    font-size: medium;
+}
 
 /*navbar administrateur*/
 .navbar-inverse {
