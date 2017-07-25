@@ -62,22 +62,26 @@ $(function(){
     
     function onClickReponse(){
         
-        //Récupère la lettre du bouton sur lequel on a cliqué et la stocke dans une variable
-        chosenAnswer = $(this).attr('id').substr(-1).toLowerCase();
+        if(!$(this).hasClass('disabled')) {
         
-        for (var i = 0; i < $('.reponseButton').length; i++) {
-            
-            if(!$('.reponseButton').eq(i).hasClass('disabled')){
-                
-                $('.reponseButton').eq(i).removeClass('reponseButton-selected');
-                $('.reponseButton').eq(i).addClass('reponseButton-primary');
-            }
-        }
-        
+            //Récupère la lettre du bouton sur lequel on a cliqué et la stocke dans une variable
+            chosenAnswer = $(this).attr('id').substr(-1).toLowerCase();
 
-        //Passe le bouton cliqué en vert
-        $(this).removeClass('reponseButton-primary');
-        $(this).addClass('reponseButton-selected');
+            for (var i = 0; i < $('.reponseButton').length; i++) {
+
+                if(!$('.reponseButton').eq(i).hasClass('disabled')){
+
+                    $('.reponseButton').eq(i).removeClass('reponseButton-selected');
+                    $('.reponseButton').eq(i).addClass('reponseButton-primary');
+                }
+            }
+
+
+            //Passe le bouton cliqué en vert
+            $(this).removeClass('reponseButton-primary');
+            $(this).addClass('reponseButton-selected');
+        
+        }
     }
     
     //fonction qui va chercher une nouvelle question via l'ajax, récupère son id,
@@ -136,7 +140,7 @@ $(function(){
             
             $('#'+ deactivatedButtons[i]).removeClass('reponseButton-primary');
             $('#'+ deactivatedButtons[i]).addClass('disabled');
-            $('#'+ deactivatedButtons[i]).off('click', onClickReponse);
+            //$('#'+ deactivatedButtons[i]).off('click', onClickReponse);
         }
     }
     
@@ -150,11 +154,21 @@ $(function(){
             
             $('#'+ deactivatedButtons[i]).removeClass('disabled');
             $('#'+ deactivatedButtons[i]).addClass('reponseButton-primary');
-            $('#'+ deactivatedButtons[i]).on('click', onClickReponse);
+            //$('#'+ deactivatedButtons[i]).on('click', onClickReponse);
         }
         
         //Vide le tableau
         deactivatedButtons = [];
+    }
+    
+    function deactivateAllButtons() {
+        $('.reponseButton').removeClass('reponseButton-primary');
+        $('.reponseButton').addClass('disabled');
+    }
+    
+    function activateAllButtons() {
+        $('.reponseButton').removeClass('disabled');
+        $('.reponseButton').addClass('reponseButton-primary');
     }
 
     function onValidateClick(){
@@ -167,6 +181,8 @@ $(function(){
             $(this).removeClass('validateButton-primary');
             $(this).addClass('disabled');
             $(this).off('click', onValidateClick);
+            
+            deactivateAllButtons();
             
             //Timer de suspens
             setTimeout(function(){
@@ -266,7 +282,9 @@ $(function(){
                     $('.reponseButton').removeClass('reponseButton-selected');
                     $('.reponseButton').removeClass('reponseButton-right');
                     $('.reponseButton').removeClass('reponseButton-wrong');
-                    $('.reponseButton').addClass('reponseButton-primary');
+                    //$('.reponseButton').addClass('reponseButton-primary');
+                    
+                    activateAllButtons();
 
                     chosenAnswer = undefined;
 
