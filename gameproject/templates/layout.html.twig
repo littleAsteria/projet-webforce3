@@ -16,7 +16,7 @@
     </head>
     <body>
         {% if membre_manager.admin %}
-            <nav class="navbar navbar-inverse">
+            <nav class="navbar navbar-inverse" id="navbar-admin"> 
                 <div class="container">
                     <a class="navbar-brand">Menu admin</a>
                         <ul class="nav navbar-nav">
@@ -29,7 +29,7 @@
             </nav>
         {% endif %}               
         <nav class="navbar navbar-default">
-                <div class="container">
+                <div class="container" id="navbar-container">
                     
                         <ul class="nav navbar-nav navbar-right">
                             <li class="bottom"><a href="{{ path('homepage') }}"><strong>Accueil</strong></a></li>
