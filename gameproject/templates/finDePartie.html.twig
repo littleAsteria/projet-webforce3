@@ -29,7 +29,37 @@
             </div>
             
              <div class="row" >
-                <img id="logo" src="{{ asset('assets/images/earth.png') }}" alt="logo">
+                {% if membre_manager.score < 600 %}
+                    <img id="logo" src="{{ asset('assets/images/restricted.png') }}" alt="logo">
+                {% endif%}
+                
+                {% if membre_manager.score >= 600 and membre_manager.score < 1200 %}
+                    <img id="logo" src="{{ asset('assets/images/participer.jpg') }}" alt="logo">
+                {% endif%}
+                
+                {% if membre_manager.score >= 1200 and membre_manager.score < 2000 %}
+                    <img id="logo" src="{{ asset('assets/images/deguise.jpg') }}" alt="logo">
+                {% endif%}
+                
+                {% if membre_manager.score >= 2000 and membre_manager.score < 2800 %}
+                    <img id="logo" src="{{ asset('assets/images/carte.jpg') }}" alt="logo">
+                {% endif%}
+                
+                {% if membre_manager.score >= 2800 and membre_manager.score < 4000%}
+                    <img id="logo" src="{{ asset('assets/images/station.jpg') }}" alt="logo">
+                {% endif%}
+                
+                {% if membre_manager.score >= 4000 and membre_manager.score < 6300 %}
+                    <img id="logo" src="{{ asset('assets/images/seconde.jpg') }}" alt="logo">
+                {% endif%}
+                
+                {% if membre_manager.score >= 6300 and membre_manager.score < 7300 %}
+                    <img id="logo" src="{{ asset('assets/images/terre.jpg') }}" alt="logo">
+                {% endif%}
+                
+                {% if membre_manager.score == 7300 %}
+                    <img id="logo" src="{{ asset('assets/images/best.jpg') }}" alt="logo">
+                {% endif%}
              </div>
             
             <div class="row">
