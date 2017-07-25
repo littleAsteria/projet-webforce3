@@ -11,7 +11,6 @@ body{
 /*titre h1*/
 #welcome{
    font-size: xx-large;
-   /*text-align: center;*/
    font-family:'Gruppo';
    font-weight: bold;
 }
@@ -76,4 +75,10 @@ body{
     margin-top: 10%;
     text-align: center;
     margin-bottom: 15px;
+}
+
+@media screen and (max-width:400px){
+    #welcome{
+       text-align: right; 
+    }   
 }

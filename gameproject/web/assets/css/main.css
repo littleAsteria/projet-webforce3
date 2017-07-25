@@ -14,6 +14,9 @@ li.top{
     border-top: solid 1px #0288d1;
 }
 
+.navbar-nav {
+    margin: 0;
+}
 
 .navbar-default .navbar-nav li a{
      color: #0288d1;
@@ -46,6 +49,14 @@ li.top{
 
 .margin-bottom-5 {
     margin-bottom: 5%;
+}
+
+#navbar-admin {
+    margin: 0;
+}
+
+#navbar-container {
+    padding: 0;
 }
 
 /*Options pour le Tableau de validation des questions*/
