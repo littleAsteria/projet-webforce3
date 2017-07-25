@@ -3,9 +3,10 @@
 
 .navbar-default .navbar-brand {
    color:#fff; 
-   /*margin-right: 10px;
-   float: right;
-   clear:both*/
+}
+/*lien tableau des scores*/
+.font{
+    font-size: medium;
 }
 
 /*Hovers*/
