@@ -97,6 +97,11 @@ li.top{
 
 .btn-primary:hover{
    background-color: #90caf9; 
-    border-color: transparent;
-    color:#0288d1;
+   border-color: transparent;
+   color:#0288d1;
+}
+
+/*responsive */
+.margin-button{
+    margin-bottom: 10px;
 }

@@ -30,13 +30,13 @@
         </div>
         
         <div class="row">
-            <a href="{{ path('scores') }}" class="btn btn-primary col-md-2 col-md-offset-4 margin-top-5 col-xs-6 col-xs-offset-3" role="button">Scores</a>
+            <a href="{{ path('scores') }}" class="btn btn-primary col-md-2 col-md-offset-4 margin-top-5 col-xs-6 col-xs-offset-3 {% if not membre_manager.membre %}margin-button{% endif%}" role="button">Scores</a>
         </div>
         
        
         {% if membre_manager.membre %}    
         <div class="row" >
-            <a href="{{ path('soumission') }}" id="last-button" class="btn btn-primary col-md-2 col-md-offset-4 margin-top-5 col-xs-6 col-xs-offset-3" role="button">Proposer une question</a>
+            <a href="{{ path('soumission') }}" id="last-button" class="btn btn-primary col-md-2 col-md-offset-4 margin-top-5 col-xs-6 col-xs-offset-3 margin-button" role="button">Proposer une question</a>
         </div>
         {% endif %}
         

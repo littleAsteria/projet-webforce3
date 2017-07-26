@@ -53,7 +53,8 @@ $app['membre.manager'] = function() use ($app){
     
 };
 
-//ADMIN:
+//----ADMIN----
+//CONTROLLERS:
 //Déclaration en service du contrôleur Admin Question 
 $app['admin.question.controller'] = function() use ($app) {
     
@@ -67,7 +68,7 @@ $app['admin.membre.controller'] = function() use ($app) {
 };
 
 
-//FRONT:
+//-----FRONT-----
 //CONTROLLERS:
 //Déclaration en service du contrôleur Membre: 
 $app['membre.controller'] = function() use ($app){ 

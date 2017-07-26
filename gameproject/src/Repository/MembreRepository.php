@@ -15,7 +15,7 @@ class MembreRepository extends RepositoryAbstract{
     
     public function findAllBestScores($limit){
         $query = "SELECT * FROM membre ORDER BY score DESC LIMIT 0, $limit";
-        
+   
         $dbMembres = $this->db->fetchAll($query);
         
         $membres = [];
