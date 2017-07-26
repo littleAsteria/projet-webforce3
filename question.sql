@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Mar 25 Juillet 2017 à 11:31
+-- Généré le :  Mer 26 Juillet 2017 à 15:36
 -- Version du serveur :  10.1.13-MariaDB
 -- Version de PHP :  5.6.23
 
@@ -19,9 +19,7 @@ SET time_zone = "+00:00";
 --
 -- Base de données :  `game`
 --
-
-USE game;
-
+  USE game;
 -- --------------------------------------------------------
 
 --
@@ -94,7 +92,20 @@ INSERT INTO `question` (`id_question`, `question`, `reponse_a`, `reponse_b`, `re
 (47, 'Quel philosophe a écrit " Les origines du totalitarisme " et " La crise de la culture " ?\r\n', 'John Dewey', 'Edmund Husserl', 'Hannah Arendt', 'Henri Bergson', 'c', 9, '1'),
 (48, 'Qui a composé la musique de Game of Thrones ?', 'Hans Zimmer', 'James Newton Howard', 'Ramin Djawadi', 'James Horner', 'c', 9, '1'),
 (49, 'Dans quelle mer se jette le fleuve Méandre ?', 'La mer noire', 'La mer Égée', 'La mer Caspienne', 'La mer Adriatique', 'b', 10, '1'),
-(50, '“Il ira loin, il croit tout ce qu’il dit”. De qui parle Mirabeau ?', 'Napoléon', 'Robespierre', 'Talleyrand', 'Fouché', 'b', 10, '1');
+(50, '“Il ira loin, il croit tout ce qu’il dit”. De qui parle Mirabeau ?', 'Napoléon', 'Robespierre', 'Talleyrand', 'Fouché', 'b', 10, '1'),
+(51, 'Dans Charlie et la chocolaterie, quelles créatures assistent Willy .Wonka ?', 'Les Gualas-Bompas', 'Les Oompa-Loompas', 'Les Oula-Wompas', 'Les Oula-Hoopas', 'b', 5, '1'),
+(52, 'Quelle est la tessiture de voix d''homme la plus élevée ?', 'Le ténor', 'La basse', 'Le baryton', 'La haute-contre', 'd', 5, '1'),
+(53, 'Que signifie le verbe procrastiner ?', 'Etudier énormément', 'Remettre quelque chose à plus tard', 'Parler vulgairement', 'Contredire son interlocuteur', 'b', 2, '1'),
+(54, 'De quel animal est issu le cachemire ? ', 'Le lapin', 'Le vison', 'La chévre', 'Le mouton', 'c', 4, '1'),
+(55, 'Quelle est la première ville au monde à s''être dotée d''un métro ?', 'New York', 'Paris', 'Londres', 'Berlin', 'c', 3, '1'),
+(56, 'Qui est l''auteur de L''idiot ?', 'Anton Tchekov', 'Nicolas Gogol', 'Fiodor Dostoievskï', 'Léon Tolstoï', 'c', 6, '1'),
+(57, 'Quelle est la capitale de la Bolivie ?', 'Sucre', 'Porto-novo', 'Praia', 'Bogota', 'a', 7, '1'),
+(58, 'Quelle est la durée actuelle du mandat présidentiel aux États-Unis ?', 'Quatre ans', 'Cinq  ans', 'Six ans', 'Sept ans', 'a', 2, '1'),
+(59, 'En argot, que signifie l''expression "Décrocher les tableaux " ?', 'S''appauvrir', 'Devenir fou', 'Changer de vie', 'Se récurer le nez', 'd', 7, '1'),
+(60, 'Quelle proposition ne fait pas partie des douze travaux d''Hercule?', 'Tuer l''hydre de Lerne', 'Résoudre l''enigme du Sphinx ', 'Dérober la ceinture d''hippolyte', 'Nettoyer les écuries d''Augias ', 'a', 5, '1'),
+(61, 'Quel est le premier long métrage d’animation des studios Walt Disney ? ', 'Blanche neige et les sept nains', 'Bambi', 'Pinnochio', 'La belle au bois dormant', 'a', 6, '1'),
+(62, 'Au bowling, combien de quilles sont alignées sur la dernière rangée  ?', '3', '4', '5', '6', 'b', 4, '1'),
+(63, 'Que représente les cinq anneaux présents sur le drapeau olympique ?', 'Les disciplines par catégorie', 'Les différents continents', 'Les valeurs sportives', 'Les types de médailles', 'b', 3, '1');
 
 --
 -- Index pour les tables exportées
@@ -114,7 +125,7 @@ ALTER TABLE `question`
 -- AUTO_INCREMENT pour la table `question`
 --
 ALTER TABLE `question`
-  MODIFY `id_question` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+  MODIFY `id_question` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
