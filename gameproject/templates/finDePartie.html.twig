@@ -5,7 +5,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
-        <title>{% block title '' %} - Politismos quiz</title>
+        {% block title '- Fin de partie' %} 
+            
         {% block stylesheets %}
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <link href="{{ asset('assets/css/main.css') }}" rel="stylesheet" type="text/css" />
@@ -19,16 +20,18 @@
         
         <nav class="navbar navbar-default">
             <div class="container" id="navbar-container">
-                    
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="bottom"><a href="{{ path('homepage') }}" class="bold">Accueil</a></li>
-                    <li><a class="font" href="{{ path('scores') }}">Tableau des scores</a></li>
-                </ul>
+                    <li class="bottom">
+                        <a href="{{ path('homepage') }}" class="bold">Accueil</a>
+                    </li>
+                    <li>
+                        <a class="font" href="{{ path('scores') }}">Tableau des scores</a>
+                    </li>
+                </ul>  
             </div>
         </nav> 
             
         <div class="container">
-             
             <div class="row">
                 <h1 class="col-md-12 col-md-offset-0" id="rappelTitre">Politismos Quiz</h1>
             </div>
@@ -120,14 +123,13 @@
                     Waouh! Nous sommes impressionnés! 
                     Vous êtes de loin notre meilleur(e) candidat(e)!
                     Vous seriez sans doute capable de conduire vous-même la navette! 
-                  {% endif%}
-                  
+                  {% endif%} 
                 </p>
             </div>
         </div>
                 
         {% block javascript %}
-       {#récupérerer les liens sur bootstrap#}
+        {#récupérerer les liens sur bootstrap#}
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
         {% endblock %}

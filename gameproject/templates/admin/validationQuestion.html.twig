@@ -1,23 +1,24 @@
 {% extends "layout.html.twig" %}
 
-{% block title "Questions joueurs" %}
+{% block title "Validation questions joueurs" %}
+    
 {% block content %}
-<div class="container">
-    <div class="table-responsive">
-        <table class="table">
-             <tr>
-                <th>Id_question</th>
-                <th>Question</th>
-                <th>Réponse A</th>
-                <th>Réponse B</th>
-                <th>Réponse C</th>
-                <th>Réponse D</th>
-                <th>Bonne réponse</th>
-                <th>Niveau</th>
-                <th width="200px">Options</th>
-            </tr>
+    <div class="container">
+        <div class="table-responsive">
+            <table class="table">
+                <tr>
+                    <th>Id_question</th>
+                    <th>Question</th>
+                    <th>Réponse A</th>
+                    <th>Réponse B</th>
+                    <th>Réponse C</th>
+                    <th>Réponse D</th>
+                    <th>Bonne réponse</th>
+                    <th>Niveau</th>
+                    <th width="200px">Options</th>
+                </tr>
 
-            {% for question in questions %}
+                {% for question in questions %}
                 <tr>
 
                     <td>{{ question.id_question }}</td>
@@ -30,6 +31,7 @@
                     <td>{{ question.niveau}}</td>
                     {# cherche la methode categoryName#}
                     <td>
+                        {# options #}
                         <a href="{{ path('admin_validation_accord' , {id: question.id_question}) }}">
                             <img alt="accepter la question" id="option1" src="{{ asset('assets/images/validation.png') }}">
                         </a>
@@ -42,11 +44,11 @@
                         </a>  
                     </td>
                 </tr>
-            {% endfor %}
+                {% endfor %}
 
-        </table>
-    </div>
-</div> 
+            </table>
+        </div>
+    </div> 
 {% endblock %}
 
     
