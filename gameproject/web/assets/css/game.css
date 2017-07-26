@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Anton');
 @import url('https://fonts.googleapis.com/css?family=Pacifico');
 
-/*JEU*/
+/*----JEU----*/
 body {
     margin: 0;
     background-image: url('../images/background.jpg');
@@ -163,7 +163,7 @@ h1, h2, h3, p {
     color: #ffff00;
 }
 
-/* Gestion de la hauteur de l'écran (pour le top en absolute) */
+/*----Gestion de la hauteur de l'écran (pour le top en absolute)----*/
 
 @media screen and (max-height:320px) {
     body {

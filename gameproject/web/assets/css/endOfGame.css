@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Anton');
 
+/*-----barre de navigation ----*/
 
 .navbar-default .navbar-brand {
-   color:#fff; 
+   color: #fff; 
 }
 /*lien tableau des scores*/
 .font{
@@ -17,49 +18,44 @@
 .navbar-default .navbar-brand:hover{
     color: #0288d1;
 }
+/*----Contenu de la page----*/
 
 /*Titre du jeu*/
 #rappelTitre{
-   font-family:'Anton';
+   font-family: 'Anton';
    margin-bottom: 30px;
 }
 
-/*affichage du score*/
+/*Affichage du score*/
 #score{
-     font-family:'Anton';
-     margin-top:30px;
+     font-family: 'Anton';
+     margin-top: 30px;
 }
 
-/*texte de fin de partie*/
+/*Texte de fin de partie*/
 #paragraph{
     color: #fff;
-    font-family:'Anton';
+    font-family: 'Anton';
     font-weight: 100;
-    font-size:large;
+    font-size: 1.9rem;
     margin-top: 50px;
 }
 
-/*image*/
+/*Image*/
 #logo{
     width: 250px;
     height: 200px;
     display: block;
-    margin :10px auto;
+    margin : 10px auto;
 }
+
 
 #container-bar {
     padding: 0;
 }
 
+/*Bordure pour la nav en responsive*/
 .bottom{
     border-bottom: solid 1px #0288d1;
 }
 
-/*@media screen and (max-width:400px){
-    .navbar-default .navbar-brand {
-        display:block;
-        padding: 10px;
-        margin: 0;
-        width: 100%;
-    }
-}*/

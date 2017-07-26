@@ -21,21 +21,11 @@
             <div class="container" id="navbar-container">
                     
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="bottom"><a href="{{ path('homepage') }}" class="bold"><strong>Accueil</strong></a></li>
-                    <li><a class="navbar-brand font" href="{{ path('scores') }}">Tableau des scores</a></li>
+                    <li class="bottom"><a href="{{ path('homepage') }}" class="bold">Accueil</a></li>
+                    <li><a class="font" href="{{ path('scores') }}">Tableau des scores</a></li>
                 </ul>
             </div>
-        </nav>
-        
-        {# <nav class="navbar navbar-default">
-            <div class="container" id="container-bar">
-                <a class="navbar-brand bottom" href="{{ path('homepage') }}">Accueil</a>
-                <a class="navbar-brand" href="{{ path('scores') }}">Tableau des scores</a>
-            </div>
-        </nav> #}
-            
-            
-            
+        </nav> 
             
         <div class="container">
              
@@ -43,7 +33,8 @@
                 <h1 class="col-md-12 col-md-offset-0" id="rappelTitre">Politismos Quiz</h1>
             </div>
             
-             <div class="row" >
+            <div class="row" >
+             {# image affichée à la fin du jeu en fonction du score du joueur #}    
                 {% if membre_manager.score < 600 %}
                     <img id="logo" src="{{ asset('assets/images/restricted.png') }}" alt="logo">
                 {% endif%}
@@ -75,7 +66,7 @@
                 {% if membre_manager.score == 7300 %}
                     <img id="logo" src="{{ asset('assets/images/best.jpg') }}" alt="logo">
                 {% endif%}
-             </div>
+            </div>
             
             <div class="row">
                 <h3 id="score" class="col-md-12 col-md-offset-0">Score : {{ membre_manager.score }}</h3>
@@ -121,7 +112,7 @@
                   {% if membre_manager.score >= 6300 and membre_manager.score < 7300 %}
                     {# entre 6300 points et moins de 7300 points #}
                     Bon travail! Vous avez réussi!
-                    Prêt(e) pour l'aventure de votre vie ? 
+                    Prêt(e) pour l'aventure de votre vie avec Politismos.Inc? 
                   {% endif%}
                   
                   {% if membre_manager.score == 7300 %}

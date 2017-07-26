@@ -2,7 +2,7 @@ body{
 background: url('../images/background_accueil.png') center center repeat;
 background-size:cover 100%;
 }
-/*Boutons de l'accueil'*/
+/*Boutons de l'accueil*/
 .btn-primary {
     background-color: #42a5f5;
     border-color: transparent;
@@ -15,7 +15,7 @@ background-size:cover 100%;
    color: #0288d1;
 }
 
-/*bouton proposer une question*/
+/*Bouton proposer une question*/
 #last-button{
     font-size: 1.3rem;
 }
