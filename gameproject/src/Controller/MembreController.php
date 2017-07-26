@@ -43,12 +43,12 @@ class MembreController extends ControllerAbstract{
                 
             }elseif($_POST['mdp'] != $_POST['mdp_confirm']){
                     
-                    $errors['mdp_confirm'] = "Mot de passe non confirmé";
+                $errors['mdp_confirm'] = "Mot de passe non confirmé";
             }
                
                 
             if(empty($errors)){
-                 //encodage du password
+                //encodage du password
                 $membre->setMdp($this->app['membre.manager']->encodePassword($_POST['mdp']));
                 //créer le compte 
                 $this->app['membre.repository']->save($membre);

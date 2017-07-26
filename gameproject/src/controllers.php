@@ -26,13 +26,13 @@ $app->get('/', function () use ($app) {
 
 $app
     ->get('/randomQuestion', 'question.ajax.controller:getRandomQuestion')
-//    ->assert('difficulty','\d+')
     ->bind('randomQuestion')
 ;
 
 
-$app ->post('/bestScore','game.controller:postBestScore')
-     ->bind('best-score')
+$app
+    ->post('/bestScore','game.controller:postBestScore')
+    ->bind('best-score')
 ;
 
 
@@ -57,34 +57,34 @@ $app
 
 //Vue game
 $app
-        ->get('/game', 'game.controller:getToGame')
-        ->bind('game')
+    ->get('/game', 'game.controller:getToGame')
+    ->bind('game')
 ;
 
 //Vue des régles
 $app
-        ->get('/regles', 'game.controller:getToRegles')
-        ->bind('regles')
+    ->get('/regles', 'game.controller:getToRegles')
+    ->bind('regles')
 ;
 
 //Vue de fin de partie
 $app
-       ->get('/endGame','game.controller:getToEndGame')
-       ->bind('fin_de_partie')
+    ->get('/endGame','game.controller:getToEndGame')
+    ->bind('fin_de_partie')
 ;
 
 //Vue des scores
 $app
-        ->get('/scores', 'game.controller:getToScores')
-        ->bind('scores')
+    ->get('/scores', 'game.controller:getToScores')
+    ->bind('scores')
 ;
 
 
 
 //Vue du formulaire de soumission des questions
 $app
-        ->match('/soumission', 'question.controller:submitAction')
-        ->bind('soumission')
+    ->match('/soumission', 'question.controller:submitAction')
+    ->bind('soumission')
 ;
 
 //Partie Admin:
@@ -93,8 +93,8 @@ $admin = $app['controllers_factory'];
 //sécurisation des routes admin:
 $admin->before(function () use ($app){
     if(!$app['membre.manager']->isAdmin()){
-        $app->abort(403,'AccÃ¨s refusÃ©');
-    //renvoie un message d'erreur si la personne n'est pas connectÃ© entant qu'admin
+        $app->abort(403,'Accès refusé');
+        //renvoie un message d'erreur si la personne n'est pas connectée en tant qu'admin
     }
 });
 
@@ -102,34 +102,33 @@ $app->mount('/admin', $admin);
 
 //route de la vue validationQuestion
 $admin
-     ->get('/validation','admin.question.controller:listAction')
-     ->bind('admin_validation')
+    ->get('/validation','admin.question.controller:listAction')
+    ->bind('admin_validation')
 ;
 
 //route question acceptée
 $admin
-     ->get('/validation/accord/{id}','admin.question.controller:acceptAction')
-     ->bind('admin_validation_accord')
+    ->get('/validation/accord/{id}','admin.question.controller:acceptAction')
+    ->bind('admin_validation_accord')
 ;
 
 //route modificationQuestion
 $admin
-     ->match('/validation/modification/{id}','admin.question.controller:editAction')
-     
-     ->bind('admin_validation_modification')
+    ->match('/validation/modification/{id}','admin.question.controller:editAction')
+    ->bind('admin_validation_modification')
 ;
 
 
 //route suppressionQuestion
 $admin        
-     ->get('validation/suppression/{id}','admin.question.controller:deleteAction') 
-     ->bind('admin_validation_suppression')
+    ->get('validation/suppression/{id}','admin.question.controller:deleteAction') 
+    ->bind('admin_validation_suppression')
 ;
 
 //route remise d'un score à  0
 $admin
-        ->get('/score/reset/{id}', 'admin.membre.controller:setScoreToZero')
-        ->bind('admin_reset_score')
+    ->get('/score/reset/{id}', 'admin.membre.controller:setScoreToZero')
+    ->bind('admin_reset_score')
 ;
 
 
