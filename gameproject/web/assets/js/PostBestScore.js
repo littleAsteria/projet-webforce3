@@ -9,9 +9,8 @@ function postScore(score){
                
     })
     .done(function(data){
-        //console.log('done');
-        window.location = path3;
         //route qui renvoie à la page de fin de partie
+        window.location = path3;
     })
     
     .fail(function(jqXHR, textStatus){
