@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Gruppo');
 
-/*navbar utilisateur*/
+/*----navbar utilisateur----*/
 .navbar-default {
     background-color: #42a5f5;
     border-color: #0288d1;
@@ -35,18 +35,18 @@ li.top{
     color: #0288d1;
 }
 
+/* liens accueil */
 .bold{
     font-weight: bold;
     font-size: medium;
 }
 
-/*navbar administrateur*/
+/*-----navbar administrateur-----*/
 .navbar-inverse {
     background-color: #222;
     border-color: transparent;
 }
-
-
+/*----Contenu des pages----*/
 .margin-top-5 {
     margin-top: 5%;
 }
@@ -69,11 +69,13 @@ li.top{
   heigth: 30px;
   display: inline-block;
 }
+
 /*message à l'utilisateur connecté*/
 #messageUser{
     margin: 15px;
     color: #fff;
 }
+
 #messageUser:hover{
     background: transparent;
 }
@@ -85,8 +87,6 @@ li.top{
     color: #fff;
     font-size: 4rem;
 }
-
-
 
 /*boutons de validation des formulaires*/
 .btn-primary{
