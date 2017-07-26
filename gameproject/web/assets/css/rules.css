@@ -26,12 +26,12 @@ body{
 /*ul*/
 #cadre{
     border: solid 1px #ccc;
-    background: url('../images/blue3.jpg') center center repeat;
+    background: url('../images/blue4.jpg') center center repeat;
     background-size:cover;
     color: #fff;
     font-family:'Gruppo';
     font-weight: bold;
-    font-size:large;
+    font-size:x-large;
 }
 
 /*li*/
@@ -56,12 +56,12 @@ body{
 
 /*ul*/
 #rules{
-    background: url('../images/blue3.jpg') center center repeat;
+    background: url('../images/blue4.jpg') center center repeat;
     background-size: cover;
     color: #fff;
     font-family:'Gruppo';
     font-weight: bold;
-    font-size: large;
+    font-size: x-large;
 }
 
 /*li*/

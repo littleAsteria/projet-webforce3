@@ -1,11 +1,10 @@
 {% extends "layout.html.twig" %}
 
-{% block title "Scores" %}
+{% block title "Politismos Quiz : Scores" %}
     
 {% block content %}
 <div class="container">
     <h1>Meilleurs scores</h1>
-    
     
     <table class="table">
         <tr>
@@ -21,7 +20,11 @@
             <td>{{ membre.pseudo }}</td>
             <td>{{ membre.score }}</td>
             {% if membre_manager.admin %}
-            <td><a href="{{ path('admin_reset_score',{id:membre.id_membre}) }}"><img id="option3" src="{{ asset('assets/images/remove.png') }}" alt="remettre à zéro"></a></td>
+            <td>
+                <a href="{{ path('admin_reset_score',{id:membre.id_membre}) }}">
+                <img id="option3" src="{{ asset('assets/images/remove.png') }}" alt="remettre à zéro">
+                </a>
+            </td>
             {% endif %}
         </tr>
         {% endfor %}
