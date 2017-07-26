@@ -32,7 +32,7 @@ $app['twig'] = $app->extend('twig', function ($twig, $app) {
 });
 
 $app->register( //nom de méthode propre à silex
-       new DoctrineServiceProvider(),//pour pouvoir utiliser doctrine dans db
+        new DoctrineServiceProvider(),//pour pouvoir utiliser doctrine dans db
         [
           'db.options' => [
               'driver' => 'pdo_mysql',
@@ -82,7 +82,7 @@ $app['game.controller'] = function () use ($app){
 
 //Déclaration en service du contrôleur Question:
 $app['question.controller'] = function () use ($app){
-  return new QuestionController($app);  
+    return new QuestionController($app);  
 };
 
 //Déclaration en service du controller QuestionAjax:
@@ -99,7 +99,7 @@ $app['membre.repository'] = function() use ($app){
 
 //Déclaration en service du repository Question:
 $app['question.repository'] = function() use ($app){
-  return new QuestionRepository($app['db']);  
+    return new QuestionRepository($app['db']);  
 };
 
 

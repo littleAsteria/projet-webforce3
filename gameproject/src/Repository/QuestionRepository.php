@@ -58,7 +58,7 @@ class QuestionRepository extends RepositoryAbstract{
         $query = "SELECT * FROM question WHERE statut_question = :statut_question";
         
 
-        $questions =[];
+        $questions = [];
 
         
         $dbQuestions = $this->db->fetchAll(
@@ -67,14 +67,14 @@ class QuestionRepository extends RepositoryAbstract{
             //selectionner les questions de la table question lorsque celle-ci on un statut 0   
             [':statut_question' => '0']
                 
-            );    
+        );    
         
-            foreach ($dbQuestions as $dbQuestion){
-                $question = $this->buildFromArray($dbQuestion);
+        foreach ($dbQuestions as $dbQuestion){
             
+            $question = $this->buildFromArray($dbQuestion);
             
-                $questions[] = $question;
-            }
+            $questions[] = $question;
+        }
             
         return $questions;
      
@@ -95,7 +95,7 @@ class QuestionRepository extends RepositoryAbstract{
         
     }
     
-     public function delete($question){
+    public function delete($question){
         
         $this->db->delete('question', ['id_question' => $question->getId_question()]);
     

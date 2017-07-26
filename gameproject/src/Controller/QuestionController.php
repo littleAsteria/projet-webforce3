@@ -11,8 +11,10 @@ class QuestionController extends ControllerAbstract{
     public function submitAction(){
         
         $question = new Question();
-        $emptyQuestion = new Question();
+        
         //On créé une 2éme instance de question qui restera vide et sera passé en paramétre de la méthode render
+        $emptyQuestion = new Question();
+        
         $errors = [];
         
         //Vérification des champs
@@ -65,8 +67,9 @@ class QuestionController extends ControllerAbstract{
             }
         }
         
-        return $this->render('soumissionQuestion.html.twig', ['question' => $emptyQuestion]);
         //Le paramétre permet d'afficher le formulaire avec des champs vides dans le cas d'un ajout
+        return $this->render('soumissionQuestion.html.twig', ['question' => $emptyQuestion]);
+        
     }
     
     

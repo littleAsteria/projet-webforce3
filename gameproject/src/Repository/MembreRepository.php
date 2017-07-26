@@ -38,8 +38,8 @@ class MembreRepository extends RepositoryAbstract{
         ];
         
         $where = !empty($membre->getId_membre())
-                 ?['id_membre' => $membre->getId_membre()]
-                 : null
+                ?['id_membre' => $membre->getId_membre()]
+                : null
         ;
         
         $this->persist($data,$where);
@@ -50,10 +50,7 @@ class MembreRepository extends RepositoryAbstract{
         
         $dbMembre = $this->db->fetchAssoc(
             'SELECT * FROM membre WHERE pseudo = :pseudo',
-            [':pseudo' => $pseudo]
-                
-           
-                
+            [':pseudo' => $pseudo]     
         );
         
         if(!empty($dbMembre)){

@@ -78,7 +78,7 @@ class ControllerAbstract {
         return $this->app->redirect(
            $this->app['url_generator']->generate($routeName,$parameters)
               
-                );
+        );
     }
             
     
