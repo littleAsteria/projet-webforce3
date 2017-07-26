@@ -35,8 +35,6 @@ $(function(){
     var comboUpTime = 1000;
     var comboFadeOutTime = 2000;
     
-    //console.log('réponses requises pour un combo : ' + comboRequirement);
-    
     getQuestion();
     
     $('button').on('click', function(){
@@ -48,7 +46,6 @@ $(function(){
     $('#joker1').on('click', clickJokerQuestion);
     $('#joker2').on('click', clickJokerMoitie);
     
-    //
     $('.reponseButton').on('click', onClickReponse);
 
     //quand on valide la reponse à la question:
@@ -57,8 +54,6 @@ $(function(){
     
     gameMusic.play();
     
-    console.log('width : ' + window.innerWidth);
-    console.log('height : ' + window.innerHeight);
     
     function onClickReponse(){
         
@@ -140,7 +135,6 @@ $(function(){
             
             $('#'+ deactivatedButtons[i]).removeClass('reponseButton-primary');
             $('#'+ deactivatedButtons[i]).addClass('disabled');
-            //$('#'+ deactivatedButtons[i]).off('click', onClickReponse);
         }
     }
     
@@ -154,7 +148,6 @@ $(function(){
             
             $('#'+ deactivatedButtons[i]).removeClass('disabled');
             $('#'+ deactivatedButtons[i]).addClass('reponseButton-primary');
-            //$('#'+ deactivatedButtons[i]).on('click', onClickReponse);
         }
         
         //Vide le tableau
@@ -254,7 +247,6 @@ $(function(){
                             goodAnswersInARow = 0;
                             getQuestion();
                             
-                            //console.log(score);
                             //Si le joueur répond à 3 mauvaises réponses alors la partie s'arrête
                             if(wrongAnswers == 3) postScore(score);
                         }
@@ -282,7 +274,6 @@ $(function(){
                     $('.reponseButton').removeClass('reponseButton-selected');
                     $('.reponseButton').removeClass('reponseButton-right');
                     $('.reponseButton').removeClass('reponseButton-wrong');
-                    //$('.reponseButton').addClass('reponseButton-primary');
                     
                     activateAllButtons();
 
@@ -298,11 +289,6 @@ $(function(){
             
             }, suspensTimer * (currentDifficulty / 2));
             
-        }
-        //si le joueur valide sans chosir de réponse:
-        else {
-            
-            console.log('aucune réponse donnée');
         }
 
     }

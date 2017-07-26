@@ -4,13 +4,10 @@
  * */
 function affichageDonnees(question, questionNumber){
     $('#questionNumber').html('Question n° ' + questionNumber);
-    //console.log(question);
     
     $('#questionText').html(question.question);
-    //console.log(question.question);
     
     $('#reponseA').html(question.reponseA);
-    //console.log(question);
     
     $('#reponseB').html(question.reponseB);
     
