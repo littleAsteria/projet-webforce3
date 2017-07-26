@@ -12,7 +12,7 @@ class QuestionController extends ControllerAbstract{
         
         $question = new Question();
         
-        //On créé une 2éme instance de question qui restera vide et sera passé en paramétre de la méthode render
+        //On créé une 2éme instance de question qui restera vide et sera passée en paramétre de la méthode render
         $emptyQuestion = new Question();
         
         $errors = [];

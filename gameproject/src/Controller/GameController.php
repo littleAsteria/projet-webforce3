@@ -15,7 +15,7 @@ class GameController extends ControllerAbstract{
     
     public function getToScores(){
         
-        $membres = $this->app['membre.repository']->findAllBestScores('10');
+        $membres = $this->app['membre.repository']->findAllBestScores('9');
         
         return $this->render('score.html.twig', ['membres' => $membres]);
     }
@@ -27,7 +27,7 @@ class GameController extends ControllerAbstract{
     //action: 
     /*
      * Si pas de score ou score précédent plus bas que le score actuel 
-    faire une requete pour envoyer le score actuel dans la table membre 
+    faire une requête pour envoyer le score actuel dans la table membre 
     Sinon ne pas envoyé le score
      */
     
