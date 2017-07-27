@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Jeu 20 Juillet 2017 à 17:15
--- Version du serveur :  10.1.13-MariaDB
--- Version de PHP :  5.6.23
+-- Généré le :  Jeu 27 Juillet 2017 à 09:43
+-- Version du serveur :  10.1.9-MariaDB
+-- Version de PHP :  5.6.15
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -20,12 +20,8 @@ SET time_zone = "+00:00";
 -- Base de données :  `game`
 --
 
-CREATE DATABASE IF NOT EXISTS game;
-
-USE game;
-
 -- --------------------------------------------------------
-
+USE game;
 --
 -- Structure de la table `membre`
 --
@@ -38,8 +34,12 @@ CREATE TABLE `membre` (
   `statut_membre` enum('0','1') COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Contenu de la table `membre`
+--
 
-
+INSERT INTO `membre` (`id_membre`, `pseudo`, `mdp`, `score`, `statut_membre`) VALUES
+(1, 'cinnamonpan', '$2y$10$vVU4/.xoVx1mkef8s/x2YOUhlljINxIJEpelGl3hpb3xJWjfn.7Lu', 0, '1');
 
 -- --------------------------------------------------------
 
@@ -83,7 +83,50 @@ INSERT INTO `question` (`id_question`, `question`, `reponse_a`, `reponse_b`, `re
 (17, 'A quelle altitude est placé un satellite en orbite géostationnaire ?', '35800 km', '28500 km', '16700 km', '12000 km', 'a', 8, '1'),
 (18, 'Un dirigeant est un ploutocrate si il est ?', 'Insignifiant', 'Riche', 'Intelligent', 'Naïf', 'b', 6, '1'),
 (19, 'Comment appelle-t-on les habitants de Pontault-Combault ?', 'Les Pontaullois combolais', 'Les Pontault comboliens', 'Les Pontellois combalusiens', 'Les Pontois combauliens', 'c', 9, '1'),
-(20, 'Qu''indiquent les points des coccinelles ?', 'Leur espèce', 'Leur longueur', 'Leur âge', 'Leur sexe', 'c', 3, '1');
+(20, 'Qu''indiquent les points des coccinelles ?', 'Leur espèce', 'Leur taille', 'Leur âge', 'Leur sexe', 'c', 3, '1'),
+(21, 'De quelle génération de Pokémon Doduo est-il issu ?', 'La première', 'La deuxième', 'La troisième', 'La quatrième', 'a', 7, '1'),
+(22, 'De ces grandes batailles Napoléoniennes, laquelle est la plus récente ?', 'Austerlitz', 'Iéna', 'Marengo', 'Wagram', 'd', 10, '1'),
+(23, 'Dans quel film Bourvil incarne-t-il Antoine Maréchal ?', 'La Grande Vadrouille', 'Le Corniaud', 'Le Cercle rouge', 'Le Cerveau', 'b', 8, '1'),
+(24, 'Qui a introduit la stérilisation des instruments chirurgicaux ?', 'Robert Koch', 'Edward Jenner', 'Sir Alexander Fleming', 'Joseph Lister', 'd', 10, '1'),
+(25, 'Que signifie l''expression québecoise "Tire-toi une bûche" ?', 'Fais attention à la marche !', 'Pars et ne reviens jamais !', 'Viens t''asseoir !', 'Va faire chauffer du bois !', 'c', 7, '1'),
+(26, 'Dans une ferme quels animaux loge-t-on dans le poulailler ?', 'Les poux', 'Les poulains', 'Les poulpes', 'Les poules', 'd', 1, '1'),
+(27, 'Dans un livre de cuisine, on ne peut pas trouver la recette du…', 'Canard à l''orange', 'Canard enchaîné', 'Confit de canard', 'Canard laqué', 'b', 2, '1'),
+(28, 'Qui est la déesse romaine de la sagesse ?', 'Minerve', 'Prothèse', 'Attelle', 'Béquille', 'a', 2, '1'),
+(29, 'À la Maison Blanche, quel est le surnom du bureau dans lequel travaille le président ?', 'Bureau rectangulaire', 'Bureau carré', 'Bureau arrondi', 'Bureau ovale', 'd', 2, '1'),
+(30, 'Sur la Lune, si on lâche simultanément une plume et un marteau de la même hauteur...', 'La plume arrive en 1er', 'Le marteau arrive en 1er', 'Ils arrivent ensemble', 'Ils flottent', 'c', 3, '1'),
+(31, 'Sur une automobile, à quel dispositif l''overdrive est-il lié ?', 'La boîte de vitesses', 'La suspension', 'La carburation', 'Le freinage', 'a', 3, '1'),
+(32, 'Quel héros de la mythologie grecque décapita la terrible Méduse ?', 'Hector', 'Orphée', 'Achille', 'Persée', 'd', 4, '1'),
+(33, 'L''oniromancie est un procédé de divination par :', 'Les lignes du pied', 'Les pierres', 'L''iris de l''oeil', 'Les rêves', 'd', 4, '1'),
+(34, 'En quelle année a été lancé l''Eurostar ?', '1994', '1996', '1998', '2000', 'a', 4, '1'),
+(35, 'En 1946, quel homme politique lança l''expression "rideau de fer " ?', 'Charles de Gaulle', 'Joseph Staline', 'Winston Churchill', 'Franklin Roosevelt', 'c', 4, '1'),
+(36, 'Combien de licences de jeux, la société Blizzard Entertainment  possède-t-elle ?', 'Une', 'Deux', 'Trois ', 'Quatre', 'd', 5, '1'),
+(37, 'Quelle est la capitale de la Lettonie ?', 'Vilnius', 'Riga', 'Tallinn', 'Kiev', 'b', 6, '1'),
+(38, 'Quel animal (réel ou fictif) porte malheur pour les marins ?', 'Le lapin', 'Le mouton', 'La sirène', 'Le requin', 'a', 5, '1'),
+(39, 'Qu''est-ce qu''un Bombax ?', 'Un arbre', 'Un poisson', 'Un lézard', 'Un oiseau', 'a', 5, '1'),
+(40, 'Quel était le plus grand bateau de Christophe Colomb ?', 'La Nina', 'La Santa-Maria', 'La Pinta', 'Le HMS Victory', 'b', 5, '1'),
+(41, 'Qui a composé la Marseillaise ?', 'Truite de Bordo', 'Sole de Lion', 'Mérou de Marseille', 'Rouget de Lisle', 'd', 7, '1'),
+(42, 'Quel fleuve traverse la ville de Verdun ?', 'Le Rhin', 'le Rhône', 'La Meuse', 'La Moselle', 'c', 6, '1'),
+(43, 'Dans quelle ville Jules Verne est-il né ?', 'Angers', 'Laval', 'Lorient', 'Nantes', 'd', 7, '1'),
+(44, 'Quel oiseau parcourt la plus grande distance au monde ?', 'La Sterne Arctique', 'L''Hirondelle', 'Le Fou de Bassan', 'La Cigogne', 'a', 8, '1'),
+(45, 'En quelle année Astérix a-t-il vu le jour ?', '1950', '1959', '1960', '1969', 'b', 8, '1'),
+(46, 'Les diomedeidae sont plus connus sous le nom de :', 'Goélands argentés', 'Vautours', 'Albatros', 'Aigles royaux', 'c', 9, '1'),
+(47, 'Quel philosophe a écrit " Les origines du totalitarisme " et " La crise de la culture " ?\r\n', 'John Dewey', 'Edmund Husserl', 'Hannah Arendt', 'Henri Bergson', 'c', 9, '1'),
+(48, 'Qui a composé le générique de Game of Thrones ?', 'Hans Zimmer', 'James Newton Howard', 'Ramin Djawadi', 'James Horner', 'c', 9, '1'),
+(49, 'Dans quelle mer se jette le fleuve Méandre ?', 'La mer noire', 'La mer Égée', 'La mer Caspienne', 'La mer Adriatique', 'b', 10, '1'),
+(50, '“Il ira loin, il croit tout ce qu’il dit”. De qui parle Mirabeau ?', 'Napoléon', 'Robespierre', 'Talleyrand', 'Fouché', 'b', 10, '1'),
+(51, 'Dans Charlie et la chocolaterie, quelles créatures assistent Willy .Wonka ?', 'Les Gualas-Bompas', 'Les Oompa-Loompas', 'Les Oula-Wompas', 'Les Oola-Hoopas', 'b', 5, '1'),
+(52, 'Quelle est la tessiture de voix d''homme la plus élevée ?', 'Le ténor', 'La basse', 'Le baryton', 'La haute-contre', 'd', 5, '1'),
+(53, 'Que signifie le verbe procrastiner ?', 'Etudier énormément', 'Remettre quelque chose à plus tard', 'Parler vulgairement', 'Contredire son interlocuteur', 'b', 2, '1'),
+(54, 'De quel animal est issu le cachemire ? ', 'Le lapin', 'Le vison', 'La chévre', 'Le mouton', 'c', 4, '1'),
+(55, 'Quelle est la première ville au monde à s''être dotée d''un métro ?', 'New York', 'Paris', 'Londres', 'Berlin', 'c', 3, '1'),
+(56, 'Qui est l''auteur de L''idiot ?', 'Anton Tchekov', 'Nicolas Gogol', 'Fiodor Dostoievskï', 'Léon Tolstoï', 'c', 6, '1'),
+(57, 'Quelle est la capitale de la Bolivie ?', 'Sucre', 'Porto-novo', 'Praia', 'Bogota', 'a', 7, '1'),
+(58, 'Quelle est la durée actuelle du mandat présidentiel aux États-Unis ?', 'Quatre ans', 'Cinq  ans', 'Six ans', 'Sept ans', 'a', 3, '1'),
+(59, 'En argot, que signifie l''expression "Décrocher les tableaux " ?', 'S''appauvrir', 'Devenir fou', 'Changer de vie', 'Se récurer le nez', 'd', 7, '1'),
+(60, 'Quelle proposition ne fait pas partie des douze travaux d''Hercule?', 'Tuer l''hydre de Lerne', 'Résoudre l''enigme du Sphinx ', 'Dérober la ceinture d''hippolyte', 'Nettoyer les écuries d''Augias ', 'b', 5, '1'),
+(61, 'Quel est le premier long métrage d’animation des studios Walt Disney ? ', 'Blanche neige et les sept nains', 'Bambi', 'Pinnochio', 'La belle au bois dormant', 'a', 6, '1'),
+(62, 'Au bowling, combien de quilles sont alignées sur la dernière rangée  ?', '3', '4', '5', '6', 'b', 4, '1'),
+(63, 'Que représentent les cinq anneaux présents sur le drapeau olympique ?', 'Les disciplines par catégorie', 'Les différents continents', 'Les valeurs sportives', 'Les types de médailles', 'b', 3, '1');
 
 --
 -- Index pour les tables exportées
@@ -109,12 +152,12 @@ ALTER TABLE `question`
 -- AUTO_INCREMENT pour la table `membre`
 --
 ALTER TABLE `membre`
-  MODIFY `id_membre` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+  MODIFY `id_membre` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT pour la table `question`
 --
 ALTER TABLE `question`
-  MODIFY `id_question` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id_question` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
