@@ -14,16 +14,16 @@ $(function(){
     
     var deactivatedButtons = [];
   
-    //en début de partie, le score commence à 0
+    //en début de partie, le score commence à 0
     var score = 0;
     
     //compteur de mauvaises réponses
     var wrongAnswers = 0;
     
-    //compteur de bonnes réponses à la suite
+    //compteur de bonnes réponses à la suite
     var goodAnswersInARow = 0;
     
-    //nombre de bonnes réponses à la suite requises pour faire un combo
+    //nombre de bonnes réponses à la suite requises pour faire un combo
     var comboRequirement = 3;
     
     var nextQuestionTimer = 2800;
@@ -48,7 +48,7 @@ $(function(){
     
     $('.reponseButton').on('click', onClickReponse);
 
-    //quand on valide la reponse à la question:
+    //quand on valide la reponse à la question:
     $('#valider').on('click', onValidateClick);
     
     
@@ -216,7 +216,7 @@ $(function(){
                 //Timer avant d'afficher la prochaine question
                 setTimeout(function(){ 
 
-                    //Si le numéro de la question actuelle est inférieur à 10
+                    //Si le numéro de la question actuelle est inférieur à 10
                     if(currentQuestionNumber < 10){
 
                         //Si le joueur a donné la bonne réponse
@@ -242,13 +242,19 @@ $(function(){
                         //Si le joueur donne une mauvaise réponse à la question alors
                         else {
 
-                            currentQuestionNumber++;
                             wrongAnswers++;
-                            goodAnswersInARow = 0;
-                            getQuestion();
+                            //Si le joueur répond 3 mauvaises réponses alors la partie s'arrète
+                            if(wrongAnswers == 3){
+                                postScore(score);
+                            }
                             
-                            //Si le joueur répond à 3 mauvaises réponses alors la partie s'arrête
-                            if(wrongAnswers == 3) postScore(score);
+                            //Sinon, le jeu continue
+                            else {
+                                currentQuestionNumber++;
+                                goodAnswersInARow = 0;
+                                getQuestion();
+                            }
+                            
                         }
                     }
 
@@ -270,7 +276,7 @@ $(function(){
                     }
 
                     //évite que la couleur de la reponse validée reste verte
-                    // en passant à la question suivante
+                    //en passant à la question suivante
                     $('.reponseButton').removeClass('reponseButton-selected');
                     $('.reponseButton').removeClass('reponseButton-right');
                     $('.reponseButton').removeClass('reponseButton-wrong');
