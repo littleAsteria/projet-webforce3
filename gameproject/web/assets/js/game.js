@@ -177,6 +177,8 @@ $(function(){
             
             deactivateAllButtons();
             
+            if(isFiftyUsed) isFiftyUsed = false;
+            
             //Timer de suspens
             setTimeout(function(){
             
