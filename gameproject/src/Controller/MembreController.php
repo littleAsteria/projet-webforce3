@@ -53,10 +53,16 @@ class MembreController extends ControllerAbstract{
                 //créer le compte 
                 $this->app['membre.repository']->save($membre);
                 
+                $currentId = $this->app['db']->lastInsertId();
+                
+                $membre->setId_membre($currentId);
+                
                 //connexion direct 
                 $this->app['membre.manager']->login($membre);
                 
                 return $this->redirectRoute('homepage');
+                
+                //$this->addFlashMessage('bien enregistré');
             }
             
             else {
