@@ -87,6 +87,12 @@ $app
     ->bind('soumission')
 ;
 
+//Vue des crédits
+$app
+    ->get('/credits', 'game.controller:getToCredits')
+    ->bind('credits')
+;
+
 //Partie Admin:
 $admin = $app['controllers_factory'];
 

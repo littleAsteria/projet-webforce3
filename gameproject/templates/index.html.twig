@@ -40,6 +40,10 @@
         </div>
         {% endif %}
         
+        <div class="row">
+            <a href="{{ path('credits') }}" class="btn btn-primary col-md-2 col-md-offset-4 margin-top-5 col-xs-6 col-xs-offset-3" role="button">Crédits</a>
+        </div>
+        
         {% block javascript %}
             {{ parent() }}
             <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.4/howler.core.min.js"></script>
