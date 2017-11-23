@@ -1,0 +1,27 @@
+{% extends "layout.html.twig" %}
+
+{% block title "Politismos Quiz : Crédits" %}
+{% block stylesheets %} 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="icon" type="image/png" href="{{ asset('assets/images/earth.png') }}" />
+    <link href="{{ asset('assets/css/credits.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('assets/css/main.css') }}" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% block content %}
+    
+    <div class="container">
+        
+        <div class="row">
+    
+            <h1>Jeu développé par :</h1>
+            <ul class="namesList">
+                <li id="sonia"><h2>Sonia Daguet</h2></li>
+                <li id="david"><h2>David Spanjaard</h2></li>
+            </ul>
+    
+        </div>
+        
+    </div>
+    
+{% endblock %}

@@ -20,6 +20,10 @@ class GameController extends ControllerAbstract{
         return $this->render('score.html.twig', ['membres' => $membres]);
     }
     
+    public function getToCredits(){
+        return $this->render('credits.html.twig');
+    }
+    
     public function getToEndGame(){
         
         return $this->render('finDePartie.html.twig');

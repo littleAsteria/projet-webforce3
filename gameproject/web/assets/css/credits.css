@@ -1,0 +1,28 @@
+h1 {
+    text-align: center;
+}
+
+.namesList {
+    display: block;
+    margin-top: 5%;
+    padding: 5%;
+}
+
+
+#sonia, #david {
+    display: inline-block;  
+}
+
+#sonia {
+    float: left;
+}
+
+#david {
+    float: right;
+}
+
+@media screen and (max-width:453px) {
+    #sonia, #david {
+        float: none;
+    }
+}
